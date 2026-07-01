@@ -1,0 +1,2160 @@
+{
+  "generated_at_utc": "2026-07-01T17:29:08+00:00",
+  "n_files": 359,
+  "files": [
+    {
+      "relative_path": ".zenodo.json",
+      "size_bytes": 1452,
+      "mtime_utc": "2026-07-01T17:29:01+00:00",
+      "sha256": "8f077cb6958affaacd3c7731a09f02a8ec7bc0e2b1954591835573ac8827a2b6"
+    },
+    {
+      "relative_path": "DATA_AND_CODE_AVAILABILITY_PLAN.md",
+      "size_bytes": 5442,
+      "mtime_utc": "2026-07-01T17:29:02+00:00",
+      "sha256": "1a5726932aabc92edce9eff92ebaf030c729dbfd8fec824712e457e58a65d086"
+    },
+    {
+      "relative_path": "MODEL_METHODOLOGY_REPORT.md",
+      "size_bytes": 20104,
+      "mtime_utc": "2026-03-24T13:38:30+00:00",
+      "sha256": "27de33bd04247aa94381860e99828edebdae348fcc1746bebd0cdfeb879bb8f1"
+    },
+    {
+      "relative_path": "New_Analysis/README.md",
+      "size_bytes": 6843,
+      "mtime_utc": "2026-06-18T18:29:55+00:00",
+      "sha256": "b508ac925534ef1861c88dc107db32284f3bf6e2dfd60d9a1af4620b9449a723"
+    },
+    {
+      "relative_path": "New_Analysis/cff_calibrated_baseline/README.md",
+      "size_bytes": 1929,
+      "mtime_utc": "2026-06-19T02:13:10+00:00",
+      "sha256": "8447d7f16301a2d8d2bb5890cc08dedc7d881470a424545144a57b52cd3114c0"
+    },
+    {
+      "relative_path": "New_Analysis/cff_gfnff/README.md",
+      "size_bytes": 8536,
+      "mtime_utc": "2026-06-18T18:21:27+00:00",
+      "sha256": "a3d8914e641bbe65220b018346b89ee9fb5959368a993c06d025ec11518e8dff"
+    },
+    {
+      "relative_path": "New_Analysis/cff_raw_diagnostics/README.md",
+      "size_bytes": 1103,
+      "mtime_utc": "2026-06-19T02:12:58+00:00",
+      "sha256": "97e0fdd0c289dffb48f7147ef24fc5eb98c6837f5f8970aa0889f351a95c219f"
+    },
+    {
+      "relative_path": "New_Analysis/cff_ref_boe_target_analysis/README.md",
+      "size_bytes": 2977,
+      "mtime_utc": "2026-06-19T02:13:16+00:00",
+      "sha256": "868acf303e994f955d3c833d03b51936225f92a3aa77905495fb1a049c968b2d"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/MANIFEST.csv",
+      "size_bytes": 2198,
+      "mtime_utc": "2026-06-18T18:29:16+00:00",
+      "sha256": "74e863eab470d0a0b74440a6cec1baa28eaa13aa9660349f787d402d4daa68c5"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/MANIFEST.json",
+      "size_bytes": 3117,
+      "mtime_utc": "2026-06-18T18:29:16+00:00",
+      "sha256": "ff276e5ba3b95d4fdee6cf45a50dcc5e91ca67596ae4f3c2905c1b0d44d813f7"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/dft_ref_boe_variance_and_boe_correlation.csv",
+      "size_bytes": 1635,
+      "mtime_utc": "2026-06-28T14:16:52+00:00",
+      "sha256": "742df17bc75b9c06560ef2783de434ed1d0bae011359148ffe0c34f2c69a7e2e"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__BoB-ref-BoE.csv",
+      "size_bytes": 1832849,
+      "mtime_utc": "2026-06-19T12:18:38+00:00",
+      "sha256": "73220b0c7179c887fd9875c357804280fd2d424da0f63dd514b5a787d12626a2"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__DFT_ref-BoE.csv",
+      "size_bytes": 13115915,
+      "mtime_utc": "2026-06-18T18:29:13+00:00",
+      "sha256": "ce808bb15bec54a8ede521bc6701444a8c2ee1863d27534da23f282218aae4e7"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__DFT_ref.csv",
+      "size_bytes": 4005258,
+      "mtime_utc": "2026-06-18T18:29:12+00:00",
+      "sha256": "3b0aec4bad0f4df55bc8a14aa7298afea6afd8867ba8a100485e92efea83b164"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__Delta_BoB-ref-BoE.csv",
+      "size_bytes": 8897436,
+      "mtime_utc": "2026-06-18T18:19:37+00:00",
+      "sha256": "e13281f6bfc161ff131897f9e1ceba53411ee162c91c6a2dd26d79e685e9da34"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__Delta_PRE-ref-BoE.csv",
+      "size_bytes": 8907528,
+      "mtime_utc": "2026-06-18T18:19:37+00:00",
+      "sha256": "f8e9b6d957ceb6bb506e6c9ec55a2d198726e392ae9155d5af93c1853970ae5b"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__Delta_PRE_plus_A-ref-BoE.csv",
+      "size_bytes": 1878829,
+      "mtime_utc": "2026-06-19T12:18:38+00:00",
+      "sha256": "c16aecbbd8f2ccd6cae6e09668873b8409544b411947b89b74b6f637c565f94c"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__Delta_cFF-ref-BoE.csv",
+      "size_bytes": 22836433,
+      "mtime_utc": "2026-06-17T18:50:58+00:00",
+      "sha256": "95a3e3e72cd48e667b1c7fbed0b9bf194c626d17dedd73a999155e5a1cf292ef"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__Delta_xTB-ref-BoE.csv",
+      "size_bytes": 23328751,
+      "mtime_utc": "2026-06-18T18:29:16+00:00",
+      "sha256": "db796bfa90f7480a625bdef016432588dfda7cf91512b41ed67672ff87e5d001"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__Delta_xTB-ref.csv",
+      "size_bytes": 11173932,
+      "mtime_utc": "2026-06-18T18:29:13+00:00",
+      "sha256": "e7cffff9a6bf2f4342693d16465cecbdda95e1013825a6e069d30e868ff7a9c5"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__PRE-ref-BoE.csv",
+      "size_bytes": 1833048,
+      "mtime_utc": "2026-06-19T12:18:38+00:00",
+      "sha256": "f1d99ac10801bffd55b9fa4452c0e0ec0d9fb993b4f5deb13a162ef9859509da"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__PRE_plus_A-ref-BoE.csv",
+      "size_bytes": 1878795,
+      "mtime_utc": "2026-06-19T12:18:38+00:00",
+      "sha256": "a9992de36c5a719402f5f914156bb83470fbf9e8bc87802c9771699166971791"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__cFF_ref-BoE.csv",
+      "size_bytes": 17518679,
+      "mtime_utc": "2026-06-17T18:50:56+00:00",
+      "sha256": "a81d0137608421ad67948617a208edcb45401bc17ccd4f0f51db89cae0056627"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__core_targets_common_DFT_xTB_rows.csv",
+      "size_bytes": 9801896,
+      "mtime_utc": "2026-06-18T18:29:16+00:00",
+      "sha256": "bf8f6f0cc0184c2d6f60b307f92a3e696a914db0a25ec5e3f4e214c63fd14a30"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__xTB_ref-BoE.csv",
+      "size_bytes": 13148590,
+      "mtime_utc": "2026-06-18T18:29:14+00:00",
+      "sha256": "3b8b9ca61772cb52a97ecb64371c07d73646a257c57c3b6b4a429addad318c98"
+    },
+    {
+      "relative_path": "New_Analysis/datasets/tmQM__xTB_ref.csv",
+      "size_bytes": 4039082,
+      "mtime_utc": "2026-06-18T18:29:12+00:00",
+      "sha256": "65227f63eeb751004365c89ff31ca7ca9aa724734046799827394d20b240b415"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/CHECKLIST.md",
+      "size_bytes": 5645,
+      "mtime_utc": "2026-06-19T17:35:26+00:00",
+      "sha256": "b5ed991572d4f42a902db3c7264ec6d7a87ae7949ee56a754adba4d52bc2217d"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/IMPLEMENTATION_STATUS.md",
+      "size_bytes": 3426,
+      "mtime_utc": "2026-06-19T12:21:48+00:00",
+      "sha256": "d20e0c44608eabf36a2ae7a847b0a59eb2d301e3ed5ce18c8052bcf862159d62"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/NEXT_STEPS.md",
+      "size_bytes": 5410,
+      "mtime_utc": "2026-06-19T21:26:33+00:00",
+      "sha256": "fe46e1072deb4f989b2c3890a9267871f411b9c022b4eef24732fe823f97235e"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/README.md",
+      "size_bytes": 6201,
+      "mtime_utc": "2026-06-19T12:21:58+00:00",
+      "sha256": "e126ed962dba92e1278662fb98eb0a2810ed86280ea8727a4eff2aa2225bec00"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/TARGETS_MODELS_METHODS.md",
+      "size_bytes": 17232,
+      "mtime_utc": "2026-06-29T22:47:59+00:00",
+      "sha256": "517720f0ddd73603481f5ba34945b0da4358f8fd8ba740addfe32ec4c3198054"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/TRILLIUM_COMMANDS.md",
+      "size_bytes": 4105,
+      "mtime_utc": "2026-06-19T12:22:24+00:00",
+      "sha256": "5a2a6257d6ef56e64c5fec21b9191a3b676f6e1da5edd2e8ba15885896e6c928"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/absolute_dirichlet_vs_mae_correlations.csv",
+      "size_bytes": 4556,
+      "mtime_utc": "2026-06-21T15:11:13+00:00",
+      "sha256": "0645bf0daa9ab60f17008c28dfce9e509b34ca8346bdcd8a4ebc0f5a77e034b5"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/absolute_dirichlet_vs_mae_points.csv",
+      "size_bytes": 97227,
+      "mtime_utc": "2026-06-21T15:11:12+00:00",
+      "sha256": "37f84f5b2fcc9eae3494cf9f58cbc88e00b9dd99250e74a7f437d9cb96f6c623"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/delta_rank_normalized_dirichlet_vs_gemnet_mae.csv",
+      "size_bytes": 907,
+      "mtime_utc": "2026-06-21T21:09:32+00:00",
+      "sha256": "448c7cf48d98c6d501a725d544d8a29827d9d6028f10f70233f7ac75a0a6bac9"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/delta_targets_pre_prea_space_gemnet_summary_table.csv",
+      "size_bytes": 484,
+      "mtime_utc": "2026-06-21T18:32:30+00:00",
+      "sha256": "df999e62ba6ea5465ba9073cade4670dd93013fba268885299cc49ad1655e6d1"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/delta_targets_pre_prea_space_gemnet_summary_table.md",
+      "size_bytes": 858,
+      "mtime_utc": "2026-06-21T18:32:30+00:00",
+      "sha256": "51a2b568d414009b8ab255729a68315635e8b43178feaec7cb5a616de706683c"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/delta_targets_pre_space_gemnet_summary_table.csv",
+      "size_bytes": 379,
+      "mtime_utc": "2026-06-21T18:18:33+00:00",
+      "sha256": "df01d01d930a4d0369c01583e5f75b181d500205fc7a69e121a867d7b936aec0"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/delta_targets_pre_space_gemnet_summary_table.md",
+      "size_bytes": 648,
+      "mtime_utc": "2026-06-21T18:18:33+00:00",
+      "sha256": "49b988a17ce32d5e065f843340eecdd4b4e48f672cc11ee156ad20d4ac45266d"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/expanded_model_target_val_metrics_available.csv",
+      "size_bytes": 7971,
+      "mtime_utc": "2026-06-21T15:11:21+00:00",
+      "sha256": "c6e0d92230d10f81b5928a422ad66ae732e7fe45cda629993a96143b52d00475"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/expanded_smoothness_correlations_available.csv",
+      "size_bytes": 19425,
+      "mtime_utc": "2026-06-21T15:11:22+00:00",
+      "sha256": "ecb7d8c4aab39adde73e303df372c7ffc09eec51eae69a8f6ca63bbb7a27eb43"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/normalized_dirichlet_target_ranks_raw_k10.csv",
+      "size_bytes": 4676,
+      "mtime_utc": "2026-06-21T16:38:14+00:00",
+      "sha256": "bf06a13370fdc63b98da409d740134500ddf274bbc9ebf11773d440d01653b58"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/normalized_dirichlet_vs_nmae_correlations.csv",
+      "size_bytes": 9086,
+      "mtime_utc": "2026-06-21T15:11:17+00:00",
+      "sha256": "ad0a8ad1709320b9a9ed268dca8187283db733bca9d72ac1943a9e4d5fd52157"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/normalized_dirichlet_vs_nmae_points.csv",
+      "size_bytes": 97227,
+      "mtime_utc": "2026-06-21T15:11:17+00:00",
+      "sha256": "37f84f5b2fcc9eae3494cf9f58cbc88e00b9dd99250e74a7f437d9cb96f6c623"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_descriptor_points_raw.csv",
+      "size_bytes": 4024,
+      "mtime_utc": "2026-06-29T18:57:00+00:00",
+      "sha256": "c3ebc389903c74cb820c41ac8a85e9da377f09e85f29d97c0486e04036cbad26"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_descriptor_points_std.csv",
+      "size_bytes": 4052,
+      "mtime_utc": "2026-06-29T18:57:00+00:00",
+      "sha256": "25b7d90b7a98827eacca36f6500e4756eade0313a5210317f85b56bbc0627c8d"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_norm_dirichlet_vs_gemnet_vmae_rank_raw_k10.csv",
+      "size_bytes": 3842,
+      "mtime_utc": "2026-06-21T16:48:47+00:00",
+      "sha256": "db1f82679687eea8a0972f959c4b9f54753b3126b6a484e4fc654144764976b4"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_plus_a_descriptor_points_raw.csv",
+      "size_bytes": 4036,
+      "mtime_utc": "2026-06-29T18:57:00+00:00",
+      "sha256": "ae702357a521025176f35076b4bfebbb168bf3b4af007f2a647848f41a1ddfd2"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_plus_a_descriptor_points_std.csv",
+      "size_bytes": 4071,
+      "mtime_utc": "2026-06-29T18:57:00+00:00",
+      "sha256": "03a37e7f660e2cc73c80ad8672af83fdeb8c6156815405ffb110f05b0178402c"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_plus_a_scale_vs_normalized_roughness_gemnet_qm9_raw.csv",
+      "size_bytes": 2209,
+      "mtime_utc": "2026-06-29T18:42:44+00:00",
+      "sha256": "920621b01652fe4a15153548c646eac34917df3b6c6f670b5528a961484b8ea6"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_plus_a_scale_vs_normalized_roughness_gemnet_qm9_std.csv",
+      "size_bytes": 1634,
+      "mtime_utc": "2026-06-29T18:42:44+00:00",
+      "sha256": "5da0eee98e50035a67ece239200173f5b294f0fb46b3fe9b895bfa7afdda3d8e"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_plus_a_std_normalized_dirichlet_vs_gemnet_nmae_points.csv",
+      "size_bytes": 4186,
+      "mtime_utc": "2026-06-29T19:05:59+00:00",
+      "sha256": "6a507aa2d5156650e5a3ed94168c0c2a171615761bdb9806784969879aadac54"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_scale_vs_normalized_roughness_gemnet_qm9_raw.csv",
+      "size_bytes": 2216,
+      "mtime_utc": "2026-06-29T18:50:08+00:00",
+      "sha256": "389c402078d32712793b6188aa4b01086af91994335c91dd1f6e3a9c3c262477"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_scale_vs_normalized_roughness_gemnet_qm9_std.csv",
+      "size_bytes": 2217,
+      "mtime_utc": "2026-06-29T18:50:08+00:00",
+      "sha256": "6b58bec8431597f1cb35923955a17fb724baf0a103eed2bbf7454a038c0136ed"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_space_gemnet_delta_rank_comparison.csv",
+      "size_bytes": 424,
+      "mtime_utc": "2026-06-21T16:50:23+00:00",
+      "sha256": "8d05bb7b3afd6c689433d0261937371a240c5b1b8a6efa1fc58fe621a98a3e96"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/pre_vs_prea_descriptor_correlations.csv",
+      "size_bytes": 3935,
+      "mtime_utc": "2026-06-29T18:57:00+00:00",
+      "sha256": "7eac3d560263f45282ec07782891f7e668dd2dc62a22a49be6d1a2fbe6dbfc3e"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/rank_smoothness_vs_nmae_points.csv",
+      "size_bytes": 7623,
+      "mtime_utc": "2026-06-21T16:49:43+00:00",
+      "sha256": "0a601ecd77e183beba1705b074e4c20526061820722911a55f472dfd93b671fe"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/raw_dirichlet_target_ranks_raw_k10.csv",
+      "size_bytes": 4812,
+      "mtime_utc": "2026-06-21T16:38:11+00:00",
+      "sha256": "0a993b36e7f8dd0179cea61df708a29bec724f5ed25078380d119083e75d4119"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/final_plots/robust_iqr_dirichlet_target_ranks_raw_k10.csv",
+      "size_bytes": 4589,
+      "mtime_utc": "2026-06-21T16:45:47+00:00",
+      "sha256": "b677b578f4263672cb9dab0aa75adea0a92b048739aabe1f890a8621380cab1b"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/gnn/expanded_gnn_val_mae_summary.csv",
+      "size_bytes": 2090,
+      "mtime_utc": "2026-06-21T14:32:46+00:00",
+      "sha256": "af021e9ef7543b4dcc1df20cd55697a02e217785305f70973718beed7fae5680"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/bob_alpha_grid_results.json",
+      "size_bytes": 11947,
+      "mtime_utc": "2026-06-19T20:52:13+00:00",
+      "sha256": "310e820ddfc38ebf9921c06d21047913dc3431347cb33d56963522a9567dfd1c"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/bob_input_validation.json",
+      "size_bytes": 3361,
+      "mtime_utc": "2026-06-19T02:48:21+00:00",
+      "sha256": "b43e505885b10f9b325ea3abafd264a26bdb9f3c6bc496689c6e301265bb95d2"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/bob_target_metrics.csv",
+      "size_bytes": 11302,
+      "mtime_utc": "2026-06-19T20:52:13+00:00",
+      "sha256": "6223ea25dc136dc31da36b270fc8e4d279a14758e4e5781b8bff9811363cceae"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/pre_alpha_grid_results.json",
+      "size_bytes": 983,
+      "mtime_utc": "2026-06-19T17:18:37+00:00",
+      "sha256": "476795363f82123faf2762b3071db3d25f38cfa662c22ab9cda61136520d87ef"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/pre_input_validation.json",
+      "size_bytes": 1700,
+      "mtime_utc": "2026-06-19T17:18:37+00:00",
+      "sha256": "0ba08726ea1708aa040e4b3af29c47717506ce98130a1a95c6d8fedd0ae27b7f"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/pre_plus_a_alpha_grid_results.json",
+      "size_bytes": 1630,
+      "mtime_utc": "2026-06-19T20:48:26+00:00",
+      "sha256": "f4d56d2e2d7bf99e548bc2c5808e85fa5d8d544fafbb80b5c32fcf6aedd29318"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/pre_plus_a_input_validation.json",
+      "size_bytes": 3813,
+      "mtime_utc": "2026-06-19T20:48:26+00:00",
+      "sha256": "86ca7a00316e7d34f227f53b7e120c451499d7e9dbe95dc78b4bad0c3c58501c"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/pre_plus_a_target_metrics.csv",
+      "size_bytes": 11330,
+      "mtime_utc": "2026-06-19T20:48:26+00:00",
+      "sha256": "ea02b837bab7cda2418061eae67e76d1de6a4b71a007b9afc0ce705e8f79d9a1"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/ridge/pre_target_metrics.csv",
+      "size_bytes": 5253,
+      "mtime_utc": "2026-06-19T17:18:37+00:00",
+      "sha256": "e25c450b8d577cfe3a7678b8ff87c0c3ee7c4fd658c8b9356441eba9f64b0b3a"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/smoothness/bob_space_dirichlet_val.csv",
+      "size_bytes": 5778,
+      "mtime_utc": "2026-06-19T12:18:53+00:00",
+      "sha256": "a726d43d1aee1cface33edb55d77f29228e11e1df15b2ef896d46406d4156c38"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/smoothness/pre_plus_a_space_dft_ref_dirichlet_val.csv",
+      "size_bytes": 828,
+      "mtime_utc": "2026-06-29T17:51:12+00:00",
+      "sha256": "1fe6528b373299150ce22ca339f25a148df7f5a3ce8935bad2da41213ac61ca5"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/smoothness/pre_plus_a_space_dirichlet_val.csv",
+      "size_bytes": 5873,
+      "mtime_utc": "2026-06-19T12:21:18+00:00",
+      "sha256": "f95603a27fc0490e991f223bc9d03c8c63eb20693f97fdc37d3633f5661fc394"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/smoothness/pre_plus_a_space_extra_dirichlet_val.csv",
+      "size_bytes": 2640,
+      "mtime_utc": "2026-06-29T18:56:17+00:00",
+      "sha256": "533796f52ac062fb41fb51bf87662a69b15a82d533bcdb0cf341d4c383163f48"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/smoothness/pre_space_dirichlet_val.csv",
+      "size_bytes": 5829,
+      "mtime_utc": "2026-06-19T12:20:09+00:00",
+      "sha256": "010345e368857a4aeb9c995623986cef8699738d851e63b69124cd7d6f23fd7d"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/smoothness/pre_space_extra_dirichlet_val.csv",
+      "size_bytes": 2630,
+      "mtime_utc": "2026-06-29T18:49:17+00:00",
+      "sha256": "1e1d2de57ef5b3eb8cf1f9c6bb56a0f48a469de6227bf22c37eb82097c8d4677"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/status/completed_model_target_val_metrics.csv",
+      "size_bytes": 7799,
+      "mtime_utc": "2026-06-21T14:34:12+00:00",
+      "sha256": "2d5cfc378a2aca3d949f9f04d1713a1dea8d94ad20866a28c94d3fa0d82b62fe"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/status/model_target_completion_grid.csv",
+      "size_bytes": 5194,
+      "mtime_utc": "2026-06-21T14:34:12+00:00",
+      "sha256": "5097bf1276bb86401ebda0f642769f44b04182d5ae334702bfb9f1f2791dfc3a"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/outputs/status/model_target_completion_summary.md",
+      "size_bytes": 331,
+      "mtime_utc": "2026-06-21T14:34:12+00:00",
+      "sha256": "59809b15b46b8336a7440bb697a3af27b5b8428f8e9c548e106cfee29d274290"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/target_registry.csv",
+      "size_bytes": 1613,
+      "mtime_utc": "2026-06-19T12:18:38+00:00",
+      "sha256": "4fe28310e67128c5e7244db9ade80f9b904a401a133d801be84bac7f37c9a9f8"
+    },
+    {
+      "relative_path": "New_Analysis/expanded_target_panel/target_registry.json",
+      "size_bytes": 3010,
+      "mtime_utc": "2026-06-19T12:18:38+00:00",
+      "sha256": "a441c818650202a7b3706535032ab8c074c58feca78bdbcc1d10d22bd1d08de9"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/LEARNED_EMBEDDING_RESULTS_SUMMARY.md",
+      "size_bytes": 7139,
+      "mtime_utc": "2026-06-29T16:19:19+00:00",
+      "sha256": "c0c0e2e6cd44f76d7b82462ebafd32af9c512e8980fece4e39f252adcfc07771"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/README.md",
+      "size_bytes": 6936,
+      "mtime_utc": "2026-06-29T15:59:05+00:00",
+      "sha256": "a85a07d3ca5de70aff880717abf84b9fd61a9472e7f8417ad987eebee578eabc"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/embedding_export_manifest_summary.csv",
+      "size_bytes": 1159,
+      "mtime_utc": "2026-06-29T16:09:11+00:00",
+      "sha256": "2b8113f69e7a0d37f9f721c797d9742a566a3634b3b2080c0c7fdf24c70e707a"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/embedding_export_manifest_summary.meta.json",
+      "size_bytes": 394,
+      "mtime_utc": "2026-06-29T16:09:11+00:00",
+      "sha256": "92e3b16198dad2bedeb15faae8c557dab8736ccbb2a8976e3845a96a9cc10c2b"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/gemnet_embedding_test_metrics_manifest.csv",
+      "size_bytes": 638,
+      "mtime_utc": "2026-06-29T16:01:41+00:00",
+      "sha256": "29085edef035360ae759f1602973c6b1d78bdad6695eb5270e2252a64c362bb8"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/gemnet_embedding_val_metrics_manifest.csv",
+      "size_bytes": 1581,
+      "mtime_utc": "2026-06-29T16:06:57+00:00",
+      "sha256": "b1d2568635c0eb1b0c97695d6faea12cabccaa26e13145b6e5d566f185026956"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/gemnet_embedding_val_metrics_manifest_corrected.csv",
+      "size_bytes": 1709,
+      "mtime_utc": "2026-06-29T16:10:56+00:00",
+      "sha256": "06a2bf7c9c572e9381fdada41c254cbd6c1512e3f51d409495c7a2158858a592"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/learned_embedding_manifest_mean_std.csv",
+      "size_bytes": 2379,
+      "mtime_utc": "2026-06-29T15:57:12+00:00",
+      "sha256": "d2a32bc75ab6b0fb7e429ed85fedbf1d901923870b3bae39769fa4bf90147fc2"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/learned_embedding_manifest_mean_std_corrected.csv",
+      "size_bytes": 2565,
+      "mtime_utc": "2026-06-29T16:09:42+00:00",
+      "sha256": "096257866e159cc845ddffa5bd564072d712df5ae8389bc9e400e9eafe14d332"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/learned_embedding_roughness_mean_std_all_targets.csv",
+      "size_bytes": 114541,
+      "mtime_utc": "2026-06-29T15:57:48+00:00",
+      "sha256": "3a85bce9f44f975f5234d999d0a8879d9f9adb836b69d1eb6dd2e6b107d1d5ce"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/learned_embedding_roughness_mean_std_all_targets_corrected_shared.csv",
+      "size_bytes": 123817,
+      "mtime_utc": "2026-06-29T16:10:35+00:00",
+      "sha256": "4d3d6edc9ee62c40c4219d82af1d6334f2a9a8c39abcb65c190d3338aa038d99"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/learned_embedding_roughness_mean_std_all_targets_shared6126.csv",
+      "size_bytes": 114580,
+      "mtime_utc": "2026-06-29T16:00:35+00:00",
+      "sha256": "49e2439e6039079f711fb2cc92436db55df1b7d01e1179454129cbcea5d96e29"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/learned_embedding_self_target_roughness_vs_gemnet_val_mae_corrected_shared.csv",
+      "size_bytes": 12528,
+      "mtime_utc": "2026-06-29T16:11:02+00:00",
+      "sha256": "9de6ef79a712357369620f8425a002fe71c2c9beedc1bc51aea6bef127974f55"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/learned_embedding_self_target_roughness_vs_gemnet_val_mae_shared6126.csv",
+      "size_bytes": 11636,
+      "mtime_utc": "2026-06-29T16:06:57+00:00",
+      "sha256": "16a042da358dbc34119f5d62f186f1f0a9957b3eb72b2060049c123e3c50bbd8"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/shared_embedding_mol_ids.csv",
+      "size_bytes": 42889,
+      "mtime_utc": "2026-06-29T15:58:28+00:00",
+      "sha256": "503397fd382427fc972e05b9859a6f5e1af53ea4d59e21f74c51f1b4450f3f95"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/shared_embedding_mol_ids_corrected.csv",
+      "size_bytes": 42889,
+      "mtime_utc": "2026-06-29T16:09:56+00:00",
+      "sha256": "503397fd382427fc972e05b9859a6f5e1af53ea4d59e21f74c51f1b4450f3f95"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/bob_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1014,
+      "mtime_utc": "2026-06-29T15:54:04+00:00",
+      "sha256": "e41ba3902cb2308e930f557ba2e0286bc8b3280286d9ce9e7cb8c530a8278d6e"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/bob_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 458,
+      "mtime_utc": "2026-06-29T15:54:04+00:00",
+      "sha256": "77ee7773733713467c9da4885546e4c0e91dca49aa9c55deb95720f90ec51f85"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/bob_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1030,
+      "mtime_utc": "2026-06-29T15:54:32+00:00",
+      "sha256": "5a97bc8d667112f81f8796ee68c5dc0fdddbae05f63476b12e80b8d190ad1361"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/bob_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 470,
+      "mtime_utc": "2026-06-29T15:54:32+00:00",
+      "sha256": "d7d59e34a9674c700a9fabade29f4e6ff99c0171cb88d652e9a98a74f0f48dd0"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 998,
+      "mtime_utc": "2026-06-29T15:53:36+00:00",
+      "sha256": "9cca6517b473bdcd586d6a1a9e4dea2be966a98fc3d6543c209c54a808400ec4"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 446,
+      "mtime_utc": "2026-06-29T15:53:36+00:00",
+      "sha256": "211b6ee486450472b4f31da33953784738f5e65263021539a1661b716f8b120f"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/boe_xtb/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1014,
+      "mtime_utc": "2026-06-29T15:53:50+00:00",
+      "sha256": "98c92cfa57b053ead50c932d44350cd62e0098c12361851b28d2281680d479c0"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/boe_xtb/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 458,
+      "mtime_utc": "2026-06-29T15:53:50+00:00",
+      "sha256": "2f88a985d8b9d1e8a6c96592558233e384707030b3cdf012bff267d6756d66e6"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_mlp_bob_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1070,
+      "mtime_utc": "2026-06-29T15:55:27+00:00",
+      "sha256": "5a1fde52fa2e16a3c666733e0642c7e68d3eff9f5ab0628fc4e7bd634c3a67a2"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_mlp_bob_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 500,
+      "mtime_utc": "2026-06-29T15:55:27+00:00",
+      "sha256": "dc980dddcdf0aca7f6acc2dcb22b54e86c691f841daece20331b89c0a1415189"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_mlp_pre_plus_a_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1098,
+      "mtime_utc": "2026-06-29T15:55:53+00:00",
+      "sha256": "d12f4546b5aa27f11853a6aaf00bb2262dc54c93b8244ad10668b69896d303e6"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_mlp_pre_plus_a_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 521,
+      "mtime_utc": "2026-06-29T15:55:53+00:00",
+      "sha256": "542afb196edfa50ea8129492784ec8dff340bcb0b32a2000f1c209695e3b2512"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_mlp_pre_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1070,
+      "mtime_utc": "2026-06-29T15:55:40+00:00",
+      "sha256": "947a83c8e0c93b42bd8b508c7525a4ea4e486e27f4e9b52d2813e4fb3ff7043e"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_mlp_pre_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 500,
+      "mtime_utc": "2026-06-29T15:55:40+00:00",
+      "sha256": "81ea07b01d25d24c0ebaafec67cda4c9965ee7f850930b1aff423710a64030be"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_pre_plus_a_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1082,
+      "mtime_utc": "2026-06-29T15:55:13+00:00",
+      "sha256": "b74bee41a81e2a5c1723e47a7b935b7c05e83b9828fe5fd76ace3e5e09ead7e6"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_pre_plus_a_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 509,
+      "mtime_utc": "2026-06-29T15:55:13+00:00",
+      "sha256": "d40f91db5f38e22b6168b3de3f3fbdfdc29101c1359c8696d2e205698d790500"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_xtb_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1054,
+      "mtime_utc": "2026-06-29T16:09:39+00:00",
+      "sha256": "ed930c0f6971bafe48f3814f76df92940fd5d7476a9e679c31454d82b5b23e77"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/delta_xtb_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 488,
+      "mtime_utc": "2026-06-29T16:09:39+00:00",
+      "sha256": "c53fd4f4f73fe2cc211784b8350c3f27da0a49ee5277b78cc07099f2fdeb1e17"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1014,
+      "mtime_utc": "2026-06-29T15:54:18+00:00",
+      "sha256": "34d9c317b9263e8e241966ac476f7a69690ea58e5332836c009ff196f92fbc6f"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 458,
+      "mtime_utc": "2026-06-29T15:54:18+00:00",
+      "sha256": "6ac2d3ec5d2505c426dfc77ecb4da66523659e2b5850981ebff1bc0b0b031d6f"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_plus_a_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1058,
+      "mtime_utc": "2026-06-29T15:55:00+00:00",
+      "sha256": "707f28fd9429a95636a4bd9fb41f7de8f8b1ed89daf3860c32a4b6501ab9e7db"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_plus_a_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 491,
+      "mtime_utc": "2026-06-29T15:55:00+00:00",
+      "sha256": "aa3eac154ed47dbd28a6778a326b8476f964d6db085a7be1269f977f410bb938"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_plus_a_ref_boe/roughness_mean_std_all_targets.csv",
+      "size_bytes": 9859,
+      "mtime_utc": "2026-06-29T15:38:47+00:00",
+      "sha256": "7cfa6f3f7b91816f39b2aeae0ac5c837b22eac5d2ad947ca436cf7245e22eab8"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_plus_a_ref_boe/roughness_mean_std_all_targets.meta.json",
+      "size_bytes": 748,
+      "mtime_utc": "2026-06-29T15:38:47+00:00",
+      "sha256": "95daa805a2150f8874e76df6835dbadef2b433f890eeea1081a1870759c59a7b"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_ref_boe/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1030,
+      "mtime_utc": "2026-06-29T15:54:46+00:00",
+      "sha256": "dba2a971b0c9ece616c5f5a7f2ed89c9df5d627515a9a85d85a12f55effad686"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/pre_ref_boe/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 470,
+      "mtime_utc": "2026-06-29T15:54:46+00:00",
+      "sha256": "a370d207e0b9bb981ba5c73ea6c27581ba8beff44d5d2a121ea71058627b65f4"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/totE/pooled/molecular_embedding_pooling_meta.json",
+      "size_bytes": 1002,
+      "mtime_utc": "2026-06-29T15:53:22+00:00",
+      "sha256": "e7c44413ab1f733ba871afcf12dc582bda8db8749f164a707e217c481a084651"
+    },
+    {
+      "relative_path": "New_Analysis/gemnet_learned_embedding_smoothness/outputs_trillium/manifest_exports/test/totE/pooled/molecular_embedding_pooling_summary.csv",
+      "size_bytes": 449,
+      "mtime_utc": "2026-06-29T15:53:22+00:00",
+      "sha256": "15d70b7d34e5afc26654fa94e4b1322a4580c366f7656a325a476eaf1a09fa37"
+    },
+    {
+      "relative_path": "New_Analysis/local_learnability_knn/README.md",
+      "size_bytes": 2964,
+      "mtime_utc": "2026-06-18T18:21:27+00:00",
+      "sha256": "d7b31544b53986569463867b2d071988cc55d36fa556754f5945deabe164849f"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/README.md",
+      "size_bytes": 1015,
+      "mtime_utc": "2026-06-28T14:38:18+00:00",
+      "sha256": "68b3080f67d90ceb7e04e09926adb4c8d4c2782b874ad51cb362aba2f0d81659"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/analyze_gemnet_smoothness_correlation_grid.py",
+      "size_bytes": 10386,
+      "mtime_utc": "2026-06-30T22:16:34+00:00",
+      "sha256": "44c5c27fe8f1f18b6d0a90ede1eb8a249fcd797d738aa278ee2cd0ffd5a3b7bf"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/build_section_02_boe_figure_table.py",
+      "size_bytes": 12236,
+      "mtime_utc": "2026-06-28T16:17:05+00:00",
+      "sha256": "f5d8b1f93dd814485fde3a45fdfdc53ba4bc785ef149643fb74dd72b5eaf1297"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/build_section_02_gemnet_parity_figure.py",
+      "size_bytes": 11520,
+      "mtime_utc": "2026-06-28T19:11:30+00:00",
+      "sha256": "97254f650933bbd240b2543c30cc147429fa27555b23a57aadea1a4c87eefb79"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/build_section_02_qm9_validated_parity.py",
+      "size_bytes": 5225,
+      "mtime_utc": "2026-06-28T17:20:47+00:00",
+      "sha256": "7701720809398c2333f1bd38e1007834d0f0ad8815ffcc15db7bde1c506703b3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figure_index.md",
+      "size_bytes": 613,
+      "mtime_utc": "2026-06-28T14:38:19+00:00",
+      "sha256": "82818885e0cd0573bdf78679e505402b284af7c3eb01164ac9fee9cf2ed89b0d"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_correlation_vs_gemnet_delta_mae.png",
+      "size_bytes": 137881,
+      "mtime_utc": "2026-06-30T21:37:41+00:00",
+      "sha256": "c85efd6d2e1ea450b476cda9d06ffbf4d9ec8e8ef79963af84c4347c25f5529c"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_dft_ref_boe_correlation_scale_mae.png",
+      "size_bytes": 192388,
+      "mtime_utc": "2026-06-30T16:33:12+00:00",
+      "sha256": "cd146df4ca91d6da1af98257e9ff928b60cf43f5889724b7c1b9667a99298f75"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_dft_ref_boe_correlation_scores.png",
+      "size_bytes": 185946,
+      "mtime_utc": "2026-06-30T16:02:05+00:00",
+      "sha256": "a06290c8ba7a32a474b7c2179b8125b96160424065e30ba285cce873baf61291"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_dft_ref_boe_val_correlation_hexbin.png",
+      "size_bytes": 841895,
+      "mtime_utc": "2026-06-30T15:59:30+00:00",
+      "sha256": "6e0aa165cba717e1573b91604b12b717ce4c64ef42b1bef05a2e86509695ca60"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_spearman_vs_gemnet_delta_mae.png",
+      "size_bytes": 141777,
+      "mtime_utc": "2026-06-30T21:37:42+00:00",
+      "sha256": "2142e97955d9fba4f7235b4c6e90629fd0e816e8c02b11d601c5d23e57195c4e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_to_gemnet_residual_mae_cleveland.png",
+      "size_bytes": 115601,
+      "mtime_utc": "2026-06-30T17:42:16+00:00",
+      "sha256": "83109adfd863c3671d175f3d7ce3f2a0c8d16e40be07acae486ded601c03a0eb"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_to_residual_normalized_dirichlet_cleveland.png",
+      "size_bytes": 84416,
+      "mtime_utc": "2026-07-01T15:01:05+00:00",
+      "sha256": "ae8e55f75f1ef95e73ac9d4797244524944b6dd331351403868b130fe5d962ac"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_to_residual_normalized_dirichlet_pre_space_cleveland.png",
+      "size_bytes": 88478,
+      "mtime_utc": "2026-06-30T18:08:54+00:00",
+      "sha256": "5a903fad086d20d7f447b2a20928e8ff09895051bea3be349087eb31c1f00b74"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/baseline_to_schnet_residual_mae_cleveland.png",
+      "size_bytes": 115170,
+      "mtime_utc": "2026-06-30T17:48:35+00:00",
+      "sha256": "f2b7ab1b4413b6d686280561ae4dfb69504388e3ac34647c93c6a07009f223d1"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_cosine_linear_mlp.png",
+      "size_bytes": 120637,
+      "mtime_utc": "2026-07-01T14:09:24+00:00",
+      "sha256": "7f13b0661fe53534bc538488c423b29ee430f19a8cd581869c3f3365bd6810d4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_linear_mlp.png",
+      "size_bytes": 127203,
+      "mtime_utc": "2026-07-01T14:06:29+00:00",
+      "sha256": "0b1abbd6e35302307b390d3d85e418eec1f31e0e7aeb6f345b91868b862cd846"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_with_eref_linear_mlp.png",
+      "size_bytes": 131885,
+      "mtime_utc": "2026-07-01T14:05:42+00:00",
+      "sha256": "cc1112dc1c66d0dde6e812816a410aff71371e2235ea3244605972a4c9c3b485"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_plus_a_std_iqr_norm_dirichlet_cosine_linear_mlp.png",
+      "size_bytes": 163125,
+      "mtime_utc": "2026-07-01T14:35:15+00:00",
+      "sha256": "c5fc1e148a3d2cf0b39d4e9cd0de18be75ca3611d9b3769cd3793a58dd64c03b"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_plus_a_var_norm_dirichlet_with_eref_linear_mlp.png",
+      "size_bytes": 133662,
+      "mtime_utc": "2026-07-01T13:47:54+00:00",
+      "sha256": "9181e5f56244a34d6c928ee83722473c044bdc9121560e783dceda65a3ade88b"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_plus_a_var_norm_dirichlet_with_eref_mlp.png",
+      "size_bytes": 129472,
+      "mtime_utc": "2026-07-01T13:43:02+00:00",
+      "sha256": "63a43f28359066340b65c14bb4c0971ea10062d526bbfec3cdf6adbbfe60792c"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_std_iqr_norm_dirichlet_cosine_linear_mlp.png",
+      "size_bytes": 150481,
+      "mtime_utc": "2026-07-01T14:50:33+00:00",
+      "sha256": "63d9b4650b5fb9732af2b5dc32062c1d16e60c89ade2c8e52348abb5820b45fb"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_iqr_nmae_vs_pre_var_norm_dirichlet_with_eref_linear_mlp.png",
+      "size_bytes": 129945,
+      "mtime_utc": "2026-07-01T13:49:59+00:00",
+      "sha256": "e1628b09c44b513c48bb5cc7e90c602a1d35940ef6a492b0bd29a2bd05a9635b"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_iqr_vs_pre_iqr_norm_dirichlet.png",
+      "size_bytes": 123165,
+      "mtime_utc": "2026-06-30T22:12:30+00:00",
+      "sha256": "356a24023117b7c3de63742e8d5f4cd7cb900b65bae17c04b10e541d343c87e3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_iqr_vs_pre_plus_a_iqr_norm_dirichlet.png",
+      "size_bytes": 123436,
+      "mtime_utc": "2026-06-30T22:12:19+00:00",
+      "sha256": "301d54a4c1f8923550422e9ac452e652d41ea44207709e38b06ce2b4c07d620a"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_iqr_vs_pre_plus_a_var_norm_dirichlet.png",
+      "size_bytes": 124116,
+      "mtime_utc": "2026-06-30T22:12:22+00:00",
+      "sha256": "7f8831165b5b487d991c1b01514538090f11e392600191e664d4332422bab66d"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_iqr_vs_pre_var_norm_dirichlet.png",
+      "size_bytes": 122869,
+      "mtime_utc": "2026-06-30T22:12:33+00:00",
+      "sha256": "b1959c2f8677426c84d323051cf58ba3bd6974f22d80cc538a52f2eaf0969ee3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_var_vs_pre_iqr_norm_dirichlet.png",
+      "size_bytes": 112617,
+      "mtime_utc": "2026-06-30T22:12:37+00:00",
+      "sha256": "4f0ec73ea8e0f5e7cc044ca6f3f91759ec2bd31a5892362f7151beca0b8f7f08"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_var_vs_pre_plus_a_iqr_norm_dirichlet.png",
+      "size_bytes": 114618,
+      "mtime_utc": "2026-06-30T22:12:25+00:00",
+      "sha256": "a82aa0c1b55efd1b5944ab705a82eaec58a874b35205968264c6a126286d0051"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_var_vs_pre_plus_a_var_norm_dirichlet.png",
+      "size_bytes": 114362,
+      "mtime_utc": "2026-06-30T22:12:28+00:00",
+      "sha256": "d4f034cf29a1c53ec8ec024d144b7123c5533f89ce40f065bb6aa5251312e756"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_mae_over_var_vs_pre_var_norm_dirichlet.png",
+      "size_bytes": 112941,
+      "mtime_utc": "2026-06-30T22:12:41+00:00",
+      "sha256": "9c21db50c9b0dca1868f86c790b3edc95501bd27f3002f7b22b48b79e11f0a18"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_nmae_vs_iqr_normalized_dirichlet.png",
+      "size_bytes": 120110,
+      "mtime_utc": "2026-06-30T22:02:35+00:00",
+      "sha256": "284c73305489edb566c630a3b34e4d0804d1936e2a889efb458d9872fab4241c"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_nmae_vs_pre_iqr_normalized_dirichlet.png",
+      "size_bytes": 123165,
+      "mtime_utc": "2026-06-30T22:08:17+00:00",
+      "sha256": "356a24023117b7c3de63742e8d5f4cd7cb900b65bae17c04b10e541d343c87e3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_nmae_vs_pre_variance_normalized_dirichlet.png",
+      "size_bytes": 122566,
+      "mtime_utc": "2026-06-30T22:08:19+00:00",
+      "sha256": "25db8ac82dd22dea2e75bc01a6b14f0f7c3998961ab33778c7b1e73810bd2bf4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_nmae_vs_variance_normalized_dirichlet.png",
+      "size_bytes": 120141,
+      "mtime_utc": "2026-06-30T22:02:36+00:00",
+      "sha256": "0fff87f9bd55e50ba4a7585e5c53894643b49473cfedffedea71a50ff5080368"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_val_mae_linear_vs_mlp_delta_baselines.png",
+      "size_bytes": 168519,
+      "mtime_utc": "2026-07-01T15:15:37+00:00",
+      "sha256": "c850bbdbbc3b4f1d95b0c5930a202d0523be8b99991055bc535879ff49cc14a4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_var_nmae_vs_pre_plus_a_var_norm_dirichlet_with_eref_mlp.png",
+      "size_bytes": 123400,
+      "mtime_utc": "2026-07-01T13:40:20+00:00",
+      "sha256": "e451b98e5246f37f43adde0ffcf329ceb94600d29ebb23aac3709ad3d209ce66"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gemnet_var_nmae_vs_pre_plus_a_var_norm_dirichlet_with_eref_mlp_linear.png",
+      "size_bytes": 117808,
+      "mtime_utc": "2026-07-01T13:40:23+00:00",
+      "sha256": "c2ff6d064b08c122a9bf814dd4ae6a768e8e97c084f4f2081863e0a6537dae46"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/gnn_residual_learning_architecture_bipanel.png",
+      "size_bytes": 200892,
+      "mtime_utc": "2026-07-01T16:06:27+00:00",
+      "sha256": "1cef9069fa5de1fc34a2ecb2566c6a004c2582947fa67ed3e10f3dcafd91112e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/mlp_baseline_dft_ref_boe_mae_residual_iqr.png",
+      "size_bytes": 279680,
+      "mtime_utc": "2026-06-30T19:54:37+00:00",
+      "sha256": "f6f517c547b811e06e9895b872ab18cc7bd17f24478c28ac115fd1418a4157d8"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/mlp_baseline_val_mae_cleveland.png",
+      "size_bytes": 119176,
+      "mtime_utc": "2026-06-30T17:31:11+00:00",
+      "sha256": "9729031fe8ce77d4ff51d06df20c5183c60dc80127274e9c7981e365d5f40be8"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/qm9_transfer_architecture_bipanel.png",
+      "size_bytes": 205849,
+      "mtime_utc": "2026-07-01T16:44:15+00:00",
+      "sha256": "7de13caffd0311aae950155ef6ec6c948c02ca866cc16b7f8bd5a9ba810eb47d"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/qm9_transfer_architecture_bipanel_preview.png",
+      "size_bytes": 205849,
+      "mtime_utc": "2026-07-01T16:32:55+00:00",
+      "sha256": "7de13caffd0311aae950155ef6ec6c948c02ca866cc16b7f8bd5a9ba810eb47d"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/schnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_cosine_linear_mlp.png",
+      "size_bytes": 119446,
+      "mtime_utc": "2026-07-01T14:09:24+00:00",
+      "sha256": "2d6700485e94e2363fa0d3c0dd52e3d0910d8a0655a9757835dc040c2b03b0b7"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/schnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_linear_mlp.png",
+      "size_bytes": 127029,
+      "mtime_utc": "2026-07-01T14:06:29+00:00",
+      "sha256": "a71f6b354ca3ebbb0fdc93c59234c4e783bd8122a4e9e93104a34ee9c191040e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/schnet_iqr_nmae_vs_pre_std_iqr_norm_dirichlet_cosine_linear_mlp.png",
+      "size_bytes": 149550,
+      "mtime_utc": "2026-07-01T14:50:34+00:00",
+      "sha256": "5e871acc84bc9158f6a108273634623f8de5cdc1e4f9089c793b9c594f8535a2"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/schnet_iqr_nmae_vs_pre_var_norm_dirichlet_linear_mlp.png",
+      "size_bytes": 128372,
+      "mtime_utc": "2026-07-01T14:04:00+00:00",
+      "sha256": "03e59fc3482c65591cb32408533844f427e4159064d4d2d43abd77ab7b89c99e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/schnet_val_mae_linear_vs_mlp_delta_baselines.png",
+      "size_bytes": 167524,
+      "mtime_utc": "2026-07-01T15:15:37+00:00",
+      "sha256": "fd1799b71674de2c3f228901a3f865d378021022a945750f25f2a876c2f1aff7"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_iqr_dirichlet_gnn_mae_bipanel.png",
+      "size_bytes": 225932,
+      "mtime_utc": "2026-06-30T20:07:06+00:00",
+      "sha256": "73e71d276cd6e3f728b8a32de35e17243dfeabfcdedddd584e0c6652a345eac8"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_iqr_pre_dirichlet_schnet_mae.png",
+      "size_bytes": 150078,
+      "mtime_utc": "2026-06-30T20:07:07+00:00",
+      "sha256": "94e1377026b6af2e6f1b61dced1dabda6f73d77027a2a1b04b1623a9f0ec6506"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_iqr_pre_plus_a_dirichlet_gemnet_mae.png",
+      "size_bytes": 151538,
+      "mtime_utc": "2026-06-30T20:07:07+00:00",
+      "sha256": "c070a399c4ef846a142fcaa956461e0fbab90b4eb20f4c91295f66195276bed4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_iqr_pre_plus_a_variance_norm_dirichlet_gemnet_mae.png",
+      "size_bytes": 156295,
+      "mtime_utc": "2026-06-30T20:07:09+00:00",
+      "sha256": "39d77a59c4ff8ce0dabfac97e6ed73b1f853666e48acba321e5d61ecc6f76918"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_iqr_pre_variance_norm_dirichlet_schnet_mae.png",
+      "size_bytes": 163481,
+      "mtime_utc": "2026-06-30T20:07:09+00:00",
+      "sha256": "8ef2804051b37ce323178a851b68a8d5593ae887e790201aaf8f6ad929a358b7"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_iqr_variance_norm_dirichlet_gnn_mae_bipanel.png",
+      "size_bytes": 245246,
+      "mtime_utc": "2026-06-30T20:07:08+00:00",
+      "sha256": "be64df8961e4522b2a47ca5f651d8e168c44015616f01eb0dea88434ac386065"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_variance_dirichlet_gnn_mae_bipanel.png",
+      "size_bytes": 258178,
+      "mtime_utc": "2026-06-30T18:46:17+00:00",
+      "sha256": "48b03e127e8fe9fa153018d557529207b569dccc2c44f22a38c7ff4c6634a0c9"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_variance_pre_dirichlet_schnet_mae.png",
+      "size_bytes": 168668,
+      "mtime_utc": "2026-06-30T18:46:18+00:00",
+      "sha256": "9fd0a0f620de6c124d76082f5d9e215f490bbf76df8315b81849635b5f70b7d1"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/figures/target_variance_pre_plus_a_dirichlet_gemnet_mae.png",
+      "size_bytes": 154719,
+      "mtime_utc": "2026-06-30T18:46:17+00:00",
+      "sha256": "8613dc8b7c03739b44ab4f7f60b7e93c9c06c19e7127389c94d7be6e14636e20"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/key_tables/README.md",
+      "size_bytes": 273,
+      "mtime_utc": "2026-06-28T14:38:19+00:00",
+      "sha256": "b20004f69762fafe01af0ede06641b46a9cdd27e44990e350bddb684a22b9638"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/key_tables/dft_ref_vs_ref_boe_smoothness.csv",
+      "size_bytes": 2873,
+      "mtime_utc": "2026-06-29T02:16:25+00:00",
+      "sha256": "9c58ee9f3972c4cc367364d387011b82fda612b22e980bfaa2c104aff9ff198e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/methods_index.md",
+      "size_bytes": 883,
+      "mtime_utc": "2026-06-28T14:38:18+00:00",
+      "sha256": "928ae76d5a3b2146a5ef733135b48cb791857dc7b7a20076b0e36cff4bfb95bc"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_baseline_correlation_scores.py",
+      "size_bytes": 7376,
+      "mtime_utc": "2026-06-30T19:54:17+00:00",
+      "sha256": "4b960ad6c30c872a9c1f7705771c30a3666e6fbaa6910e843ceb38de3003019a"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_baseline_correlation_vs_gemnet_delta_mae.py",
+      "size_bytes": 8521,
+      "mtime_utc": "2026-06-30T21:36:51+00:00",
+      "sha256": "b0a09667f1b4378d2fa761034f1792f713e70fc4b889bba756f0712aee1b1a05"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_baseline_dft_ref_boe_correlations.py",
+      "size_bytes": 6397,
+      "mtime_utc": "2026-06-30T15:59:16+00:00",
+      "sha256": "80f97695222acfe0fbd7e1474b4c67f99000b3d832cef857660d8d87e7fbdc4e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_baseline_to_gemnet_residual_cleveland.py",
+      "size_bytes": 5384,
+      "mtime_utc": "2026-06-30T17:42:05+00:00",
+      "sha256": "2e6c16cf78b1cdcfb51a40c2004f47f1c05a1049362ef4ebebf9c5e6432c0fd3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_baseline_to_residual_dirichlet_cleveland.py",
+      "size_bytes": 6467,
+      "mtime_utc": "2026-07-01T15:00:48+00:00",
+      "sha256": "ccf1ece358db73b8463dc3317b73717ca57cf0ddd50367c2f52a1605a81b5db8"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_baseline_to_residual_dirichlet_pre_space_cleveland.py",
+      "size_bytes": 7735,
+      "mtime_utc": "2026-06-30T18:08:31+00:00",
+      "sha256": "5ffb7b6500ac223ffe6b48cd685a20e09e919cae8efbe19f054bf30c9b7da669"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_baseline_to_schnet_residual_cleveland.py",
+      "size_bytes": 5401,
+      "mtime_utc": "2026-06-30T17:48:25+00:00",
+      "sha256": "98ba2c53ee6b6766ba300e68a4ff96e43f4164b2222de6a4d3af07ed20eda65d"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gemnet_iqr_nmae_vs_pre_plus_a_std_iqr_dirichlet_cosine.py",
+      "size_bytes": 4399,
+      "mtime_utc": "2026-07-01T14:26:52+00:00",
+      "sha256": "63b18e407c2da6bca836005c22221a15930f1d846d675a1fdd2e2ad1b4de4833"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gemnet_nmae_all_dirichlet_combinations.py",
+      "size_bytes": 8650,
+      "mtime_utc": "2026-06-30T22:11:36+00:00",
+      "sha256": "ce0f02dfb0e210c9a8dc0f5b6736e8ad02dcf819099e3ad6471db71f1cfa11b7"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gemnet_nmae_vs_dirichlet_normalizations.py",
+      "size_bytes": 4627,
+      "mtime_utc": "2026-06-30T22:02:15+00:00",
+      "sha256": "83bbdb882c99e4ac790c2b6b72c5c392ccaf552bedc8808081edb5c6f961582d"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gemnet_nmae_vs_pre_dirichlet_normalizations.py",
+      "size_bytes": 6465,
+      "mtime_utc": "2026-06-30T22:07:48+00:00",
+      "sha256": "a9df225fadc16665002bb8b4bc4e42a24b681eecf50ade1be07027ce4d35c6d8"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gemnet_var_nmae_vs_var_dirichlet_with_eref.py",
+      "size_bytes": 8481,
+      "mtime_utc": "2026-07-01T13:49:43+00:00",
+      "sha256": "705c0d02a004da746bdab16f4b3dc5dedffa775a2462aeab737fe87001a3094e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gnn_iqr_nmae_vs_pre_iqr_dirichlet.py",
+      "size_bytes": 11131,
+      "mtime_utc": "2026-07-01T14:33:40+00:00",
+      "sha256": "dc212e5c9c967357eb30db4e4f1899cf979cd2364341da17215978c860a28cdd"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gnn_iqr_nmae_vs_pre_iqr_dirichlet_cosine.py",
+      "size_bytes": 10514,
+      "mtime_utc": "2026-07-01T14:34:49+00:00",
+      "sha256": "ddb597552db446869020aa3034caacb1bab50069e68192b9419412f0d040d9de"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gnn_iqr_nmae_vs_pre_std_iqr_dirichlet_cosine.py",
+      "size_bytes": 2417,
+      "mtime_utc": "2026-07-01T14:18:46+00:00",
+      "sha256": "3b8cd86d927f4fc64670c80ffbf4fc89f9ece7fa3cc63c247948f8e75d8a92a4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_gnn_residual_learning_architecture_bipanel.py",
+      "size_bytes": 5515,
+      "mtime_utc": "2026-07-01T16:05:54+00:00",
+      "sha256": "eab7a01457576d1442db6e1330706e011a9f4d41a5563844546e53d92653b346"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_linear_vs_mlp_delta_baselines_bipanel.py",
+      "size_bytes": 7451,
+      "mtime_utc": "2026-07-01T15:15:27+00:00",
+      "sha256": "8da208b06a6a7c1f14d7374831339f491f1141d488ab547e9cebfb62de4558d3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_mlp_baseline_mae_cleveland.py",
+      "size_bytes": 3154,
+      "mtime_utc": "2026-06-30T17:30:58+00:00",
+      "sha256": "2fc73ca7ee72f8a0b4684f15395a755aa14b41d8bd0f6219db84ed71056a80ea"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_qm9_transfer_architecture_bipanel.py",
+      "size_bytes": 7315,
+      "mtime_utc": "2026-07-01T16:43:42+00:00",
+      "sha256": "3d93b5c94c7c5f75ae7228962e4e2083569bc712a814c8764d213766d569f1f3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_schnet_iqr_nmae_vs_pre_var_dirichlet.py",
+      "size_bytes": 7408,
+      "mtime_utc": "2026-07-01T14:03:49+00:00",
+      "sha256": "e1e16967204f29d5e4badd0d1878efa34352e300ecf79f23a359db1783ea632a"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/plot_target_variance_dirichlet_mae.py",
+      "size_bytes": 12332,
+      "mtime_utc": "2026-06-30T20:06:39+00:00",
+      "sha256": "8fbf536df6f53e8885db42225159abeb836f5d8738206ab157e18582bac45ee7"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/results_index.md",
+      "size_bytes": 1697,
+      "mtime_utc": "2026-06-28T14:38:18+00:00",
+      "sha256": "d8c2e20eb65ff5155f1cae9d77f5c895d27fbef577f7ddb680da6c490a2e24fb"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/baseline_correlation_vs_gemnet_delta_mae.csv",
+      "size_bytes": 652,
+      "mtime_utc": "2026-06-30T21:37:40+00:00",
+      "sha256": "acf3091d2cb85343e816778b668496fb27d84b95c6897744554ba41ce534290f"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/baseline_dft_ref_boe_val_correlations.csv",
+      "size_bytes": 529,
+      "mtime_utc": "2026-06-30T15:59:28+00:00",
+      "sha256": "0f97c672cbf1404c4bc9ecdb873358164efa3d1601cc06f24436bc452720b9f3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/baseline_spearman_vs_gemnet_delta_mae.csv",
+      "size_bytes": 652,
+      "mtime_utc": "2026-06-30T21:37:41+00:00",
+      "sha256": "f464de78d99f5703f04b45b578bfcefc3f4a224a6911030529f23c304ec92f34"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/baseline_to_gemnet_residual_mae.csv",
+      "size_bytes": 275,
+      "mtime_utc": "2026-06-30T17:42:15+00:00",
+      "sha256": "4557a09a3d106a50e29bd39f34bcaa274938ea8a8c7acbad3e6c7544232765c6"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/baseline_to_residual_normalized_dirichlet.csv",
+      "size_bytes": 1098,
+      "mtime_utc": "2026-07-01T15:01:04+00:00",
+      "sha256": "760686c2475668cc0c7c1de8bfb4e08071eef7d6a5f6b61b1e9e182bfe00dbed"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/baseline_to_residual_normalized_dirichlet_pre_space.csv",
+      "size_bytes": 1115,
+      "mtime_utc": "2026-06-30T18:08:53+00:00",
+      "sha256": "cb5def64327809c920197b9be1ca0e82ba66d8655e08d261ef2c12ce5adc838d"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/baseline_to_schnet_residual_mae.csv",
+      "size_bytes": 274,
+      "mtime_utc": "2026-06-30T17:48:34+00:00",
+      "sha256": "2eb4a9f5ba0b7649e9b43866a84e03150e93f1aa51181ec443e21d3b463a72c3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/delta_target_dirichlet_normalization_comparison.csv",
+      "size_bytes": 965,
+      "mtime_utc": "2026-06-30T18:59:49+00:00",
+      "sha256": "4dc9a5b52b2755bc177c5d7fe600cac66db44054b0f8780af6ed5144bcb433a4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/delta_target_dirichlet_normalization_comparison.md",
+      "size_bytes": 1687,
+      "mtime_utc": "2026-06-30T18:59:49+00:00",
+      "sha256": "b2656ec854c16f707d98bcd199b4e4f59ef69c5a292148bcf5eaeecbd2bbd74f"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/delta_targets_linear_vs_mlp_tmqm_qm9_summary.csv",
+      "size_bytes": 1948,
+      "mtime_utc": "2026-07-01T05:18:45+00:00",
+      "sha256": "7d28257acd26b5a25325919e0ce498e8d5c4a96e6a1d4a91f76f3372587d788e"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/delta_targets_linear_vs_mlp_tmqm_qm9_summary.md",
+      "size_bytes": 2273,
+      "mtime_utc": "2026-07-01T05:18:45+00:00",
+      "sha256": "9fe9636a36ea151163456d8ca8491b2fd6f72b79f95d75d4d35a9d77efc09e92"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_cosine_linear_mlp.csv",
+      "size_bytes": 1189,
+      "mtime_utc": "2026-07-01T14:09:24+00:00",
+      "sha256": "7cca4c42e7e37b51332951c775beb74942f29b8595527aec091d6dfae20161c2"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_linear_mlp.csv",
+      "size_bytes": 1182,
+      "mtime_utc": "2026-07-01T14:06:29+00:00",
+      "sha256": "bece1fd4b3fa8d53b3eaf433249e97900ce645ea394d8e1943f7bc2b6a517984"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_with_eref_linear_mlp.csv",
+      "size_bytes": 1295,
+      "mtime_utc": "2026-07-01T14:05:42+00:00",
+      "sha256": "cb46eba1927ad817aca3cb6bf3ff185711413116f7991bd94e821e3d351020c0"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_plus_a_std_iqr_norm_dirichlet_cosine_linear_mlp.csv",
+      "size_bytes": 1447,
+      "mtime_utc": "2026-07-01T14:35:15+00:00",
+      "sha256": "9881dca372910d7ed6e263ba98c802c850bf3f3efc40cfc5b8b6f965f6401eb1"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_plus_a_var_norm_dirichlet_with_eref_linear_mlp.csv",
+      "size_bytes": 1303,
+      "mtime_utc": "2026-07-01T13:47:47+00:00",
+      "sha256": "bc005b5518cc635eaa50166c5243f7ab96f22643d68a3cecacd745d9b88efcfc"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_plus_a_var_norm_dirichlet_with_eref_mlp.csv",
+      "size_bytes": 888,
+      "mtime_utc": "2026-07-01T13:42:55+00:00",
+      "sha256": "69d1bf67d9418892c4966ab6b5ae3fdd0d1ef02e5fbbec4e3bf12e489306f1b3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_std_iqr_norm_dirichlet_cosine_linear_mlp.csv",
+      "size_bytes": 1190,
+      "mtime_utc": "2026-07-01T14:50:33+00:00",
+      "sha256": "20402296d20137a673d7ec4be203c252494c2afbb3dddbc1d818ad104cf261ca"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_iqr_nmae_vs_pre_var_norm_dirichlet_with_eref_linear_mlp.csv",
+      "size_bytes": 1302,
+      "mtime_utc": "2026-07-01T13:49:54+00:00",
+      "sha256": "990a64b304162e49ee5685f42d0a048555562f7c892b9c627a0955405784f0d8"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_nmae_all_dirichlet_combinations.csv",
+      "size_bytes": 2471,
+      "mtime_utc": "2026-06-30T22:12:06+00:00",
+      "sha256": "3a2718d461db6c1abd08caf5d37ed1a462d6a92a0e81779d15cb4123ecee1759"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_nmae_vs_dirichlet_normalizations.csv",
+      "size_bytes": 689,
+      "mtime_utc": "2026-06-30T22:02:28+00:00",
+      "sha256": "97e4ee9367159d1bb7c60f131e60a5ad641c1575a60681632e60d7feac829ce4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_nmae_vs_pre_dirichlet_normalizations.csv",
+      "size_bytes": 1059,
+      "mtime_utc": "2026-06-30T22:08:04+00:00",
+      "sha256": "81dccf1ebbee893131f13f5ff0edb43398d42fcb7de15b4ee6c101ea6bfc39db"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_smoothness_correlation_grid.csv",
+      "size_bytes": 165239,
+      "mtime_utc": "2026-06-30T22:17:11+00:00",
+      "sha256": "db837c390cae30a3f516fbc5e4cc49efd63305abbfa096cd9517fe6797395aae"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_smoothness_correlation_grid_points.csv",
+      "size_bytes": 29186,
+      "mtime_utc": "2026-06-30T22:17:11+00:00",
+      "sha256": "e9dab325104e5b93eac8226c3cc325cb36ca7237260dda2239894ff3e3c33fd4"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_smoothness_correlation_grid_summary.md",
+      "size_bytes": 9409,
+      "mtime_utc": "2026-06-30T22:17:11+00:00",
+      "sha256": "78d9d38000476d9f35ed54fbcec5bc32b2f3aa67a9992551ac724ea27ed212e3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_smoothness_correlation_grid_top.csv",
+      "size_bytes": 23196,
+      "mtime_utc": "2026-06-30T22:17:11+00:00",
+      "sha256": "54a9a7f2075deee5ed1b1d1024ee5a3bd6d6f74eb7b3b5a9dfd457a34bdd1338"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_val_mae_linear_vs_mlp_delta_baselines.csv",
+      "size_bytes": 297,
+      "mtime_utc": "2026-07-01T15:15:36+00:00",
+      "sha256": "e0e54b8f17874c0ef2dfdfd238f159bd729cad5572105505253b5bc30b607250"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gemnet_var_nmae_vs_pre_plus_a_var_norm_dirichlet_with_eref_mlp.csv",
+      "size_bytes": 764,
+      "mtime_utc": "2026-07-01T13:40:13+00:00",
+      "sha256": "35558105852f1a09549c32df1d582db768f4e6bab6d021e580bb9d8f73d2f008"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/gnn_residual_learning_architecture_bipanel.csv",
+      "size_bytes": 435,
+      "mtime_utc": "2026-07-01T16:06:25+00:00",
+      "sha256": "b58c0d692eccb7b0a5911f4884eae8da2e71b142b7a6cb9e58b7114cffd13632"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/mlp_baseline_dft_ref_boe_val_metrics.csv",
+      "size_bytes": 668,
+      "mtime_utc": "2026-06-30T19:54:35+00:00",
+      "sha256": "3cb2e02c9dd4a3142eac8ca165cb68aeb816d27659c0d60c64641a93ec414ff3"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/qm9_gnn_all_available_predictions_mean_shift_summary.csv",
+      "size_bytes": 10796,
+      "mtime_utc": "2026-07-01T15:15:28+00:00",
+      "sha256": "5f8338c1f5ff533ab91ba411a1d90dd483ac7cecceaf18a10c9905dd344452f8"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/qm9_gnn_all_available_predictions_mean_shift_summary.md",
+      "size_bytes": 3292,
+      "mtime_utc": "2026-07-01T15:15:28+00:00",
+      "sha256": "7db47966d5fe1e53673c9ff7e0f9bf6bd4f20211f44b1488e94cfb117ab4cb82"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/qm9_gnn_all_available_predictions_metrics.csv",
+      "size_bytes": 20839,
+      "mtime_utc": "2026-07-01T15:15:28+00:00",
+      "sha256": "4284d5430f840c3a0a3ad3a3e9cb3361a563688aee55f42443b9985a72c14ea2"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/qm9_transfer_architecture_bipanel.csv",
+      "size_bytes": 602,
+      "mtime_utc": "2026-07-01T16:44:13+00:00",
+      "sha256": "8e8a837100f696d33e26647307550b76cbf319409b81464214faef7b652eed04"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/qm9_transfer_architecture_bipanel_preview.csv",
+      "size_bytes": 602,
+      "mtime_utc": "2026-07-01T16:32:53+00:00",
+      "sha256": "8e8a837100f696d33e26647307550b76cbf319409b81464214faef7b652eed04"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/schnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_cosine_linear_mlp.csv",
+      "size_bytes": 1189,
+      "mtime_utc": "2026-07-01T14:09:24+00:00",
+      "sha256": "2580431637e7bd501412d5926da09c8c0ca8a0335b474ad21d6447a8ba56ae0b"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/schnet_iqr_nmae_vs_pre_iqr_norm_dirichlet_linear_mlp.csv",
+      "size_bytes": 1180,
+      "mtime_utc": "2026-07-01T14:06:29+00:00",
+      "sha256": "bc679a273791de30bbb1045c2fedd2701d7a12936e5d20cf16832477ddf88f0f"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/schnet_iqr_nmae_vs_pre_std_iqr_norm_dirichlet_cosine_linear_mlp.csv",
+      "size_bytes": 1190,
+      "mtime_utc": "2026-07-01T14:50:34+00:00",
+      "sha256": "31a91273535dbd7b11b0f0ff1424cc67d0b9e1231f64a1e0df36aeca8c9868e6"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/schnet_iqr_nmae_vs_pre_var_norm_dirichlet_linear_mlp.csv",
+      "size_bytes": 1189,
+      "mtime_utc": "2026-07-01T14:03:57+00:00",
+      "sha256": "c81ff03de64c9454055442822c8e6632c6bb017978b4f4dde819fcd5a6adc914"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/schnet_val_mae_linear_vs_mlp_delta_baselines.csv",
+      "size_bytes": 297,
+      "mtime_utc": "2026-07-01T15:15:37+00:00",
+      "sha256": "e0e54b8f17874c0ef2dfdfd238f159bd729cad5572105505253b5bc30b607250"
+    },
+    {
+      "relative_path": "New_Analysis/manuscript_support/tables/target_variance_dirichlet_gnn_mae_points.csv",
+      "size_bytes": 2367,
+      "mtime_utc": "2026-06-30T20:07:05+00:00",
+      "sha256": "1acb6f4fe006c3991eb266314ad923d00cd63309523acd12f80d58ea5b1c6e53"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/README.md",
+      "size_bytes": 4530,
+      "mtime_utc": "2026-06-21T22:05:36+00:00",
+      "sha256": "9e723ad2d046d8e7e51096513005f8c562587bc80f67b7537ab0cc4eb0cf0395"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/bob/mlp_bob_predictions_dft.csv",
+      "size_bytes": 8026392,
+      "mtime_utc": "2026-06-21T22:17:48+00:00",
+      "sha256": "4d654f6c34ecde73d1e26081aa6aaf86507952cacacdf8ad827a52327f573fde"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/bob/mlp_bob_training_history.csv",
+      "size_bytes": 39521,
+      "mtime_utc": "2026-06-21T22:17:49+00:00",
+      "sha256": "2f6a9adbab8e0e5c8e02ffebc37d1f9fba5484fab8112073e92310460b3d6dbf"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/bob/mlp_input_validation.json",
+      "size_bytes": 541,
+      "mtime_utc": "2026-06-21T22:17:49+00:00",
+      "sha256": "389fb81ebc18bab896c98761e3e52d780550959e3ecee6e290f776c85902ce76"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/bob/mlp_target_metrics.csv",
+      "size_bytes": 1200,
+      "mtime_utc": "2026-06-21T22:17:49+00:00",
+      "sha256": "0c7c0e29fe7853f8ca50ef4c23266caa151888bd5b7a5fe96aeb6cefc56cabd5"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/bob/tmQM__Delta_MLP_BoB-ref-BoE.csv",
+      "size_bytes": 2030430,
+      "mtime_utc": "2026-06-21T22:17:49+00:00",
+      "sha256": "658e1d1f2e73aa1a08da9f1d198e79e9abc3ff4345c3db2afff22e61284308fb"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/bob/tmQM__MLP_BoB_ref_BoE__pred_and_residual.csv",
+      "size_bytes": 4681998,
+      "mtime_utc": "2026-06-21T22:17:49+00:00",
+      "sha256": "187292c771d449579f1a6e383f5b9c69401be38fb30e35cd6a234e8216648874"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/mlp_dft_ref_boe_val_summary.csv",
+      "size_bytes": 672,
+      "mtime_utc": "2026-06-21T22:18:45+00:00",
+      "sha256": "ba4b499b428627a2a460f9c03e9ea91987ebe52ffb35b505f676bf8200e2007d"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/mlp_vs_linear_baseline_summary.csv",
+      "size_bytes": 2056,
+      "mtime_utc": "2026-06-21T22:23:55+00:00",
+      "sha256": "471dcc50cbc1f9e777196d3b4db7a44d91b2cc59b691ee637e35fd6311bff9ea"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre/mlp_input_validation.json",
+      "size_bytes": 543,
+      "mtime_utc": "2026-06-21T22:17:31+00:00",
+      "sha256": "124f1965cdeba0989d0fefbd6dbbc347a6450da8cf971e1cb442f364e86a66b6"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre/mlp_pre_predictions_dft.csv",
+      "size_bytes": 8056030,
+      "mtime_utc": "2026-06-21T22:17:30+00:00",
+      "sha256": "16a36721c7ecdcab2fb7a1bce07bcdd40f444c768fbf0a98154ad572089794d1"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre/mlp_pre_training_history.csv",
+      "size_bytes": 12982,
+      "mtime_utc": "2026-06-21T22:17:31+00:00",
+      "sha256": "a20047f8f59551605e35b3983451811c5d387ded816e2f2d43d0708657c7d604"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre/mlp_target_metrics.csv",
+      "size_bytes": 1209,
+      "mtime_utc": "2026-06-21T22:17:31+00:00",
+      "sha256": "a881f63e7065399de5a064b39f973f6cc223ace8d4e43f6f6379059086893043"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre/tmQM__Delta_MLP_PRE-ref-BoE.csv",
+      "size_bytes": 2045256,
+      "mtime_utc": "2026-06-21T22:17:31+00:00",
+      "sha256": "0c56107392847490aed4e086a60ae7649d0507ffcbff15d8512eb8c5e9575823"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre/tmQM__MLP_PRE_ref_BoE__pred_and_residual.csv",
+      "size_bytes": 4695642,
+      "mtime_utc": "2026-06-21T22:17:30+00:00",
+      "sha256": "33d3548ce75bdd261efa70d3639058cb0cb86523090a08ef662c3547bcf73ce3"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre_plus_a/mlp_input_validation.json",
+      "size_bytes": 615,
+      "mtime_utc": "2026-06-21T22:15:19+00:00",
+      "sha256": "c764ea88a6d9ca7d2587a9a29d8dc38cfc5484dd549509037ed185432890dc2e"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre_plus_a/mlp_pre_plus_a_predictions_dft.csv",
+      "size_bytes": 8556872,
+      "mtime_utc": "2026-06-21T22:15:18+00:00",
+      "sha256": "57c947053ee2c2e8d4b6f6c2d6be4ad62f3266cc5afea79bf264f9559212d14f"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre_plus_a/mlp_pre_plus_a_training_history.csv",
+      "size_bytes": 16626,
+      "mtime_utc": "2026-06-21T22:15:19+00:00",
+      "sha256": "17d5a55dfc86dab68ee1246244b413bad35821fe88cff26b529f78403faa08eb"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre_plus_a/mlp_target_metrics.csv",
+      "size_bytes": 1243,
+      "mtime_utc": "2026-06-21T22:15:19+00:00",
+      "sha256": "8451c44197daa4b5005f625e5682e7f063db9ea577fd364f0c02d4bc1439a19e"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre_plus_a/mlp_vs_linear_pre_plus_a_mask_comparison.csv",
+      "size_bytes": 839,
+      "mtime_utc": "2026-06-21T22:20:41+00:00",
+      "sha256": "11f7de754314d03dd4b1b00f933d83572054cc9018a03388ec91f1aa06468005"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre_plus_a/tmQM__Delta_MLP_PRE_plus_A-ref-BoE.csv",
+      "size_bytes": 2044107,
+      "mtime_utc": "2026-06-21T22:15:19+00:00",
+      "sha256": "127411f9c4a5e50438701476df634f144feaf7b54f4ce6f2a1633dec35f9d2d4"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_baselines/outputs/pre_plus_a/tmQM__MLP_PRE_plus_A_ref_BoE__pred_and_residual.csv",
+      "size_bytes": 4694277,
+      "mtime_utc": "2026-06-21T22:15:18+00:00",
+      "sha256": "f76a192f25f393266895314e36929b2267426ccddbd59f54bc594ec3dbc80ace"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/README.md",
+      "size_bytes": 2637,
+      "mtime_utc": "2026-06-21T22:27:39+00:00",
+      "sha256": "00ea840ca5d87e73e0317ff4f4b90cd744e78c2f7e1030c374a5e6cca342c997"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/comparison_plots/linear_vs_mlp_residual_schnet_mae_summary.csv",
+      "size_bytes": 2448,
+      "mtime_utc": "2026-06-25T13:41:01+00:00",
+      "sha256": "849c81115da49cd628ec3a7f25adfb2e9a6274cd0809a2ab1a9f3f918d3384c8"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/comparison_plots/linear_vs_mlp_residual_schnet_mae_summary_pre_filtered_exception.csv",
+      "size_bytes": 1395,
+      "mtime_utc": "2026-06-25T13:41:04+00:00",
+      "sha256": "63bf0891d87c7556afdacee76c843b299635313d25c0243d7a45260ab8c8c1e3"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/comparison_plots/linear_vs_mlp_residual_schnet_mae_summary_shared_mask_only.csv",
+      "size_bytes": 1339,
+      "mtime_utc": "2026-06-25T13:41:05+00:00",
+      "sha256": "111120a6033a99b77e0aebdaf002929023ea195bf74b84ce00113f6e379a9346"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/comparison_plots/shared_mask_baseline_mae_residual_stdev_table.csv",
+      "size_bytes": 415,
+      "mtime_utc": "2026-06-25T13:44:50+00:00",
+      "sha256": "2e7f74132de9bc172223416b0b1a977067205af22d0dcb3277754297232a8e54"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/comparison_plots/shared_mask_baseline_mae_residual_stdev_table.md",
+      "size_bytes": 355,
+      "mtime_utc": "2026-06-25T13:44:50+00:00",
+      "sha256": "d243703c46ad4f21d25d3e711eff31e4d8ad470846ecf1dfa82e7c1dbc557fc1"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/gemnet_mlp_residual_val_mae_summary.csv",
+      "size_bytes": 1401,
+      "mtime_utc": "2026-06-29T14:41:16+00:00",
+      "sha256": "58a8900d74f10af35ba9c7495218055c30e3988a8dea9bddb56aabd50ca5da43"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/mlp_residual_gnn_val_mae_summary.csv",
+      "size_bytes": 762,
+      "mtime_utc": "2026-06-25T13:11:35+00:00",
+      "sha256": "3eaddb373c617722c8d28e8a00a7f972b8a790fccebecd147df09c46a4ebb7a8"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/mlp_residual_gnn_val_mae_summary_all.csv",
+      "size_bytes": 1401,
+      "mtime_utc": "2026-06-29T14:41:24+00:00",
+      "sha256": "58a8900d74f10af35ba9c7495218055c30e3988a8dea9bddb56aabd50ca5da43"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/smoothness/residual_normalized_dirichlet_vs_schnet_points.csv",
+      "size_bytes": 2638,
+      "mtime_utc": "2026-06-25T14:05:06+00:00",
+      "sha256": "7cfa5e7492709e7fb8044b3b9141b71840f8bace671258d53aee910070a9c3f1"
+    },
+    {
+      "relative_path": "New_Analysis/mlp_residual_gnn_runs/outputs/smoothness_pre_plus_a_space/residual_normalized_dirichlet_vs_schnet_points.csv",
+      "size_bytes": 2645,
+      "mtime_utc": "2026-06-25T14:15:10+00:00",
+      "sha256": "7d3f973126e5c694103ea625e2e960b72097a83f2ea7afa3dc293b09acc06541"
+    },
+    {
+      "relative_path": "New_Analysis/model_target_comparison/README.md",
+      "size_bytes": 2949,
+      "mtime_utc": "2026-06-18T18:21:27+00:00",
+      "sha256": "154ab6b279a2b901a1cd8e3833b08aa21c7dc8de00a8b4a40e9c728629444808"
+    },
+    {
+      "relative_path": "New_Analysis/morgan_predict_targets/README.md",
+      "size_bytes": 3711,
+      "mtime_utc": "2026-06-18T18:21:27+00:00",
+      "sha256": "883865e1e42eb9d830ed88a5c747fc362190b9bcaf8de4c10017efff60269ad4"
+    },
+    {
+      "relative_path": "New_Analysis/pair_triplet_feature_smoothness/README.md",
+      "size_bytes": 1523,
+      "mtime_utc": "2026-06-18T18:21:27+00:00",
+      "sha256": "73a39d6de38474ed1eae3e2ff05846e5cb0d2c519ed31d61a2cdf3668fc2d47f"
+    },
+    {
+      "relative_path": "New_Analysis/pre_plus_a/README.md",
+      "size_bytes": 5068,
+      "mtime_utc": "2026-06-19T00:26:59+00:00",
+      "sha256": "e9a0b6c083af026280004db3e67834c659de5d17feaa82702d0b94f7c0daabc5"
+    },
+    {
+      "relative_path": "New_Analysis/qm9_dft_ref_boe_transfer/README.md",
+      "size_bytes": 3778,
+      "mtime_utc": "2026-06-18T18:29:50+00:00",
+      "sha256": "90673cc45b76b03d71f56071f63aeaeecebba5a58d2dce9242cda3f042485cbe"
+    },
+    {
+      "relative_path": "New_Analysis/qm9_dft_ref_boe_transfer/model_manifest.csv",
+      "size_bytes": 1182,
+      "mtime_utc": "2026-06-18T18:28:13+00:00",
+      "sha256": "8886a90d85ef5c9c43d33d2ee3d7732cb37f8926caf7b4b1640a7538299c09d7"
+    },
+    {
+      "relative_path": "New_Analysis/qm9_dft_ref_boe_transfer/outputs/qm9_DFT_ref_BoE_gemnet_metrics.csv",
+      "size_bytes": 1907,
+      "mtime_utc": "2026-05-22T14:14:44+00:00",
+      "sha256": "6cd241f9c2159412c5f7353de9429712eaaac2e7a8aa47fb00a459970f68fe7f"
+    },
+    {
+      "relative_path": "New_Analysis/qm9_dft_ref_boe_transfer/outputs/requested_parity_against_DFT_ref/qm9_requested_parity_metrics_against_DFT_ref.csv",
+      "size_bytes": 1608,
+      "mtime_utc": "2026-05-25T14:17:44+00:00",
+      "sha256": "29ee2d82253b6a31698f8b482efed086520e56c7c1e33a9b3b445c072626f378"
+    },
+    {
+      "relative_path": "New_Analysis/qm9_dft_ref_boe_transfer/outputs/requested_parity_against_DFT_ref_BoE/qm9_requested_parity_metrics_against_DFT_ref_BoE.csv",
+      "size_bytes": 1609,
+      "mtime_utc": "2026-05-25T14:17:42+00:00",
+      "sha256": "3b3ba4c25ddb67170dd37efd79817ce11eb8b6d7c35ec2a9839f4610864146cc"
+    },
+    {
+      "relative_path": "New_Analysis/qm9_dft_ref_boe_transfer/outputs/requested_parity_against_DFT_ref_BoE/summary_bar_plots/qm9_gemnet_delta_summary_bars_against_DFT_ref_BoE.csv",
+      "size_bytes": 503,
+      "mtime_utc": "2026-05-25T17:21:18+00:00",
+      "sha256": "378c636063153444e4fd374634e47bb577d25a8fd72429ad5b38f74f12f52f2d"
+    },
+    {
+      "relative_path": "New_Analysis/qm9_dft_ref_boe_transfer/outputs/requested_parity_against_DFT_ref_BoE/summary_bar_plots/qm9_gemnet_delta_summary_bars_raw_against_DFT_ref_BoE.csv",
+      "size_bytes": 484,
+      "mtime_utc": "2026-05-25T17:26:11+00:00",
+      "sha256": "a59bba1a4596973e8ce442a30890bed28beaa10aca17da3f17433dc191522965"
+    },
+    {
+      "relative_path": "New_Analysis/signal_stability/README.md",
+      "size_bytes": 2690,
+      "mtime_utc": "2026-06-18T18:21:27+00:00",
+      "sha256": "29d0f8542652d51aa5e7d8d65ec06af9683e6d459616c967964a507adefdb443"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/README.md",
+      "size_bytes": 1582,
+      "mtime_utc": "2026-06-18T18:28:58+00:00",
+      "sha256": "f1d0a07b1e83ac9303dea710f17b2c32b9f8b3d02b1820ce3ff2112a6c9e6807"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/bob/QM9__BoB_tmQM_ridge_on_BoEresid__pred_and_residual.csv",
+      "size_bytes": 18331964,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "110d1c0cedff0fc4f28b330eb8cc3d4d128268d155307a30cf30237d6fb36565"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/bob/tmQM__BoB_tmQM_ridge_on_BoEresid__pred_and_residual.csv",
+      "size_bytes": 8897436,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "e13281f6bfc161ff131897f9e1ceba53411ee162c91c6a2dd26d79e685e9da34"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/bob/tmQM__BoB_tmQM_ridge_on_energy__pred_and_residual.csv",
+      "size_bytes": 7399267,
+      "mtime_utc": "2026-06-18T18:28:41+00:00",
+      "sha256": "b792bdc09a94cec8e1511eb8aa8a105b09f585b0d6ab6f2f84481ab3840c12cf"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/boe/QM9__BoE_tmQM_ridge__residuals.csv",
+      "size_bytes": 10854834,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "7b5eeb89987ba1ef252db01a52ff6a4ba77162dcf42be4f279af2b5369d67f57"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/boe/tmQM__BoE_tmQM_ridge__pred_and_residual.csv",
+      "size_bytes": 13232011,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "7969bb80be5372ad82df27292e9a8fec9166bf768d5469b84b1b28a76b74864f"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/boe_xtb/QM9__BoE_xTB_tmQM_ridge__residuals.csv",
+      "size_bytes": 24895456,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "bd12019fd247015a29d9b42694111cf4dcdcb09ff3e135cab9913d0194cf0f1d"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/boe_xtb/tmQM__BoE_xTB_tmQM_ridge__pred_and_residual.csv",
+      "size_bytes": 13266413,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "fb53b816f3360bf293ef502d2082dbccbdccb397c8794bb9ecd1838273398867"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/pre/QM9__PRE_tmQM_ridge_on_BoEresid__residuals.csv",
+      "size_bytes": 18510908,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "24bbdc8f5d2699382b772b70a5c2ba7e540a29e7ff122b9e0fd7ad6c31003e50"
+    },
+    {
+      "relative_path": "New_Analysis/source_artifacts/pre/tmQM__PRE_tmQM_ridge_on_BoEresid__pred_and_residual.csv",
+      "size_bytes": 8907528,
+      "mtime_utc": "2026-06-18T18:27:11+00:00",
+      "sha256": "f8e9b6d957ceb6bb506e6c9ec55a2d198726e392ae9155d5af93c1853970ae5b"
+    },
+    {
+      "relative_path": "New_Analysis/split_baseline_val_mae/README.md",
+      "size_bytes": 4672,
+      "mtime_utc": "2026-06-19T02:13:23+00:00",
+      "sha256": "ec228e6453c11597f56e018f82e4c0f5382a79ddc000f3f546d7b80a6517982e"
+    },
+    {
+      "relative_path": "New_Analysis/sw_radial_smoothness/README.md",
+      "size_bytes": 2344,
+      "mtime_utc": "2026-06-18T18:21:27+00:00",
+      "sha256": "fb860a7fc44598542a94c054cf6477b2e37ba24af3689659c34e3ee26e1375ed"
+    },
+    {
+      "relative_path": "README.md",
+      "size_bytes": 2264,
+      "mtime_utc": "2026-07-01T17:29:01+00:00",
+      "sha256": "bf872b84bb5b95404ae66343367bf134dbac6e1f8e7709f7a646918663f50847"
+    },
+    {
+      "relative_path": "RUN_REPRODUCTION.md",
+      "size_bytes": 4206,
+      "mtime_utc": "2026-07-01T17:29:01+00:00",
+      "sha256": "a492eb2f9fcfc7e4f86a19107190fb63784922be0a7c9d38c129293bc6e17d4b"
+    },
+    {
+      "relative_path": "environment.yml",
+      "size_bytes": 243,
+      "mtime_utc": "2026-07-01T17:01:14+00:00",
+      "sha256": "ce8480bb2c7b0734d2ea319146fee81a66a8766706769bb6b6966b63af6567d3"
+    },
+    {
+      "relative_path": "manuscript/bib/references.bib",
+      "size_bytes": 11869,
+      "mtime_utc": "2026-07-01T17:27:17+00:00",
+      "sha256": "0a102ebea80a8476eed43f74b3435943ceb170486969451a0ad3430bc7a83b67"
+    },
+    {
+      "relative_path": "manuscript/figures/baseline_correlation_vs_gemnet_delta_mae.png",
+      "size_bytes": 137881,
+      "mtime_utc": "2026-06-30T21:46:01+00:00",
+      "sha256": "c85efd6d2e1ea450b476cda9d06ffbf4d9ec8e8ef79963af84c4347c25f5529c"
+    },
+    {
+      "relative_path": "manuscript/figures/baseline_spearman_vs_gemnet_delta_mae.png",
+      "size_bytes": 141777,
+      "mtime_utc": "2026-06-30T21:46:01+00:00",
+      "sha256": "2142e97955d9fba4f7235b4c6e90629fd0e816e8c02b11d601c5d23e57195c4e"
+    },
+    {
+      "relative_path": "manuscript/figures/baseline_to_gemnet_residual_mae_cleveland.png",
+      "size_bytes": 115601,
+      "mtime_utc": "2026-06-30T17:47:21+00:00",
+      "sha256": "83109adfd863c3671d175f3d7ce3f2a0c8d16e40be07acae486ded601c03a0eb"
+    },
+    {
+      "relative_path": "manuscript/figures/baseline_to_residual_normalized_dirichlet_cleveland.png",
+      "size_bytes": 84416,
+      "mtime_utc": "2026-07-01T15:01:14+00:00",
+      "sha256": "ae8e55f75f1ef95e73ac9d4797244524944b6dd331351403868b130fe5d962ac"
+    },
+    {
+      "relative_path": "manuscript/figures/baseline_to_residual_normalized_dirichlet_pre_space_cleveland.png",
+      "size_bytes": 88478,
+      "mtime_utc": "2026-06-30T18:30:20+00:00",
+      "sha256": "5a903fad086d20d7f447b2a20928e8ff09895051bea3be349087eb31c1f00b74"
+    },
+    {
+      "relative_path": "manuscript/figures/baseline_to_schnet_residual_mae_cleveland.png",
+      "size_bytes": 115170,
+      "mtime_utc": "2026-06-30T18:09:10+00:00",
+      "sha256": "f2b7ab1b4413b6d686280561ae4dfb69504388e3ac34647c93c6a07009f223d1"
+    },
+    {
+      "relative_path": "manuscript/figures/fig_boe_target_preprocessing.png",
+      "size_bytes": 394893,
+      "mtime_utc": "2026-06-28T16:17:22+00:00",
+      "sha256": "8d273880c8c7b0ab3cd30f24e59d44a18a5d7863308bdb29f064ab9a054e4ba8"
+    },
+    {
+      "relative_path": "manuscript/figures/fig_gemnet_dftref_vs_dftrefboe_parity.png",
+      "size_bytes": 1666603,
+      "mtime_utc": "2026-06-28T19:11:57+00:00",
+      "sha256": "e5a66019f996124a603fd1b9a0c8879aed1b6cbef9518fc6ee7e2d5ecce41dc5"
+    },
+    {
+      "relative_path": "manuscript/figures/fig_gemnet_dftref_vs_dftrefboe_parity_qm9_raw.png",
+      "size_bytes": 869639,
+      "mtime_utc": "2026-06-28T19:11:56+00:00",
+      "sha256": "8d0124868feb63c72c748becb3a1c7d00c8a6fd8c54c499a7d84d2d3d97ca5f3"
+    },
+    {
+      "relative_path": "manuscript/figures/fig_qm9_gemnet_dftref_vs_dftrefboe_validated_parity.png",
+      "size_bytes": 870749,
+      "mtime_utc": "2026-06-28T17:21:07+00:00",
+      "sha256": "43f0373993b63d760e5cfb3276a43d44e64484798a10b8d136c8cf413de12285"
+    },
+    {
+      "relative_path": "manuscript/figures/fig_scaled_target_rescaling_bipanel.png",
+      "size_bytes": 519276,
+      "mtime_utc": "2026-06-29T21:21:30+00:00",
+      "sha256": "6372df016e0587582e57b3b46145e4d26378c957d3569b675f637f1dccc8c34c"
+    },
+    {
+      "relative_path": "manuscript/figures/gemnet_iqr_nmae_vs_pre_plus_a_std_iqr_norm_dirichlet_cosine_linear_mlp.png",
+      "size_bytes": 163125,
+      "mtime_utc": "2026-07-01T14:50:44+00:00",
+      "sha256": "c5fc1e148a3d2cf0b39d4e9cd0de18be75ca3611d9b3769cd3793a58dd64c03b"
+    },
+    {
+      "relative_path": "manuscript/figures/gemnet_val_mae_linear_vs_mlp_delta_baselines.png",
+      "size_bytes": 168514,
+      "mtime_utc": "2026-07-01T15:13:23+00:00",
+      "sha256": "582bc8664cce220d6b17a637de831312bc32726e7317c70a3fb6ebaf138c38cf"
+    },
+    {
+      "relative_path": "manuscript/figures/gemnet_val_mae_linear_vs_mlp_delta_baselines_bar_backup.png",
+      "size_bytes": 0,
+      "mtime_utc": "2026-07-01T15:13:23+00:00",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "manuscript/figures/gnn_residual_learning_architecture_bipanel.png",
+      "size_bytes": 200892,
+      "mtime_utc": "2026-07-01T16:06:37+00:00",
+      "sha256": "1cef9069fa5de1fc34a2ecb2566c6a004c2582947fa67ed3e10f3dcafd91112e"
+    },
+    {
+      "relative_path": "manuscript/figures/mlp_baseline_dft_ref_boe_mae_residual_iqr.png",
+      "size_bytes": 279680,
+      "mtime_utc": "2026-06-30T19:59:12+00:00",
+      "sha256": "f6f517c547b811e06e9895b872ab18cc7bd17f24478c28ac115fd1418a4157d8"
+    },
+    {
+      "relative_path": "manuscript/figures/qm9_transfer_architecture_bipanel.png",
+      "size_bytes": 205849,
+      "mtime_utc": "2026-07-01T16:44:19+00:00",
+      "sha256": "7de13caffd0311aae950155ef6ec6c948c02ca866cc16b7f8bd5a9ba810eb47d"
+    },
+    {
+      "relative_path": "manuscript/figures/schnet_iqr_nmae_vs_pre_std_iqr_norm_dirichlet_cosine_linear_mlp.png",
+      "size_bytes": 149550,
+      "mtime_utc": "2026-07-01T14:50:44+00:00",
+      "sha256": "5e871acc84bc9158f6a108273634623f8de5cdc1e4f9089c793b9c594f8535a2"
+    },
+    {
+      "relative_path": "manuscript/figures/schnet_val_mae_linear_vs_mlp_delta_baselines.png",
+      "size_bytes": 167524,
+      "mtime_utc": "2026-07-01T15:15:51+00:00",
+      "sha256": "fd1799b71674de2c3f228901a3f865d378021022a945750f25f2a876c2f1aff7"
+    },
+    {
+      "relative_path": "manuscript/figures/schnet_val_mae_linear_vs_mlp_delta_baselines_bar_backup.png",
+      "size_bytes": 0,
+      "mtime_utc": "2026-07-01T15:15:51+00:00",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "manuscript/macros.tex",
+      "size_bytes": 454,
+      "mtime_utc": "2026-06-27T22:24:18+00:00",
+      "sha256": "73ab45e9d867d3ad4e54cef77338eabe4b180b24dad736b67c8052d8adb6107f"
+    },
+    {
+      "relative_path": "manuscript/main.tex",
+      "size_bytes": 1636,
+      "mtime_utc": "2026-07-01T17:29:01+00:00",
+      "sha256": "a131c9b048c8d1fad866fef82adb8a6be11674cd1798e7f0ddc574fda746cf6c"
+    },
+    {
+      "relative_path": "manuscript/notes/literature_facts.tex",
+      "size_bytes": 14723,
+      "mtime_utc": "2026-06-28T01:17:13+00:00",
+      "sha256": "64c7b4f937e87fb5cde2320c9dbbcf72b3fda1ac083e15b88378af806ecd186b"
+    },
+    {
+      "relative_path": "manuscript/notes/methods_source_reference.tex",
+      "size_bytes": 8154,
+      "mtime_utc": "2026-06-30T04:13:42+00:00",
+      "sha256": "ebabb531da801ddb94ceda42db90b91a19f625fc0eee7944a6de4db4eb8ed472"
+    },
+    {
+      "relative_path": "manuscript/notes/section_plan.tex",
+      "size_bytes": 866,
+      "mtime_utc": "2026-06-27T22:24:18+00:00",
+      "sha256": "594666f15fe1eca1738b525e72744d54d2ff2ec7cfc228925feed7886ab1db94"
+    },
+    {
+      "relative_path": "manuscript/preamble.tex",
+      "size_bytes": 535,
+      "mtime_utc": "2026-07-01T16:01:34+00:00",
+      "sha256": "be6303c1e6bdbddb494b1186cc1ad37cc4f3ecbce85a32dbbfff3c8e28de70ce"
+    },
+    {
+      "relative_path": "manuscript/sections/section_01_1_delta_learning.tex",
+      "size_bytes": 3593,
+      "mtime_utc": "2026-07-01T05:35:20+00:00",
+      "sha256": "862094171b4e9905eac376509501338f1d17146dbfd12d8c5ce8d08960b698ec"
+    },
+    {
+      "relative_path": "manuscript/sections/section_01_introduction.tex",
+      "size_bytes": 5308,
+      "mtime_utc": "2026-07-01T17:26:13+00:00",
+      "sha256": "d26bee245cc532817d7dbcc8e89766fd3bd909eff8421ded87f60c7b5203eb69"
+    },
+    {
+      "relative_path": "manuscript/sections/section_02_results_discussion.tex",
+      "size_bytes": 46772,
+      "mtime_utc": "2026-07-01T17:26:58+00:00",
+      "sha256": "f31851dac218e9d55fbbe9e189634f5d206180a54d68cb59c841e11b90a22d1b"
+    },
+    {
+      "relative_path": "manuscript/sections/section_02_target_design_in_mlips.tex",
+      "size_bytes": 293,
+      "mtime_utc": "2026-06-27T22:24:19+00:00",
+      "sha256": "7bd64cc3f345c443ef5f71e2e495a4fa3f6de8ddce054be19433935e7f6e13ca"
+    },
+    {
+      "relative_path": "manuscript/sections/section_04_hypothesis.tex",
+      "size_bytes": 205,
+      "mtime_utc": "2026-06-27T22:24:20+00:00",
+      "sha256": "5ba0f11b74f57feabea065398db39c66dbb8188805858d9029eb2d1d3c2e9d60"
+    },
+    {
+      "relative_path": "manuscript/sections/section_05_synthetic_tests.tex",
+      "size_bytes": 143,
+      "mtime_utc": "2026-06-27T22:24:21+00:00",
+      "sha256": "9065ceb542eab50b1656449d3793a8f633fa86942fe8868845ecd051f75f8d08"
+    },
+    {
+      "relative_path": "manuscript/sections/section_06_results.tex",
+      "size_bytes": 101,
+      "mtime_utc": "2026-06-27T22:24:21+00:00",
+      "sha256": "c271ad03d95f840d44218b5bfdf7f879598f009129e9ca14d414e1aaa09e9d0c"
+    },
+    {
+      "relative_path": "manuscript/sections/section_07_discussion.tex",
+      "size_bytes": 2845,
+      "mtime_utc": "2026-07-01T16:49:22+00:00",
+      "sha256": "2736726f3bfb2b1f4290a62f67a6d9235a63cf10850f3b0bceedfaa549ce928b"
+    },
+    {
+      "relative_path": "manuscript/supplementary_information.tex",
+      "size_bytes": 10427,
+      "mtime_utc": "2026-07-01T16:27:21+00:00",
+      "sha256": "a987671ebc2bde9fff42571def0285433c69607e24b72208fda54e0400df933d"
+    },
+    {
+      "relative_path": "manuscript/tables/fig_gemnet_dftref_vs_dftrefboe_parity_metrics.csv",
+      "size_bytes": 1029,
+      "mtime_utc": "2026-06-28T19:11:57+00:00",
+      "sha256": "8d10b266e1554233465badcf0641b6b55d2bca75d24c60e9d57b812588ca364e"
+    },
+    {
+      "relative_path": "manuscript/tables/fig_gemnet_dftref_vs_dftrefboe_parity_qm9_raw_metrics.csv",
+      "size_bytes": 1032,
+      "mtime_utc": "2026-06-28T19:11:56+00:00",
+      "sha256": "8fa068cd839c2a677865c749d1b946ca84260304fc1b3d19799d2dc0ecd667a0"
+    },
+    {
+      "relative_path": "manuscript/tables/fig_qm9_gemnet_dftref_vs_dftrefboe_validated_parity_metrics.csv",
+      "size_bytes": 221,
+      "mtime_utc": "2026-06-28T17:21:07+00:00",
+      "sha256": "d283ad8ec0526425adb22e5aaa5254b97daf3d991a71663d617bc8609a2daf5b"
+    },
+    {
+      "relative_path": "manuscript/tables/table_boe_target_preprocessing.csv",
+      "size_bytes": 381,
+      "mtime_utc": "2026-06-28T16:17:22+00:00",
+      "sha256": "08f73ecfff5e4ff39bbd1e3bc8648bec5dd5f080c3fc7d8e422e2f7b87051bcf"
+    },
+    {
+      "relative_path": "manuscript/tables/table_boe_target_preprocessing.png",
+      "size_bytes": 58976,
+      "mtime_utc": "2026-06-28T16:26:57+00:00",
+      "sha256": "d5d30988b987ecb5c31429e05d4093b65431f90ef0d3fab3ae1d6dab07cf5bfd"
+    },
+    {
+      "relative_path": "manuscript/tables/table_boe_target_preprocessing.tex",
+      "size_bytes": 423,
+      "mtime_utc": "2026-06-28T16:24:36+00:00",
+      "sha256": "cd6407bfc1e5c237b742c717a223989d4969d85b32b245044a4b2fd99c43316c"
+    },
+    {
+      "relative_path": "manuscript/tables/table_boe_target_preprocessing_standalone.tex",
+      "size_bytes": 469,
+      "mtime_utc": "2026-06-28T16:26:43+00:00",
+      "sha256": "6c9b21898d469486a5c28cbb242e5952e70fac598872c17bb32d58173a3d4017"
+    },
+    {
+      "relative_path": "reproducibility/GITHUB_RELEASE_COMMANDS.md",
+      "size_bytes": 2002,
+      "mtime_utc": "2026-07-01T17:03:00+00:00",
+      "sha256": "d8fc945c856c48dfe4463a7bea2e6d6c7379361198eed0cda5c343d691ada303"
+    },
+    {
+      "relative_path": "reproducibility/README.md",
+      "size_bytes": 752,
+      "mtime_utc": "2026-07-01T17:29:01+00:00",
+      "sha256": "db8862424f1799f0906f22c905d884bb8be8aa33bfeaa03d0545794e809984cd"
+    },
+    {
+      "relative_path": "reproducibility/ZENODO_UPLOAD.md",
+      "size_bytes": 2187,
+      "mtime_utc": "2026-07-01T17:29:02+00:00",
+      "sha256": "85e54fe4ae37d658f29e29138ccd9723ea196f7496fa442bf300cffbd6f50e5b"
+    },
+    {
+      "relative_path": "reproducibility/build_artifact_manifest.py",
+      "size_bytes": 5301,
+      "mtime_utc": "2026-07-01T17:02:59+00:00",
+      "sha256": "0b0adbcff9bf4e2caf15baaf6b3682d7d141562e4294dd900349386317ff4b54"
+    },
+    {
+      "relative_path": "reproducibility/make_release_bundle.py",
+      "size_bytes": 1280,
+      "mtime_utc": "2026-07-01T17:03:00+00:00",
+      "sha256": "898ec072401e5ea0f97a23cf23be7e74377bafb42469eb345fa6c434b9f6fe1b"
+    },
+    {
+      "relative_path": "trillium_project/split_ids/tmqm_test_ids.csv",
+      "size_bytes": 98379,
+      "mtime_utc": "2026-03-15T18:09:27+00:00",
+      "sha256": "7a9f65522ecff511b41d58ac2c95831247aa1e503672f80d140656c562f97f91"
+    },
+    {
+      "relative_path": "trillium_project/split_ids/tmqm_train_ids.csv",
+      "size_bytes": 786727,
+      "mtime_utc": "2026-03-15T18:09:16+00:00",
+      "sha256": "19ac15a2d20edb982eee55df008d1c8dde9e12939b8db17677b46f25b473ea62"
+    },
+    {
+      "relative_path": "trillium_project/split_ids/tmqm_val_ids.csv",
+      "size_bytes": 98352,
+      "mtime_utc": "2026-03-15T18:09:22+00:00",
+      "sha256": "2081ed04918365a9d3ae0b63c91a1f8faa3ec54fbfc740c88d86747de801ddfd"
+    }
+  ]
+}

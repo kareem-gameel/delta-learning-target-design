@@ -1,0 +1,19 @@
+name: deltaml-paper-analysis
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pyarrow
+  - joblib
+  - pyyaml
+  - tqdm
+  - pip
+  - pip:
+      - fairchem-core
+

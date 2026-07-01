@@ -1,0 +1,108 @@
+# OS / Editor
+.DS_Store
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Experiment logs and local outputs
+logs/
+lightning_logs/
+wandb/
+mlruns/
+
+# Model weights / checkpoints
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Large data / artifacts (keep out of git)
+*.lmdb
+*.parquet
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.sdf
+*.extxyz
+*.mol2
+*.tar
+*.tar.gz
+*.gz
+*.zip
+*.7z
+*.csv
+*.tsv
+*.log
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# Project-specific heavy folders
+UMAP/embeddings/**
+!UMAP/embeddings/**/
+!UMAP/embeddings/**/*.py
+!UMAP/embeddings/**/*.ipynb
+!UMAP/embeddings/**/*.md
+!UMAP/embeddings/**/*.txt
+
+**/embeddings/**
+!**/embeddings/**/
+!**/embeddings/**/*.py
+!**/embeddings/**/*.ipynb
+!**/embeddings/**/*.md
+!**/embeddings/**/*.txt
+
+**/lmdb_files/
+Atomic_latent_embeddings/clean_energy_latent_data/
+Original_Data/qm9_sdf/
+Original_Data/xyz_files/
+
+# Optional local scratch
+archive/
+
+# Serialized model artifacts
+*.joblib
+*.pkl
+
+# Publication-release metadata and lightweight manuscript artifacts.
+# The broad artifact rules above keep generated science outputs out of Git by
+# default; these exceptions allow the curated paper/reproducibility bundle.
+!README.md
+!RUN_REPRODUCTION.md
+!environment.yml
+!.zenodo.json
+!DATA_AND_CODE_AVAILABILITY_PLAN.md
+!MODEL_METHODOLOGY_REPORT.md
+!reproducibility/
+!reproducibility/**
+reproducibility/*.zip
+!manuscript/
+!manuscript/**
+manuscript/build/**
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.pdf
+manuscript/*.synctex.gz
+!manuscript/figures/*.png
+!manuscript/tables/*.csv
+!manuscript/tables/*.tex
+!manuscript/tables/*.png
+!New_Analysis/manuscript_support/figures/*.png
+!New_Analysis/manuscript_support/tables/*.csv
+!New_Analysis/manuscript_support/tables/*.md
+!New_Analysis/manuscript_support/key_tables/*.csv
+!New_Analysis/manuscript_support/key_tables/*.md

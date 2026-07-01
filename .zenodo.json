@@ -1,0 +1,30 @@
+{
+  "title": "Delta Learning as Target Design for Transferable Machine-Learning Interatomic Potentials",
+  "upload_type": "dataset",
+  "description": "Processed split identifiers, target-generation tables, baseline fits, model-configuration files, evaluation manifests, figure/table source data, and reproducibility metadata accompanying the manuscript Delta Learning as Target Design for Transferable Machine-Learning Interatomic Potentials. Raw tmQM and QM9 source datasets are not redistributed here and should be obtained from their original providers.",
+  "creators": [
+    {
+      "name": "Gameel, Kareem",
+      "affiliation": "University of Toronto"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "delta learning",
+    "machine-learning interatomic potentials",
+    "GemNet",
+    "SchNet",
+    "tmQM",
+    "QM9",
+    "target design"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/kareem-gameel/Delta_Learning_GemNet",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "This archive contains lightweight processed data products and manuscript-support artifacts. Large LMDB databases, neural-network checkpoints, raw structures, parquet embedding exports, and large prediction arrays are excluded from the Git repository and can be regenerated from the released scripts and public source datasets unless explicitly included in a later archive version."
+}

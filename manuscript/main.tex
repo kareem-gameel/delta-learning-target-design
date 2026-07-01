@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+
+\input{preamble}
+\input{macros}
+
+\title{Beyond Variance Reduction: Target Design for Generalizable Machine-Learning Interatomic Potentials}
+\author{
+  \orcidlink{0000-0002-1168-9830}\hspace{1mm}Kareem M.~Gameel\\
+  Department of Physical and Environmental Sciences, University of Toronto Scarborough\\
+  Alliance for AI-Accelerated Materials Discovery (A3MD)\\
+  Toronto, Ontario, Canada
+  \and
+  \orcidlink{0000-0001-9906-8010}\hspace{1mm}Ihor Neporozhnii\\
+  Department of Physical and Environmental Sciences, University of Toronto Scarborough\\
+  Alliance for AI-Accelerated Materials Discovery (A3MD)\\
+  Toronto, Ontario, Canada
+  \and
+  \orcidlink{0000-0002-8656-5074}\hspace{1mm}Oleksandr Voznyy\\
+  Department of Chemistry, University of Toronto\\
+  Department of Physical and Environmental Sciences, University of Toronto Scarborough\\
+  Alliance for AI-Accelerated Materials Discovery (A3MD)\\
+  Toronto, Ontario, Canada
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+% TODO: Write after the main argument and results sections stabilize.
+\end{abstract}
+
+\linenumbers
+
+\input{sections/section_01_introduction}
+\input{sections/section_01_1_delta_learning}
+\input{sections/section_02_results_discussion}
+\input{sections/section_07_discussion}
+\input{sections/section_08_methods}
+
+\section*{Data and Code Availability}
+The source datasets used in this work are publicly available from their original
+providers: tmQM for transition-metal complexes and QM9 for small organic
+molecules. The processed split identifiers, target-generation tables, baseline
+fits, model-configuration files, evaluation manifests, and figure/table source
+data needed to reproduce the analyses in this manuscript will be deposited in a
+versioned Zenodo archive at publication. The analysis and training code will be
+released in a public GitHub repository, with the corresponding Zenodo DOI cited
+in the final manuscript. Large generated artifacts, including LMDB training
+databases, neural-network checkpoints, prediction arrays, and learned embedding
+exports, are not tracked directly in Git; when required for exact reproduction,
+they will be provided through the release artifact bundle or can be regenerated
+from the released scripts and the public source datasets.
+
+\section*{Acknowledgements}
+The authors acknowledge the Alliance for AI-Accelerated Materials Discovery (A3MD) for supporting the research environment, scientific exchange, and computational infrastructure that enabled this work.
+
+\bibliographystyle{unsrt}
+\bibliography{bib/references}
+
+\end{document}

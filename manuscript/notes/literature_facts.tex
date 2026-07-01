@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+
+\input{../preamble}
+\input{../macros}
+
+\title{Literature Facts Helper}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Purpose}
+
+This helper document collects reusable literature facts, citation keys, and framing notes for the manuscript. It is not part of the paper text. Use it as a reference when drafting the Introduction, Target Design in MLIPs, Delta Learning, and Discussion sections.
+
+\section{Representation Design}
+
+\begin{itemize}
+  \item Early molecular quantum-machine-learning work emphasized the design of representations that encode nuclear charges and molecular geometry. The Coulomb matrix is a canonical example: it represents a molecule using nuclear charges on the diagonal and Coulomb-like pairwise terms off the diagonal, and was used to predict molecular atomization energies across chemical compound space \cite{rupp2012fast}.
+
+  \item In atomistic potentials, Behler and Parrinello introduced high-dimensional neural network potentials in which the total energy is decomposed into atomic contributions, each predicted from symmetry functions describing the local chemical environment \cite{behler2007generalized}. This is a key citation for the idea that MLIPs already encode physical structure through both representation and target decomposition.
+
+  \item Gaussian approximation potentials combine local atomic-environment descriptors with Gaussian-process regression, showing another major route where representation design is central to obtaining quantum-mechanical accuracy without explicit electronic-structure calculations at inference time \cite{bartok2010gap}.
+
+  \item ANI-style neural network potentials use atom-centered environment vectors and element-specific neural networks to obtain transferable molecular potentials with DFT-level accuracy at force-field-like cost for organic chemical space \cite{smith2017ani1}.
+\end{itemize}
+
+\section{Architecture Design}
+
+\begin{itemize}
+  \item SchNet replaced fixed molecular descriptors with continuous-filter convolutional layers that operate directly on atom types and Cartesian coordinates, making the learned representation differentiable with respect to positions and suitable for energy/force learning \cite{schutt2017schnet}.
+
+  \item DimeNet introduced directional message passing, explicitly incorporating angular information into molecular graph learning. This paper is useful when arguing that architecture design moved beyond pairwise distance-only message passing toward richer geometric inductive biases \cite{gasteiger2020dimenet}.
+
+  \item GemNet extends directional message passing and is directly relevant because this manuscript studies GemNet residual targets. Use GemNet citations when introducing the downstream model and the architecture-design side of the story \cite{gasteiger2021gemnet}.
+
+  \item NequIP and MACE are useful examples of the modern equivariant-architecture direction. NequIP emphasizes E(3)-equivariant tensor features and data efficiency \cite{batzner2022nequip}; MACE emphasizes higher-order equivariant message passing for accurate and efficient force fields \cite{batatia2022mace}.
+\end{itemize}
+
+\section{Target Preprocessing in MLIPs}
+
+\begin{itemize}
+  \item MLIPs commonly exploit extensivity by representing the total energy as a sum of local or atomic contributions. This architectural decomposition is already a form of structure imposed on the prediction target, not merely a neutral modeling detail \cite{behler2007generalized,schutt2017schnet}.
+
+  \item Molecular datasets often report atomization energies or reference-corrected energies rather than raw total electronic energies. QM9 is a standard reference point for molecular quantum-chemistry learning tasks and provides computed properties for roughly 134k small organic molecules \cite{ramakrishnan2014quantum}.
+
+  \item Atom-reference subtraction and composition-based linear corrections should be described carefully. They are often treated operationally as normalization, referencing, or preprocessing, but mathematically they replace the original supervised target \(\target\) with a residual target \(\residual = \target - \baseline\). This is the central bridge to the manuscript's target-design framing.
+\end{itemize}
+
+\section{Delta Learning}
+
+\begin{itemize}
+  \item The \(\Delta\)-machine-learning paper introduced the strategy of using machine learning to correct inexpensive approximate quantum-chemistry methods toward higher-level reference methods \cite{ramakrishnan2015delta}. This is the core literature citation for delta learning.
+
+  \item The standard delta-learning equation is
+  \[
+    \target(x) = \baseline(x) + \residual(x),
+    \qquad
+    \residual(x) = \target(x) - \baseline(x),
+  \]
+  with the learned prediction
+  \[
+    \prediction(x) = \baseline(x) + f_{\theta}(x).
+  \]
+  In manuscript language, the important move is that choosing \(\baseline\) defines a new residual task for \(f_{\theta}\).
+
+  \item A safe literature-review statement is: delta learning is usually motivated as a way to combine a cheap approximate method with a learned correction, improving accuracy at reduced computational cost. Our manuscript asks a different question: what makes the residual correction learnable and transferable for a fixed downstream architecture?
+\end{itemize}
+
+\section{Delta-Learning Explanations and Gaps}
+
+\subsection*{Standard Definition}
+
+\begin{itemize}
+  \item In the usual \(\Delta\)-learning setup, the model is not trained directly on a high-fidelity target \(\target\). It is trained on
+  \[
+    \Delta(x) = \target(x) - \baseline(x),
+  \]
+  where \(\baseline(x)\) is a cheaper baseline method. The final prediction is
+  \[
+    \prediction(x) = \baseline(x) + \widehat{\Delta}(x).
+  \]
+  Ramakrishnan, Dral, Rupp, and von Lilienfeld formalized this strategy for quantum chemistry by showing that machine-learning corrections to inexpensive quantum-chemical methods could approach higher-level accuracy at reduced cost \cite{ramakrishnan2015delta}.
+
+  \item Since then, \(\Delta\)-learning has been used for semiempirical-to-DFT corrections, DFT-to-coupled-cluster corrections, potential-energy surfaces, excited-state properties, and solution-phase molecular properties \cite{atz2022deltaqml,chen2023solutiondelta,dral2020hierarchical}.
+\end{itemize}
+
+\subsection*{Physical-Prior Explanation}
+
+\begin{itemize}
+  \item A common explanation is that the baseline supplies a physical prior: a low-cost quantum-chemical method, force field, or approximate electronic-structure model captures a large physically meaningful component of the target, leaving the ML model to learn only the missing correction.
+
+  \item This is plausible, but it is not a predictive criterion. A baseline can be physically motivated and still leave a residual that is poorly aligned with the model representation, descriptor, or architecture.
+
+  \item Safe manuscript framing: physical motivation explains why a baseline may be useful, but not when the resulting residual will be learnable or transferable.
+\end{itemize}
+
+\subsection*{Correlation Explanation}
+
+\begin{itemize}
+  \item A second explanation is the correlation hypothesis: if \(\baseline\) is strongly correlated with \(\target\), then the residual \(\target - \baseline\) is expected to be easier to learn.
+
+  \item Atz et al. tested this idea in \(\Delta\)-quantum machine learning for medicinal chemistry. They found that \(\Delta\)-learning generally improved predictions from GFN2-xTB to DFT-level properties, and that improvements were weaker for properties where the baseline and reference were less correlated, such as HOMO energies \cite{atz2022deltaqml}.
+
+  \item This supports correlation as a useful diagnostic, but not as a sufficient condition. Correlation mainly describes global variance reduction; it does not guarantee residual smoothness, locality, or compatibility with a chosen descriptor or GNN architecture.
+\end{itemize}
+
+\subsection*{Target-Shrinkage Explanation}
+
+\begin{itemize}
+  \item A third explanation is target shrinkage: because \(\Delta = \target - \baseline\) often has a smaller numerical range than \(\target\), it is assumed to be easier to learn.
+
+  \item This argument is weak as a general explanation. Smaller magnitude does not imply lower functional complexity. A small residual can be rough, noisy, nonlocal, or highly sensitive to changes in chemical structure.
+
+  \item Safe manuscript framing: target shrinkage can improve absolute-error numbers and optimization behavior, but it is neither necessary nor sufficient for improved generalization.
+\end{itemize}
+
+\subsection*{Systematic-Error Explanation}
+
+\begin{itemize}
+  \item A fourth explanation is that approximate methods make structured errors, and ML can learn those errors. This is reasonable in many chemistry settings, but ``systematic'' is often underdefined.
+
+  \item A residual is not useful merely because it is physically interpretable or nonzero. It is useful only if it is learnable under the chosen representation, model class, and data distribution.
+
+  \item Chen et al. make this limitation clear in solution-phase \(\Delta\)-learning: performance depends on property type, quantum-chemical method, data distribution, input features, and feature selection \cite{chen2023solutiondelta}.
+\end{itemize}
+
+\subsection*{Better Baseline Is Not Always Better}
+
+\begin{itemize}
+  \item Krug, Khan, and von Lilienfeld provide a useful challenge to the assumption that a more accurate or more physically detailed baseline automatically improves \(\Delta\)-learning. They studied \(\Delta\)-learning for iso-electronic diatomic potentials using alchemical harmonic approximation baselines \cite{krug2025aha}.
+
+  \item In their study, a simple AHA baseline improved learning efficiency, whereas an AHA+Morse baseline sometimes degraded prediction. The problem-specific explanation was that the Morse correction improved calibration near a selected reference system but generalized poorly across chemical space.
+
+  \item This is directly useful for our paper: a baseline can be physically motivated and locally accurate while still producing a worse residual target.
+\end{itemize}
+
+\subsection*{Multifidelity View}
+
+\begin{itemize}
+  \item The broader multifidelity literature makes a related statistical point. Kennedy and O'Hagan's multifidelity Gaussian-process framework assumes that cheap and expensive simulators are correlated sources of information, but the correlation structure must be modeled rather than assumed \cite{kennedy2000multifidelity}.
+
+  \item More recent multitask molecular-property work similarly shows that low-fidelity data are useful when task correlations are favorable, but may be less useful when correlations are weak or heterogeneous \cite{fisher2024multitask}.
+
+  \item This matters because standard \(\Delta\)-learning usually hard-codes the correction structure \(\target = \baseline + \Delta\), instead of learning whether the baseline should be trusted.
+\end{itemize}
+
+\subsection*{Main Literature Gap}
+
+\begin{itemize}
+  \item The gap is not that \(\Delta\)-learning lacks empirical support. It often works. The gap is that the field lacks a general pre-training criterion for deciding whether a candidate baseline will make the target more learnable.
+
+  \item Existing explanations--physical baseline, high correlation, smaller residual, systematic error, smoother correction--are mostly post hoc. They describe successful cases after training, but usually do not define smoothness over a specified feature space or predict whether a residual will align with a specific model architecture.
+
+  \item This motivates viewing \(\Delta\)-learning as target design rather than simple error correction. The relevant question is not whether \(\baseline\) is accurate, physical, or correlated with \(\target\) in the abstract. The relevant question is whether \(\target - \baseline\) is smoother, more local, less noisy, or otherwise better aligned with the model's effective representation than \(\target\).
+\end{itemize}
+
+\section{Useful Framing for This Manuscript}
+
+\begin{itemize}
+  \item Representation design asks: what features or geometric information does the model see?
+
+  \item Architecture design asks: what function class and inductive bias does the learner impose?
+
+  \item Target design asks: what supervised function is the learner actually asked to fit?
+
+  \item The paper's conceptual claim should be phrased as an empirical target-design claim, not as a universal theorem. Safe language: residual variance reduction is not sufficient to explain the observed GemNet behavior; the choice of baseline changes the residual learning problem.
+
+  \item Avoid saying that delta learning always makes the target smoother or easier. Later sections should show that variance and smoothness hypotheses are tested and found incomplete.
+\end{itemize}
+
+\section{Citation Key Index}
+
+\begin{itemize}
+  \item \texttt{behler2007generalized}: high-dimensional neural network potentials; atom-centered local environments; sum of atomic energies.
+  \item \texttt{bartok2010gap}: Gaussian approximation potentials; local descriptors plus Gaussian-process regression.
+  \item \texttt{rupp2012fast}: Coulomb matrix; molecular representation design for atomization-energy prediction.
+  \item \texttt{ramakrishnan2014quantum}: QM9 dataset.
+  \item \texttt{ramakrishnan2015delta}: \(\Delta\)-machine learning.
+  \item \texttt{atz2022deltaqml}: \(\Delta\)-quantum machine learning for medicinal chemistry; GFN2-xTB to DFT corrections; baseline-reference correlation diagnostic.
+  \item \texttt{chen2023solutiondelta}: solution-phase \(\Delta\)-learning; dependence on property, method, data distribution, and features.
+  \item \texttt{dral2020hierarchical}: hierarchical ML of potential-energy surfaces.
+  \item \texttt{krug2025aha}: AHA baseline for iso-electronic diatomics; example where a more detailed AHA+Morse baseline can degrade \(\Delta\)-learning.
+  \item \texttt{kennedy2000multifidelity}: multifidelity Gaussian-process framework.
+  \item \texttt{fisher2024multitask}: multitask molecular-property prediction from heterogeneous fidelity data.
+  \item \texttt{smith2017ani1}: ANI neural network potentials.
+  \item \texttt{schutt2017schnet}: continuous-filter convolutional neural network for molecules.
+  \item \texttt{gasteiger2020dimenet}: directional message passing.
+  \item \texttt{gasteiger2021gemnet}: GemNet.
+  \item \texttt{batzner2022nequip}: E(3)-equivariant interatomic potentials.
+  \item \texttt{batatia2022mace}: higher-order equivariant message passing.
+\end{itemize}
+
+\bibliographystyle{unsrt}
+\bibliography{../bib/references}
+
+\end{document}
