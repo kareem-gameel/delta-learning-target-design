@@ -1,0 +1,25 @@
+{
+  "release_status": "verified",
+  "public_release_ready": true,
+  "public_release_blockers": [],
+  "primary_targets": 13,
+  "tmqm_final_rows": 82,
+  "qm9_final_rows": 82,
+  "prediction_score_checks": 164,
+  "dftb_seeds": [
+    101
+  ],
+  "primary_seeds": [
+    101,
+    102,
+    103
+  ],
+  "roughness_split": "test",
+  "roughness_rows": 32,
+  "dftb_excluded_from_pooled_statistics": true,
+  "stale_active_paths": [],
+  "symlinks": [],
+  "forbidden_files": [],
+  "oversized_files": [],
+  "errors": []
+}

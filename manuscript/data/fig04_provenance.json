@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "extended_metrics_per_seed.csv": "a9f2d6dee8cb94b0ee955d444c995ad6b7addd977187bbf1fa98a959ab875fd0",
+    "qm9_final_ledger.csv": "152365d15b4ecbfe2dda43ab316712961ac1b0b430790386bf076814e119ab80"
+  },
+  "scale": "DFT_parent",
+  "primary_cohort": "common13: 128988 molecules; seeds 101,102,103",
+  "dftb_control": "common15: 128978 molecules; seed101; matched direct seed101 reference",
+  "aggregation": "arithmetic mean of per-seed scores, not ensemble predictions",
+  "uncertainty": "sample SD for primary routes; no DFTB uncertainty estimate",
+  "mean_shift": "oracle offset computed separately from evaluated QM9 labels for each predictor",
+  "caveat": "DFTB training subset differs; not pooled with primary routes",
+  "legacy_asset": "fig03_qm9_transfer is displayed Figure 4"
+}

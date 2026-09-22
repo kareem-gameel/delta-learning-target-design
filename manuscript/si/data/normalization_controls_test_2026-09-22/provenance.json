@@ -1,0 +1,34 @@
+{
+  "seed": 20260914,
+  "permutations": 5000,
+  "target_ids": [
+    "E_ref",
+    "xTB_ref",
+    "E_ref-BoE",
+    "xTB_ref-BoE",
+    "Delta_MLP_BoE-ref",
+    "Delta_BoB-ref-BoE",
+    "Delta_MLP_BoB-ref-BoE",
+    "Delta_PRE-ref-BoE",
+    "Delta_MLP_PRE-ref-BoE",
+    "Delta_PRE_plus_A-ref-BoE",
+    "Delta_MLP_PRE_plus_A-ref-BoE",
+    "Delta_xTB-ref",
+    "Delta_xTB-ref-BoE"
+  ],
+  "split": "test",
+  "molecules": 7104,
+  "dftb_included": false,
+  "statistic": "signed Pearson r(log D_IQR, fixed mean test MAE/test IQR)",
+  "permutation": "one joint molecule permutation across all targets and both graphs per replicate",
+  "pair_selection": "all unordered primary target pairs with max(IQR)/min(IQR) <= 1.10",
+  "inputs": {
+    "target_registry.csv": "17a99894529a130f0d5cbc6dcb774792c4aebdb8d37d3154411d066a7c8721e1",
+    "tmqm_test_targets.csv": "b608b341c13bec399500a00fc810fc94406af89ac8342146b0e4c9786cf67c6f",
+    "roughness_error_plot_data.csv": "369c769eb58de48ea041448d8a6e940268bb6ebd59d14e8deecf7b9b87ea80e2",
+    "graph_schnet_primary.npz": "e83497506ef457fafa4ffcfe89675f7a99b8794fd22b04dfa9254e49f476d5e8",
+    "graph_gemnet_primary.npz": "a72796a99ab5fc907f184ec83dcc5720e6983ba906b344720607fb6aa4305ef3"
+  },
+  "script_sha256": "86345b6d7ad4a85469614135b5e8f8e16ade9118f5cd7b9c0657451e003209db",
+  "verification": "observed scores and first three permutations checked with direct weighted edge differences"
+}

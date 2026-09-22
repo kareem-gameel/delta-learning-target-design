@@ -1,0 +1,12 @@
+{
+  "bundle": "si/data/test_protocol_2026-09-22",
+  "inputs_sha256": {
+    "tmqm_final_ledger.csv": "5f0cd4592e1fb86fa6181081f6bb345a5d8fefc2bba330f3cdc358172f5d15a7",
+    "target_statistics.csv": "bb3c3edeb22452cb59b877d49259d3e0abe8139a8e022062a062f571a767ff71",
+    "tmqm_test_targets.csv": "b608b341c13bec399500a00fc810fc94406af89ac8342146b0e4c9786cf67c6f"
+  },
+  "evaluation_split": "test",
+  "normalization": "same-target test IQR",
+  "checkpoint_selection": "validation only",
+  "uncertainty": "sample SD across three GNN seeds"
+}

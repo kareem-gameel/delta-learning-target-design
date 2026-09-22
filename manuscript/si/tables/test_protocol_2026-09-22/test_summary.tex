@@ -1,0 +1,28 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\caption{Native-target test MAE (Ha), mean $\pm$ sample SD across seeds 101, 102, and 103. DFTB$^\dagger$ has seed 101 only. xTB and DFTB direct-energy rows measure their own energies, not DFT reconstruction error.}
+\begin{tabular}{lrr}
+\toprule
+Target & SchNet test MAE & GemNet test MAE \\
+\midrule
+\(E_{\rm ref}^{\rm DFT}\) & 0.019917 $\pm$ 0.000178 & 0.013360 $\pm$ 0.000423 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.015648 $\pm$ 0.000077 & 0.009448 $\pm$ 0.000469 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.024672 $\pm$ 0.000112 & 0.022380 $\pm$ 0.000452 \\
+\(E_{\rm ref}^{\rm xTB}\) & 0.018337 $\pm$ 0.000099 & 0.011718 $\pm$ 0.000595 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 0.014011 $\pm$ 0.000258 & 0.008372 $\pm$ 0.000031 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 0.010269 $\pm$ 0.000128 & 0.008286 $\pm$ 0.000273 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.009569 $\pm$ 0.000101 & 0.006596 $\pm$ 0.000048 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 0.014724 $\pm$ 0.000167 & 0.011024 $\pm$ 0.000363 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.019347 $\pm$ 0.000287 & 0.018826 $\pm$ 0.000056 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 0.016139 $\pm$ 0.001004 & 0.013355 $\pm$ 0.000278 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.018278 $\pm$ 0.000070 & 0.018293 $\pm$ 0.000090 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.016086 $\pm$ 0.001178 & 0.013710 $\pm$ 0.000212 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.015462 $\pm$ 0.000035 & 0.015222 $\pm$ 0.000006 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 0.013980 & 0.008462 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.012119 & 0.007936 \\
+\bottomrule
+\end{tabular}
+\end{table}

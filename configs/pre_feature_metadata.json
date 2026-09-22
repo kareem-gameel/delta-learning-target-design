@@ -1,0 +1,28 @@
+{
+  "build_minutes": 10.875,
+  "n_samples": 71038,
+  "n_features": 34650,
+  "nnz": 29574911,
+  "density": 0.01201515787314937,
+  "ignored": {},
+  "missing_ids_count": 4,
+  "missing_ids_example": [
+    "SICKEV",
+    "GEJBUS",
+    "GEBSIR",
+    "FABMUS"
+  ],
+  "r_cut": 6.0,
+  "eps": 1e-10,
+  "m_count": 35,
+  "mu_near": [
+    0.8,
+    2.999999999999999,
+    0.1
+  ],
+  "mu_far": [
+    3.25,
+    6.0,
+    0.25
+  ]
+}

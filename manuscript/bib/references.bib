@@ -72,7 +72,7 @@
 
 @article{atz2022deltaqml,
   title = {$\Delta$-Quantum Machine-Learning for Medicinal Chemistry},
-  author = {Atz, Kenneth and Isert, Clemens and B{\"o}cker, Michael N. A. and Jim{\'e}nez-Luna, Jos{\'e} and Schneider, Gisbert},
+  author = {Atz, Kenneth and Isert, Clemens and B{\"o}cker, Markus N. A. and Jim{\'e}nez-Luna, Jos{\'e} and Schneider, Gisbert},
   journal = {Physical Chemistry Chemical Physics},
   volume = {24},
   pages = {10775--10783},
@@ -83,8 +83,11 @@
 
 @article{chen2023solutiondelta,
   title = {$\Delta$-Machine Learning for Quantum Chemistry Prediction of Solution-Phase Molecular Properties at the Ground and Excited States},
-  author = {Chen, Xielong and Li, Peng and Hruska, Eugene and Liu, Fang},
+  author = {Chen, Xu and Li, Pinyuan and Hruska, Eugen and Liu, Fang},
   journal = {Physical Chemistry Chemical Physics},
+  volume = {25},
+  number = {19},
+  pages = {13417--13428},
   year = {2023},
   publisher = {Royal Society of Chemistry},
   doi = {10.1039/D3CP00506B}
@@ -104,10 +107,12 @@
 @article{krug2025aha,
   title = {Alchemical Harmonic Approximation Based Potential for Iso-Electronic Diatomics: Foundational Baseline for $\Delta$-Machine Learning},
   author = {Krug, Simon L{\'e}on and Khan, Danish and von Lilienfeld, O. Anatole},
-  journal = {Journal of Chemical Physics},
+  journal = {The Journal of Chemical Physics},
   volume = {162},
+  number = {4},
   pages = {044101},
-  year = {2025}
+  year = {2025},
+  doi = {10.1063/5.0241872}
 }
 
 @article{kennedy2000multifidelity,
@@ -123,11 +128,13 @@
 
 @article{fisher2024multitask,
   title = {Multitask Methods for Predicting Molecular Properties from Heterogeneous Data},
-  author = {Fisher, Katharine and Herbst, Michael and Marzouk, Youssef},
+  author = {Fisher, Katharine E. and Herbst, Michael F. and Marzouk, Youssef M.},
   journal = {Journal of Chemical Physics},
   volume = {161},
+  number = {1},
   pages = {014114},
-  year = {2024}
+  year = {2024},
+  doi = {10.1063/5.0201681}
 }
 
 @article{smith2017ani1,
@@ -142,25 +149,18 @@
   doi = {10.1039/C6SC05720A}
 }
 
-@article{schutt2017schnet,
-  title = {{SchNet}: A Continuous-Filter Convolutional Neural Network for Modeling Quantum Interactions},
-  author = {Sch{\"u}tt, Kristof T. and Kindermans, Pieter-Jan and Sauceda, Huziel E. and Chmiela, Stefan and Tkatchenko, Alexandre and M{\"u}ller, Klaus-Robert},
-  journal = {Advances in Neural Information Processing Systems},
-  volume = {30},
-  year = {2017}
+@article{gasteiger2022gemnetoc,
+  title = {{GemNet-OC}: Developing Graph Neural Networks for Large and Diverse Molecular Simulation Datasets},
+  author = {Gasteiger, Johannes and Shuaibi, Muhammed and Sriram, Anuroop and G{\"u}nnemann, Stephan and Ulissi, Zachary and Zitnick, C. Lawrence and Das, Abhishek},
+  journal = {Transactions on Machine Learning Research},
+  year = {2022},
+  url = {https://openreview.net/forum?id=u8tvSxm4Bs}
 }
 
-@article{gasteiger2020dimenet,
-  title = {Directional Message Passing for Molecular Graphs},
-  author = {Gasteiger, Johannes and Gro{\ss}, Janek and G{\"u}nnemann, Stephan},
-  journal = {International Conference on Learning Representations},
-  year = {2020}
-}
-
-@article{gasteiger2021gemnet,
-  title = {GemNet: Universal Directional Graph Neural Networks for Molecules},
+@inproceedings{gasteiger2021gemnet,
+  title = {{GemNet}: Universal Directional Graph Neural Networks for Molecules},
   author = {Gasteiger, Johannes and Becker, Florian and G{\"u}nnemann, Stephan},
-  journal = {Advances in Neural Information Processing Systems},
+  booktitle = {Advances in Neural Information Processing Systems},
   volume = {34},
   pages = {6790--6802},
   year = {2021}
@@ -177,18 +177,9 @@
   doi = {10.1038/s41467-022-29939-5}
 }
 
-@article{batatia2022mace,
-  title = {{MACE}: Higher Order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields},
-  author = {Batatia, Ilyes and Kov{\'a}cs, D{\'a}vid P{\'e}ter and Simm, Gregor N. C. and Ortner, Christoph and Cs{\'a}nyi, G{\'a}bor},
-  journal = {Advances in Neural Information Processing Systems},
-  volume = {35},
-  pages = {11423--11436},
-  year = {2022}
-}
-
 @article{balcells2020tmqm,
   title = {{tmQM} Dataset: Quantum Geometries and Properties of 86k Transition Metal Complexes},
-  author = {Balcells, David and Skjelstad, Bjarte B.},
+  author = {Balcells, David and Skjelstad, Bastian Bjerkem},
   journal = {Journal of Chemical Information and Modeling},
   volume = {60},
   number = {12},
@@ -222,6 +213,57 @@
   doi = {10.1021/acs.jctc.8b01176}
 }
 
+@article{elstner1998sccdftb,
+  title = {Self-Consistent-Charge Density-Functional Tight-Binding Method for Simulations of Complex Materials Properties},
+  author = {Elstner, Marcus and Porezag, Dirk and Jungnickel, Gerd and Elsner, Jens and Haugk, Michael and Frauenheim, Thomas and Suhai, Sandor and Seifert, Gotthard},
+  journal = {Physical Review B},
+  volume = {58},
+  number = {11},
+  pages = {7260--7268},
+  year = {1998},
+  doi = {10.1103/PhysRevB.58.7260}
+}
+
+@article{hourahine2020dftbplus,
+  title = {{DFTB+}, a Software Package for Efficient Approximate Density Functional Theory Based Atomistic Simulations},
+  author = {Hourahine, Ben and Aradi, Balint and Blum, Volker and Bonafe, Francesca and Buccheri, Alexander and Camacho, Carlos and Cevallos, Cesar and Deshaye, Mael Y. and Dumitric{\u{a}}, Traian and Dominguez, Alejandro and Ehlert, Sebastian and Elstner, Marcus and van der Heide, Toma S. and Hermann, Jan and Irle, Stephan and Kranz, Julian J. and K{\"o}hler, Carsten and Kowalczyk, Tim and Kuba{\v{r}}, Tom{\'a}{\v{s}} and Lee, I.-S. and Lutsker, Vitali and Maurer, Reinhard J. and Min, Seung Kyu and Mitchell, Iain and Negre, Christian and Niehaus, Thomas A. and Niklasson, Anders M. N. and Page, Alexander J. and Pecchia, Alessandro and Penazzi, Gabriele and Persson, Mats P. and {\v{R}}ez{\'a}{\v{c}}, Jan and S{\'a}nchez, Carmen G. and Sternberg, Michael and St{\"o}hr, Meike and Stuckenberg, Frank and Tkatchenko, Alexandre and Yu, Victor W.-z. and Frauenheim, Thomas},
+  journal = {The Journal of Chemical Physics},
+  volume = {152},
+  number = {12},
+  pages = {124101},
+  year = {2020},
+  doi = {10.1063/1.5143190}
+}
+
+@misc{dftborg2025ptbp,
+  author = {{DFTB.org}},
+  title = {Periodic Table Baseline Parameter Set ({PTBP})},
+  year = {2025},
+  howpublished = {\url{https://dftb.org/parameters/download.html}},
+  note = {Accessed 26 July 2026}
+}
+
+@article{pearson1897spurious,
+  author = {Pearson, Karl},
+  title = {Mathematical Contributions to the Theory of Evolution---On a Form of Spurious Correlation Which May Arise When Indices Are Used in the Measurement of Organs},
+  journal = {Proceedings of the Royal Society of London},
+  volume = {60},
+  pages = {489--498},
+  year = {1897},
+  doi = {10.1098/rspl.1896.0076}
+}
+
+@article{phipson2010permutation,
+  author = {Phipson, Belinda and Smyth, Gordon K.},
+  title = {Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn},
+  journal = {Statistical Applications in Genetics and Molecular Biology},
+  volume = {9},
+  number = {1},
+  pages = {39},
+  year = {2010},
+  doi = {10.2202/1544-6115.1585}
+}
+
 @article{belkin2006manifold,
   title = {Manifold Regularization: A Geometric Framework for Learning from Labeled and Unlabeled Examples},
   author = {Belkin, Mikhail and Niyogi, Partha and Sindhwani, Vikas},
@@ -234,11 +276,12 @@
 @article{tran2023oc22,
   title = {The Open Catalyst 2022 ({OC22}) Dataset and Challenges for Oxide Electrocatalysts},
   author = {Tran, Richard and Lan, Janice and Shuaibi, Muhammed and Wood, Brandon M. and Goyal, Siddharth and Das, Abhishek and Heras-Domingo, Javier and Kolluru, Adeesh and Rizvi, Ammar and Shoghi, Nima and Sriram, Anuroop and Therrien, F{\'e}lix and Abed, Jehad and Voznyy, Oleksandr and Sargent, Edward H. and Ulissi, Zachary W. and Zitnick, C. Lawrence},
-  journal = {arXiv preprint arXiv:2206.08917},
+  journal = {ACS Catalysis},
+  volume = {13},
+  number = {5},
+  pages = {3066--3084},
   year = {2023},
-  eprint = {2206.08917},
-  archivePrefix = {arXiv},
-  primaryClass = {cond-mat.mtrl-sci}
+  doi = {10.1021/acscatal.2c05426}
 }
 
 @article{schutt2023schnetpack2,
@@ -248,45 +291,97 @@
   volume = {158},
   number = {14},
   pages = {144801},
-  year = {2023}
+  year = {2023},
+  doi = {10.1063/5.0138367}
 }
 
 @article{pelaez2024torchmdnet2,
   title = {{TorchMD-Net} 2.0: Fast Neural Network Potentials for Molecular Simulations},
   author = {Pelaez, Raul P. and Simeon, Guillem and Galvelis, Raimondas and Mirarchi, Antonio and Eastman, Peter and Doerr, Stefan and Th{\"o}lke, Philipp and Markland, Thomas E. and De Fabritiis, Gianni},
-  journal = {arXiv preprint arXiv:2402.17660},
+  journal = {Journal of Chemical Theory and Computation},
+  volume = {20},
+  number = {10},
+  pages = {4076--4087},
   year = {2024},
-  eprint = {2402.17660},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.LG}
+  doi = {10.1021/acs.jctc.4c00253}
 }
 
-@article{levine2025omol25,
-  title = {The Open Molecules 2025 ({OMol25}) Dataset, Evaluations, and Models},
-  author = {Levine, Daniel S. and Shuaibi, Muhammed and Spotte-Smith, Evan Walter Clark and Taylor, Michael G. and Hasyim, Muhammad R. and Michel, Kyle and Batatia, Ilyes and Cs{\'a}nyi, G{\'a}bor and Dzamba, Misko and Eastman, Peter and Frey, Nathan C. and Fu, Xiang and Gharakhanyan, Vahe and Krishnapriyan, Aditi S. and Rackers, Joshua A. and Raja, Sanjeev and Rizvi, Ammar and Rosen, Andrew S. and Ulissi, Zachary and Vargas, Santiago and Zitnick, C. Lawrence and Blau, Samuel M. and Wood, Brandon M.},
-  journal = {arXiv preprint arXiv:2505.08762},
-  year = {2025},
-  eprint = {2505.08762},
-  archivePrefix = {arXiv},
-  primaryClass = {physics.chem-ph}
+@article{mardirossian2016wb97mv,
+  title = {{$\omega$B97M-V}: A Combinatorially Optimized, Range-Separated Hybrid, Meta-{GGA} Density Functional with {VV10} Nonlocal Correlation},
+  author = {Mardirossian, Narbe and Head-Gordon, Martin},
+  journal = {The Journal of Chemical Physics},
+  volume = {144},
+  number = {21},
+  pages = {214110},
+  year = {2016},
+  doi = {10.1063/1.4952647}
 }
 
-@article{wood2025uma,
-  title = {{UMA}: A Family of Universal Models for Atoms},
-  author = {Wood, Brandon M. and Dzamba, Misko and Fu, Xiang and Gao, Meng and Shuaibi, Muhammed and Barroso-Luque, Luis and Abdelmaqsoud, Kareem and Gharakhanyan, Vahe and Kitchin, John R. and Levine, Daniel S. and Michel, Kyle and Sriram, Anuroop and Cohen, Taco and Das, Abhishek and Rizvi, Ammar and Sahoo, Sushree Jagriti and Ulissi, Zachary W. and Zitnick, C. Lawrence},
-  journal = {arXiv preprint arXiv:2506.23971},
-  year = {2025},
-  eprint = {2506.23971},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.LG}
+@article{rappoport2010def2svpd,
+  title = {Property-Optimized {Gaussian} Basis Sets for Molecular Response Calculations},
+  author = {Rappoport, Dmitrij and Furche, Filipp},
+  journal = {The Journal of Chemical Physics},
+  volume = {133},
+  number = {13},
+  pages = {134105},
+  year = {2010},
+  doi = {10.1063/1.3484283}
 }
 
-@article{sriram2025odac25,
-  title = {The Open {DAC} 2025 Dataset for Sorbent Discovery in Direct Air Capture},
-  author = {Sriram, Anuroop and Brabson, Logan M. and Yu, Xiaohan and Choi, Sihoon and Abdelmaqsoud, Kareem and Moubarak, Elias and de Haan, Pim and L{\"o}we, Sindy and Brehmer, Johann and Kitchin, John R. and Welling, Max and Zitnick, C. Lawrence and Ulissi, Zachary and Medford, Andrew J. and Sholl, David S.},
-  journal = {arXiv preprint arXiv:2508.03162},
+@article{parrish2017psi4,
+  title = {{Psi4} 1.1: An Open-Source Electronic Structure Program Emphasizing Automation, Advanced Libraries, and Interoperability},
+  author = {Parrish, Robert M. and Burns, Lori A. and Smith, Daniel G. A. and Simmonett, Andrew C. and DePrince, A. Eugene and Hohenstein, Edward G. and Bozkaya, U{\u{g}}ur and Sokolov, Alexander Yu. and Di Remigio, Roberto and Richard, Ryan M. and Gonthier, J{\'e}r{\^o}me F. and James, Andrew M. and McAlexander, Harley R. and Kumar, Ashutosh and Saitow, Masaaki and Wang, Xiao and Pritchard, Benjamin P. and Verma, Prakash and Schaefer, Henry F. and Patkowski, Konrad and King, Rollin A. and Valeev, Edward F. and Evangelista, Francesco A. and Turney, Justin M. and Crawford, T. Daniel and Sherrill, C. David},
+  journal = {Journal of Chemical Theory and Computation},
+  volume = {13},
+  number = {7},
+  pages = {3185--3197},
+  year = {2017},
+  doi = {10.1021/acs.jctc.7b00174}
+}
+
+@article{grumet2024dielectric,
+  title = {Delta Machine Learning for Predicting Dielectric Properties and Raman Spectra},
+  author = {Grumet, Manuel and von Scarpatetti, Clara and Bu{\v{c}}ko, Tom{\'a}{\v{s}} and Egger, David A.},
+  journal = {The Journal of Physical Chemistry C},
+  volume = {128},
+  number = {15},
+  pages = {6464--6470},
+  year = {2024},
+  doi = {10.1021/acs.jpcc.4c00886}
+}
+
+@article{chang2025activation,
+  title = {Enhancing Activation Energy Predictions under Data Constraints Using Graph Neural Networks},
+  author = {Chang, Han-Chung and Tsai, Ming-Hsuan and Li, Yi-Pei},
+  journal = {Journal of Chemical Information and Modeling},
+  volume = {65},
+  number = {3},
+  pages = {1367--1377},
   year = {2025},
-  eprint = {2508.03162},
-  archivePrefix = {arXiv},
-  primaryClass = {cond-mat.mtrl-sci}
+  doi = {10.1021/acs.jcim.4c02319}
+}
+
+@misc{gameelDeltaLearningRepository,
+  author = {Gameel, Kareem M.},
+  title = {{delta-learning-target-design}: Project Code Repository},
+  howpublished = {\url{https://github.com/kareem-gameel/delta-learning-target-design}},
+  note = {Public July 2026 snapshot; accessed 22 September 2026}
+}
+
+@article{tu2026transferable,
+  title = {{$\Delta$}-Learning for Transferable Machine Learning Interatomic Potentials},
+  author = {Tu, Nguyen Thien Phuc and Rowley, Christopher N.},
+  journal = {The Journal of Chemical Physics},
+  volume = {165},
+  pages = {054114},
+  year = {2026},
+  doi = {10.1063/5.0342595}
+}
+
+@misc{gameel2026correctedRelease,
+  author = {Gameel, Kareem M. and Neporozhnii, Ihor and Hoogland, Sjoerd and Voznyy, Oleksandr},
+  title = {The Mechanics of Delta Learning: Corrected Code and Data Release},
+  year = {2026},
+  howpublished = {\url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected}},
+  note = {Version v0.2.0-corrected}
 }

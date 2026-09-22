@@ -1,0 +1,61 @@
+descriptor_mlp:
+  hidden_widths: [512, 128]
+  activation: SiLU
+  dropout: 0.10
+  output_dimension: 1
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  loss: SmoothL1
+  smooth_l1_beta: 0.10
+  batch_size: 1024
+  max_epochs: 800
+  early_stopping_patience: 80
+  representative_seed: 101
+
+gemnet_t:
+  interaction_blocks: 3
+  atom_embedding_size: 512
+  edge_embedding_size: 512
+  triplet_embedding_size: 64
+  radial_basis_functions: 128
+  spherical_basis_functions: 7
+  cutoff_angstrom: 6.0
+  max_neighbours: 50
+  radial_basis: gaussian
+  angular_basis: spherical_harmonic
+  activation: SiLU
+  readout: extensive_sum
+  optimizer: AdamW
+  learning_rate: 0.0005
+  amsgrad: true
+  scheduler: ReduceLROnPlateau
+  ema_decay: 0.999
+  gradient_clip: 10
+  loss: MSE_energy
+  max_epochs: 80
+  seeds: [101, 102, 103]
+  checkpoint: best_validation_mae
+
+schnet:
+  hidden_channels: 128
+  filters: 128
+  interaction_blocks: 6
+  gaussian_radial_functions: 50
+  cutoff_angstrom: 6.0
+  readout: sum
+  graph_construction: on_the_fly
+  forces: false
+  periodic_boundaries: false
+  max_epochs: 80
+  seeds: [101, 102, 103]
+  checkpoint: best_validation_mae
+
+shared:
+  target_normalization: training_split_mean_and_standard_deviation
+  energy_only: true
+  fixed_tmqm_splits: true
+  primary_seeds: [101, 102, 103]
+  tmqm_evaluation_split: test
+  qm9_evaluation: all_primary_seeds
+  dftb_seed: 101

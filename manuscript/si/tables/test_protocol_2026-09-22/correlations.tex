@@ -1,0 +1,20 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\caption{Cross-target associations with test error. S: SchNet; G: GemNet. Roughness is logarithm-transformed. DFTB is excluded from every row; N counts targets, not seeds. $R^2$ is in-sample, not cross-validated.}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Comparison & N & S $r$ & S $R^2$ & S $\tau$ & G $r$ & G $R^2$ & G $\tau$ \\
+\midrule
+Shared test IQR & 13 & 0.972 & 0.946 & 0.872 & 0.951 & 0.905 & 0.821 \\
+Unnormalized error & 13 & 0.245 & 0.060 & 0.231 & 0.576 & 0.332 & 0.487 \\
+Unnormalized roughness & 13 & -0.633 & 0.401 & -0.564 & -0.587 & 0.345 & -0.590 \\
+Neither axis IQR-normalized & 13 & 0.259 & 0.067 & 0.128 & -0.137 & 0.019 & -0.154 \\
+Variance-normalized roughness & 13 & 0.436 & 0.190 & 0.410 & 0.334 & 0.111 & 0.282 \\
+DFT-BoE + seven residuals & 8 & 0.966 & 0.933 & 0.929 & 0.954 & 0.909 & 0.786 \\
+Six descriptor residuals & 6 & 0.919 & 0.844 & 0.867 & 0.905 & 0.820 & 0.733 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,13 @@
+feature_space,target_id,seed,split,n,mae_hartree
+boe,Delta_MLP_BoE-ref,101,test,7104,0.04490652470363419
+boe,Delta_MLP_BoE-ref,102,test,7104,0.045492623963319004
+boe,Delta_MLP_BoE-ref,103,test,7104,0.0459257324789587
+bob,Delta_MLP_BoB-ref-BoE,101,test,7104,0.021123537656872825
+bob,Delta_MLP_BoB-ref-BoE,102,test,7104,0.021226029204305035
+bob,Delta_MLP_BoB-ref-BoE,103,test,7104,0.021307042131950667
+pre,Delta_MLP_PRE-ref-BoE,101,test,7104,0.018745975321153567
+pre,Delta_MLP_PRE-ref-BoE,102,test,7104,0.018509419391481007
+pre,Delta_MLP_PRE-ref-BoE,103,test,7104,0.018660372950724778
+pre_plus_a,Delta_MLP_PRE_plus_A-ref-BoE,101,test,7104,0.016335399225231226
+pre_plus_a,Delta_MLP_PRE_plus_A-ref-BoE,102,test,7104,0.016497994850574363
+pre_plus_a,Delta_MLP_PRE_plus_A-ref-BoE,103,test,7104,0.016734794870254917

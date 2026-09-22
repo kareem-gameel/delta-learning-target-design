@@ -1,19 +1,14 @@
-name: deltaml-paper-analysis
+name: delta-target-design
 channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - numpy
-  - scipy
-  - pandas
-  - scikit-learn
-  - matplotlib
-  - seaborn
-  - pyarrow
-  - joblib
+  - matplotlib>=3.7
+  - numpy>=1.24
+  - pandas>=2.0
+  - scikit-learn>=1.3
+  - scipy>=1.10
   - pyyaml
-  - tqdm
   - pip
   - pip:
-      - fairchem-core
-
+      - -e .

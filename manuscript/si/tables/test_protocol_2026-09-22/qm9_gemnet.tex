@@ -1,0 +1,28 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\caption{GemNet QM9 native-target MAEs (Ha). Main targets: three independent seed scores, mean $\pm$ sample SD; DFTB$^\dagger$: seed 101. Native cohorts differ as listed. Shifts are estimated from the evaluated QM9 labels, not a separate calibration set.}
+\begin{tabular}{lrrr}
+\toprule
+Target & N & Raw MAE & Oracle-shift MAE \\
+\midrule
+\(E_{\rm ref}^{\rm DFT}\) & 130,807 & 1.060215 $\pm$ 0.018798 & 0.041115 $\pm$ 0.020489 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 130,807 & 0.248256 $\pm$ 0.006282 & 0.016878 $\pm$ 0.002639 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 130,807 & 0.478472 $\pm$ 0.004472 & 0.031996 $\pm$ 0.000350 \\
+\(E_{\rm ref}^{\rm xTB}\) & 130,807 & 0.988524 $\pm$ 0.003253 & 0.024332 $\pm$ 0.002402 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 130,807 & 0.280595 $\pm$ 0.003342 & 0.017877 $\pm$ 0.000265 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 130,807 & 0.052928 $\pm$ 0.002964 & 0.006344 $\pm$ 0.000454 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 130,807 & 0.024815 $\pm$ 0.000231 & 0.006029 $\pm$ 0.000117 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 130,807 & 0.265518 $\pm$ 0.002632 & 0.018540 $\pm$ 0.001494 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 130,807 & 0.253024 $\pm$ 0.005363 & 0.034020 $\pm$ 0.000691 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 128,988 & 0.263566 $\pm$ 0.000964 & 0.019325 $\pm$ 0.000974 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 128,988 & 0.214647 $\pm$ 0.000882 & 0.060508 $\pm$ 0.000347 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 128,988 & 0.254705 $\pm$ 0.002866 & 0.033508 $\pm$ 0.001345 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 128,988 & 0.214623 $\pm$ 0.000429 & 0.065508 $\pm$ 0.000444 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 130,797 & 0.306466 & 0.015873 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 130,797 & 0.056495 & 0.012578 \\
+\bottomrule
+\end{tabular}
+\end{table}

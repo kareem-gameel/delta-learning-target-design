@@ -1,0 +1,37 @@
+{
+  "inputs": {
+    "target_registry.csv": {
+      "path": "si/data/test_protocol_2026-09-22/target_registry.csv",
+      "sha256": "17a99894529a130f0d5cbc6dcb774792c4aebdb8d37d3154411d066a7c8721e1"
+    },
+    "roughness.csv": {
+      "path": "si/data/test_protocol_2026-09-22/roughness.csv",
+      "sha256": "167f7cb398155124a66ceba03db02484290e95d809997290bbb26261be689982"
+    },
+    "baseline_metrics.csv": {
+      "path": "si/data/test_protocol_2026-09-22/baseline_metrics.csv",
+      "sha256": "0d03a5cd3822698c302106ee6979f78b1d64000f2ce2c8150fefbc871962b260"
+    },
+    "tmqm_final_ledger.csv": {
+      "path": "si/data/test_protocol_2026-09-22/tmqm_final_ledger.csv",
+      "sha256": "5f0cd4592e1fb86fa6181081f6bb345a5d8fefc2bba330f3cdc358172f5d15a7"
+    },
+    "extended_metrics_per_seed.csv": {
+      "path": "si/data/test_protocol_2026-09-22/extended_metrics_per_seed.csv",
+      "sha256": "a9f2d6dee8cb94b0ee955d444c995ad6b7addd977187bbf1fa98a959ab875fd0"
+    },
+    "roughness_metadata.json": {
+      "path": "si/data/test_protocol_2026-09-22/roughness_metadata.json",
+      "sha256": "e4ff49ce73c8c9f1bd1438db0f2b134d2a2c0b03bebfbcc94ff1c2e027bd8df6"
+    },
+    "tmqm_test_targets.csv": {
+      "path": "si/data/test_protocol_2026-09-22/tmqm_test_targets.csv",
+      "sha256": "b608b341c13bec399500a00fc810fc94406af89ac8342146b0e4c9786cf67c6f"
+    }
+  },
+  "scale_and_roughness": "Corrected train-only targets; newly built 7104-molecule test graph, or 7068 DFTB-valid test molecules, normalized by the matching test IQR. No baseline or GNN refitting.",
+  "standalone_baseline_mae": "Test mean absolute residual for each frozen baseline, on the same test IDs as its GNN.",
+  "gnn_uncertainty": "Test MAE at each best-validation checkpoint; sample SD across seeds 101, 102, and 103. Canonical baseline fit seed remains 101.",
+  "dftb_control": "Seed 101 only, with no seed SD; magenta dagger-labelled row. Local ticks use DFTB-valid parent IQR, roughness, and direct seed-101 test MAE. Training cohorts are not equalized.",
+  "pooled_calculations": "None in this figure; DFTB is a display-only control, not included in primary-panel aggregates."
+}

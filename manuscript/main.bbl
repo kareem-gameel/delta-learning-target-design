@@ -1,0 +1,213 @@
+\begin{thebibliography}{10}
+
+\bibitem{behler2007generalized}
+J{\"o}rg Behler and Michele Parrinello.
+\newblock Generalized neural-network representation of high-dimensional
+  potential-energy surfaces.
+\newblock {\em Physical Review Letters}, 98(14):146401, 2007.
+
+\bibitem{bartok2010gap}
+Albert~P. Bart{\'o}k, Mike~C. Payne, Risi Kondor, and G{\'a}bor Cs{\'a}nyi.
+\newblock Gaussian approximation potentials: The accuracy of quantum mechanics,
+  without the electrons.
+\newblock {\em Physical Review Letters}, 104(13):136403, 2010.
+
+\bibitem{gasteiger2022gemnetoc}
+Johannes Gasteiger, Muhammed Shuaibi, Anuroop Sriram, Stephan G{\"u}nnemann,
+  Zachary Ulissi, C.~Lawrence Zitnick, and Abhishek Das.
+\newblock {GemNet-OC}: Developing graph neural networks for large and diverse
+  molecular simulation datasets.
+\newblock {\em Transactions on Machine Learning Research}, 2022.
+
+\bibitem{schutt2023schnetpack2}
+Kristof~T. Sch{\"u}tt, Stefaan S.~P. Hessmann, Niklas W.~A. Gebauer, Jonas
+  Lederer, and Michael Gastegger.
+\newblock {SchNetPack} 2.0: A neural network toolbox for atomistic machine
+  learning.
+\newblock {\em Journal of Chemical Physics}, 158(14):144801, 2023.
+
+\bibitem{batzner2022nequip}
+Simon Batzner, Albert Musaelian, Lixin Sun, Mario Geiger, Jonathan~P. Mailoa,
+  Mordechai Kornbluth, Nicola Molinari, Tess~E. Smidt, and Boris Kozinsky.
+\newblock {E(3)}-equivariant graph neural networks for data-efficient and
+  accurate interatomic potentials.
+\newblock {\em Nature Communications}, 13:2453, 2022.
+
+\bibitem{ramakrishnan2015delta}
+Raghunathan Ramakrishnan, Pavlo~O. Dral, Matthias Rupp, and O.~Anatole von
+  Lilienfeld.
+\newblock Big data meets quantum chemistry approximations: The $\delta$-machine
+  learning approach.
+\newblock {\em Journal of Chemical Theory and Computation}, 11(5):2087--2096,
+  2015.
+
+\bibitem{chen2023solutiondelta}
+Xu~Chen, Pinyuan Li, Eugen Hruska, and Fang Liu.
+\newblock $\delta$-machine learning for quantum chemistry prediction of
+  solution-phase molecular properties at the ground and excited states.
+\newblock {\em Physical Chemistry Chemical Physics}, 25(19):13417--13428, 2023.
+
+\bibitem{dral2020hierarchical}
+Pavlo~O. Dral, Alec Owens, Alexey Dral, and G{\'a}bor Cs{\'a}nyi.
+\newblock Hierarchical machine learning of potential energy surfaces.
+\newblock {\em Journal of Chemical Physics}, 152(20):204110, 2020.
+
+\bibitem{grumet2024dielectric}
+Manuel Grumet, Clara von Scarpatetti, Tom{\'a}{\v{s}} Bu{\v{c}}ko, and David~A.
+  Egger.
+\newblock Delta machine learning for predicting dielectric properties and raman
+  spectra.
+\newblock {\em The Journal of Physical Chemistry C}, 128(15):6464--6470, 2024.
+
+\bibitem{chang2025activation}
+Han-Chung Chang, Ming-Hsuan Tsai, and Yi-Pei Li.
+\newblock Enhancing activation energy predictions under data constraints using
+  graph neural networks.
+\newblock {\em Journal of Chemical Information and Modeling}, 65(3):1367--1377,
+  2025.
+
+\bibitem{atz2022deltaqml}
+Kenneth Atz, Clemens Isert, Markus N.~A. B{\"o}cker, Jos{\'e} Jim{\'e}nez-Luna,
+  and Gisbert Schneider.
+\newblock $\delta$-quantum machine-learning for medicinal chemistry.
+\newblock {\em Physical Chemistry Chemical Physics}, 24:10775--10783, 2022.
+
+\bibitem{krug2025aha}
+Simon~L{\'e}on Krug, Danish Khan, and O.~Anatole von Lilienfeld.
+\newblock Alchemical harmonic approximation based potential for iso-electronic
+  diatomics: Foundational baseline for $\delta$-machine learning.
+\newblock {\em The Journal of Chemical Physics}, 162(4):044101, 2025.
+
+\bibitem{belkin2006manifold}
+Mikhail Belkin, Partha Niyogi, and Vikas Sindhwani.
+\newblock Manifold regularization: A geometric framework for learning from
+  labeled and unlabeled examples.
+\newblock {\em Journal of Machine Learning Research}, 7:2399--2434, 2006.
+
+\bibitem{gasteiger2021gemnet}
+Johannes Gasteiger, Florian Becker, and Stephan G{\"u}nnemann.
+\newblock {GemNet}: Universal directional graph neural networks for molecules.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~34, pages 6790--6802, 2021.
+
+\bibitem{balcells2020tmqm}
+David Balcells and Bastian~Bjerkem Skjelstad.
+\newblock {tmQM} dataset: Quantum geometries and properties of 86k transition
+  metal complexes.
+\newblock {\em Journal of Chemical Information and Modeling},
+  60(12):6135--6146, 2020.
+
+\bibitem{ramakrishnan2014quantum}
+Raghunathan Ramakrishnan, Pavlo~O. Dral, Matthias Rupp, and O.~Anatole von
+  Lilienfeld.
+\newblock Quantum chemistry structures and properties of 134 kilo molecules.
+\newblock {\em Scientific Data}, 1:140022, 2014.
+
+\bibitem{tran2023oc22}
+Richard Tran, Janice Lan, Muhammed Shuaibi, Brandon~M. Wood, Siddharth Goyal,
+  Abhishek Das, Javier Heras-Domingo, Adeesh Kolluru, Ammar Rizvi, Nima Shoghi,
+  Anuroop Sriram, F{\'e}lix Therrien, Jehad Abed, Oleksandr Voznyy, Edward~H.
+  Sargent, Zachary~W. Ulissi, and C.~Lawrence Zitnick.
+\newblock The open catalyst 2022 ({OC22}) dataset and challenges for oxide
+  electrocatalysts.
+\newblock {\em ACS Catalysis}, 13(5):3066--3084, 2023.
+
+\bibitem{pelaez2024torchmdnet2}
+Raul~P. Pelaez, Guillem Simeon, Raimondas Galvelis, Antonio Mirarchi, Peter
+  Eastman, Stefan Doerr, Philipp Th{\"o}lke, Thomas~E. Markland, and Gianni
+  De~Fabritiis.
+\newblock {TorchMD-Net} 2.0: Fast neural network potentials for molecular
+  simulations.
+\newblock {\em Journal of Chemical Theory and Computation}, 20(10):4076--4087,
+  2024.
+
+\bibitem{bannwarth2019gfn2xtb}
+Christoph Bannwarth, Sebastian Ehlert, and Stefan Grimme.
+\newblock {GFN2-xTB}: An accurate and broadly parametrized self-consistent
+  tight-binding quantum chemical method with multipole electrostatics and
+  density-dependent dispersion contributions.
+\newblock {\em Journal of Chemical Theory and Computation}, 15(3):1652--1671,
+  2019.
+
+\bibitem{elstner1998sccdftb}
+Marcus Elstner, Dirk Porezag, Gerd Jungnickel, Jens Elsner, Michael Haugk,
+  Thomas Frauenheim, Sandor Suhai, and Gotthard Seifert.
+\newblock Self-consistent-charge density-functional tight-binding method for
+  simulations of complex materials properties.
+\newblock {\em Physical Review B}, 58(11):7260--7268, 1998.
+
+\bibitem{hourahine2020dftbplus}
+Ben Hourahine, Balint Aradi, Volker Blum, Francesca Bonafe, Alexander Buccheri,
+  Carlos Camacho, Cesar Cevallos, Mael~Y. Deshaye, Traian Dumitric{\u{a}},
+  Alejandro Dominguez, Sebastian Ehlert, Marcus Elstner, Toma~S. van~der Heide,
+  Jan Hermann, Stephan Irle, Julian~J. Kranz, Carsten K{\"o}hler, Tim
+  Kowalczyk, Tom{\'a}{\v{s}} Kuba{\v{r}}, I.-S. Lee, Vitali Lutsker,
+  Reinhard~J. Maurer, Seung~Kyu Min, Iain Mitchell, Christian Negre, Thomas~A.
+  Niehaus, Anders M.~N. Niklasson, Alexander~J. Page, Alessandro Pecchia,
+  Gabriele Penazzi, Mats~P. Persson, Jan {\v{R}}ez{\'a}{\v{c}}, Carmen~G.
+  S{\'a}nchez, Michael Sternberg, Meike St{\"o}hr, Frank Stuckenberg, Alexandre
+  Tkatchenko, Victor W.-z. Yu, and Thomas Frauenheim.
+\newblock {DFTB+}, a software package for efficient approximate density
+  functional theory based atomistic simulations.
+\newblock {\em The Journal of Chemical Physics}, 152(12):124101, 2020.
+
+\bibitem{pearson1897spurious}
+Karl Pearson.
+\newblock Mathematical contributions to the theory of evolution---on a form of
+  spurious correlation which may arise when indices are used in the measurement
+  of organs.
+\newblock {\em Proceedings of the Royal Society of London}, 60:489--498, 1897.
+
+\bibitem{phipson2010permutation}
+Belinda Phipson and Gordon~K. Smyth.
+\newblock Permutation p-values should never be zero: Calculating exact p-values
+  when permutations are randomly drawn.
+\newblock {\em Statistical Applications in Genetics and Molecular Biology},
+  9(1):39, 2010.
+
+\bibitem{tu2026transferable}
+Nguyen Thien~Phuc Tu and Christopher~N. Rowley.
+\newblock {$\Delta$}-learning for transferable machine learning interatomic
+  potentials.
+\newblock {\em The Journal of Chemical Physics}, 165:054114, 2026.
+
+\bibitem{mardirossian2016wb97mv}
+Narbe Mardirossian and Martin Head-Gordon.
+\newblock {$\omega$B97M-V}: A combinatorially optimized, range-separated
+  hybrid, meta-{GGA} density functional with {VV10} nonlocal correlation.
+\newblock {\em The Journal of Chemical Physics}, 144(21):214110, 2016.
+
+\bibitem{rappoport2010def2svpd}
+Dmitrij Rappoport and Filipp Furche.
+\newblock Property-optimized {Gaussian} basis sets for molecular response
+  calculations.
+\newblock {\em The Journal of Chemical Physics}, 133(13):134105, 2010.
+
+\bibitem{parrish2017psi4}
+Robert~M. Parrish, Lori~A. Burns, Daniel G.~A. Smith, Andrew~C. Simmonett,
+  A.~Eugene DePrince, Edward~G. Hohenstein, U{\u{g}}ur Bozkaya, Alexander~Yu.
+  Sokolov, Roberto Di~Remigio, Ryan~M. Richard, J{\'e}r{\^o}me~F. Gonthier,
+  Andrew~M. James, Harley~R. McAlexander, Ashutosh Kumar, Masaaki Saitow, Xiao
+  Wang, Benjamin~P. Pritchard, Prakash Verma, Henry~F. Schaefer, Konrad
+  Patkowski, Rollin~A. King, Edward~F. Valeev, Francesco~A. Evangelista,
+  Justin~M. Turney, T.~Daniel Crawford, and C.~David Sherrill.
+\newblock {Psi4} 1.1: An open-source electronic structure program emphasizing
+  automation, advanced libraries, and interoperability.
+\newblock {\em Journal of Chemical Theory and Computation}, 13(7):3185--3197,
+  2017.
+
+\bibitem{dftborg2025ptbp}
+{DFTB.org}.
+\newblock Periodic table baseline parameter set ({PTBP}).
+\newblock \url{https://dftb.org/parameters/download.html}, 2025.
+\newblock Accessed 26 July 2026.
+
+\bibitem{gameel2026correctedRelease}
+Kareem~M. Gameel, Ihor Neporozhnii, Sjoerd Hoogland, and Oleksandr Voznyy.
+\newblock The mechanics of delta learning: Corrected code and data release.
+\newblock
+  \url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected},
+  2026.
+\newblock Version v0.2.0-corrected.
+
+\end{thebibliography}

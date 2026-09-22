@@ -1,2 +1,0 @@
-/Users/kareem/PycharmProjects/deltaML_Paper/New_Analysis/manuscript_support/inputs/tmqm_val_gemnet_dft_ref_predictions.csv
-/Users/kareem/PycharmProjects/deltaML_Paper/New_Analysis/manuscript_support/inputs/tmqm_val_gemnet_dft_ref_boe_predictions.csv

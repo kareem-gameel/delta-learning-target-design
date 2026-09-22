@@ -1,0 +1,293 @@
+{
+  "atomic_references": {
+    "historical_comparison_sha256": "e7be648f56a5b55679f7037481032109f7c6b5c11251515ff0e6a9c478136f64",
+    "historical_comparison_source": "/scratch/gameelka/DeltaML_Pre_Sep15_2026-09-15/deltaML_project/New_Analysis/dftb/outputs/dftb_standard_atomic_energies.csv",
+    "historical_table_used_for_target_generation": false,
+    "max_abs_difference_hartree": 8.881784197001252e-16,
+    "method": "sequential standard-molecule subtraction in the fixed 44-element order",
+    "recomputed_rows": 44
+  },
+  "boe_fit": {
+    "alpha_grid": [
+      1e-06,
+      2.976351441631319e-06,
+      8.858667904100832e-06,
+      2.6366508987303556e-05,
+      7.847599703514606e-05,
+      0.00023357214690901212,
+      0.0006951927961775605,
+      0.002069138081114788,
+      0.00615848211066026,
+      0.01832980710832434,
+      0.05455594781168514,
+      0.1623776739188721,
+      0.4832930238571752,
+      1.438449888287663,
+      4.281332398719387,
+      12.74274985703132,
+      37.92690190732246,
+      112.88378916846884,
+      335.9818286283774,
+      1000.0
+    ],
+    "alpha_selection": {
+      "best_alpha": 37.92690190732246,
+      "best_cv_mae_hartree": 0.06348705234534832,
+      "boundary_check_passed": true,
+      "cv": "KFold(n_splits=5, shuffle=True, random_state=42)",
+      "method": "GridSearchCV",
+      "scoring": "neg_mean_absolute_error"
+    },
+    "created_utc": "2026-09-21T14:52:27.351995+00:00",
+    "element_vocabulary": [
+      "Ag",
+      "As",
+      "Au",
+      "B",
+      "Br",
+      "C",
+      "Cd",
+      "Cl",
+      "Co",
+      "Cr",
+      "Cu",
+      "F",
+      "Fe",
+      "H",
+      "Hf",
+      "Hg",
+      "I",
+      "Ir",
+      "La",
+      "Mn",
+      "Mo",
+      "N",
+      "Nb",
+      "Ni",
+      "O",
+      "Os",
+      "P",
+      "Pd",
+      "Pt",
+      "Re",
+      "Rh",
+      "Ru",
+      "S",
+      "Sc",
+      "Se",
+      "Si",
+      "Ta",
+      "Tc",
+      "Ti",
+      "V",
+      "W",
+      "Y",
+      "Zn",
+      "Zr"
+    ],
+    "failed_split_counts": {
+      "test": 36,
+      "train": 290,
+      "validation": 36
+    },
+    "fit_scope": "successful DFTB rows in the frozen tmQM training split only",
+    "model_equation": "BoE_fit_DFTB_ref = intercept + sum_e n_e * beta_e",
+    "model_id": "DFTB_ref_BoE_train_only",
+    "n_features": 44,
+    "preprocessing": "StandardScaler(with_mean=True, with_std=True), fit separately inside each CV fold",
+    "regressor": "Ridge(fit_intercept=True)",
+    "reported_metrics": {
+      "train": {
+        "mae_hartree": 0.06341994116448922,
+        "mean_signed_residual_hartree": 2.8753951623128763e-14,
+        "n": 56540,
+        "r2": 0.9876292984940935,
+        "residual_std_population_hartree": 0.09716690495923405,
+        "rmse_hartree": 0.09716690495923405
+      },
+      "validation": {
+        "mae_hartree": 0.06402530046688949,
+        "mean_signed_residual_hartree": 0.0016334132469011373,
+        "n": 7068,
+        "r2": 0.9862999447055172,
+        "residual_std_population_hartree": 0.09981717328266494,
+        "rmse_hartree": 0.09983053701636943
+      }
+    },
+    "residual_equation": "DFTB_ref-BoE = DFTB_ref - BoE_fit_DFTB_ref",
+    "schema_version": 1,
+    "script": {
+      "path": "/scratch/gameelka/Sep15_DeltaML/code/dftb_branch/build_corrected_dftb_targets.py",
+      "sha256": "b71c04600abbc4a34bc7b59702b2cea3de8a714297d0464620f34c08dc12a33d"
+    },
+    "software": {
+      "joblib": "1.5.3",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "platform": "Linux-5.14.0-687.39.1.el9_8.x86_64-x86_64-AMD_EPYC_9655_96-Core_Processor-with-glibc2.34",
+      "python": "3.10.19 | packaged by conda-forge | (main, Jan 26 2026, 23:45:08) [GCC 14.3.0]",
+      "scikit_learn": "1.7.2",
+      "scipy": "1.15.2"
+    },
+    "split_counts": {
+      "test": 7068,
+      "train": 56540,
+      "validation": 7068
+    },
+    "target_unit": "hartree",
+    "test_policy": "Frozen test labels were generated, but test metrics were not calculated or used."
+  },
+  "branch_id": "dftb_train_only_2026-09-21",
+  "clean_parent_inputs": {
+    "E_ref": {
+      "test": "68d1c1a9fe77236fe0b8056ad9022bd30caf01dfdd5b5aa87a6c5a1d7c446352",
+      "train": "48b128f6f9dc16891bf3f382025a10de6a06fc0c618a9a55acb28830afa76b0d",
+      "validation": "068748856e5c834566830d7a3bbed70ebbd34a8a623b256cdd87da8b20b69655"
+    },
+    "E_ref-BoE": {
+      "test": "959c7c0d293503d0c50ceae2baebb67b0e112b8496150773690ecc5d3efad673",
+      "train": "7b597128984c0983857d03324131b595cd2c7560f153e4574014961cf98c8e39",
+      "validation": "dc0f42ff5e0c80e2733577b1241998ffb312480eacac670c163bb1b3aac6d8dd"
+    },
+    "E_ref-BoE_fit_summary": {
+      "sha256": "22ce60b2ed178b5f45281a78421386be7b07ab9fa22d26bedf7faa1a596c97f0"
+    },
+    "registry": {
+      "sha256": "02eeab3008d4c7a8c368dc8b53cd5785ae8d85e6f47abae8fd285f13fe5a0989"
+    }
+  },
+  "created_utc": "2026-09-21T14:52:27.405503+00:00",
+  "historical_fitted_residuals_used": false,
+  "historical_root_role": "immutable raw DFTB calculation provenance only",
+  "imported_inputs": {
+    "dftb_standard_qchem_molecules_raw.csv": {
+      "copied_relative_path": "inputs/dftb_standard_qchem_molecules_raw.csv",
+      "copied_sha256": "7f7da504ad96ea60da70aa22e7278169b0a84604a83d3088a867ab35549729ce",
+      "role": "immutable DFTB calculation input",
+      "source_path": "/scratch/gameelka/DeltaML_Pre_Sep15_2026-09-15/deltaML_project/New_Analysis/dftb/outputs/dftb_standard_qchem_molecules_raw.csv",
+      "source_sha256": "7f7da504ad96ea60da70aa22e7278169b0a84604a83d3088a867ab35549729ce"
+    },
+    "standard_manifest.csv": {
+      "copied_relative_path": "inputs/dftb_standard_qchem_molecules_manifest.csv",
+      "copied_sha256": "5a35c25e908d7f4a3e359de1eb15372e97e214803aa8c231ccef1167a6f70122",
+      "role": "immutable DFTB calculation input",
+      "source_path": "/scratch/gameelka/DeltaML_Pre_Sep15_2026-09-15/deltaML_project/New_Analysis/dftb/prepared/dftb_standard_qchem_molecules/manifest.csv",
+      "source_sha256": "5a35c25e908d7f4a3e359de1eb15372e97e214803aa8c231ccef1167a6f70122"
+    },
+    "tmqm_neutral_dftb_raw.csv": {
+      "copied_relative_path": "inputs/tmqm_neutral_dftb_raw.csv",
+      "copied_sha256": "7f16472c442b8c0826aa0b6c952db872f717c2e2b1e98080fcf0f280534ba939",
+      "role": "immutable DFTB calculation input",
+      "source_path": "/scratch/gameelka/DeltaML_Pre_Sep15_2026-09-15/deltaML_project/New_Analysis/dftb/outputs/tmqm_neutral_dftb_raw.csv",
+      "source_sha256": "7f16472c442b8c0826aa0b6c952db872f717c2e2b1e98080fcf0f280534ba939"
+    }
+  },
+  "project_root": "/scratch/gameelka/Sep15_DeltaML",
+  "purpose": "Correct the historical DFTB branch by fitting every learned BoE quantity on training data only and add the missing exact-mask DFT GNN control.",
+  "raw_dftb": {
+    "failed": 362,
+    "failed_split_counts": {
+      "test": 36,
+      "train": 290,
+      "validation": 36
+    },
+    "failure_handling": "exclude from every DFTB-derived target; no imputation",
+    "rows": 71038,
+    "successful": 70676,
+    "successful_split_counts": {
+      "test": 7068,
+      "train": 56540,
+      "validation": 7068
+    }
+  },
+  "registry": {
+    "relative_path": "manifests/dftb_target_registry.csv",
+    "sha256": "a34d3332a8bd114e3a2473d9b3fd60c002dc679b99ca7623dab1a074d715ba76"
+  },
+  "schema_version": 1,
+  "target_generation": {
+    "development_statistics": {
+      "DFTB_ref-BoE": {
+        "train": {
+          "iqr_hartree": 0.08892071688869807,
+          "maximum_hartree": 2.2499516737941656,
+          "mean_hartree": 2.8753951623128763e-14,
+          "minimum_hartree": -1.016845709207641,
+          "n": 56540,
+          "std_population_hartree": 0.09716690495923405,
+          "std_sample_hartree": 0.09716776424641031
+        },
+        "validation": {
+          "iqr_hartree": 0.08857964169125185,
+          "maximum_hartree": 1.6129636404419108,
+          "mean_hartree": 0.0016334132469011373,
+          "minimum_hartree": -0.4582403697636108,
+          "n": 7068,
+          "std_population_hartree": 0.09981717328266494,
+          "std_sample_hartree": 0.09982423523557502
+        }
+      },
+      "Delta_DFTB-ref-BoE": {
+        "train": {
+          "iqr_hartree": 0.0790361277137992,
+          "maximum_hartree": 0.6856796811848389,
+          "mean_hartree": -0.0007476419792288814,
+          "minimum_hartree": -1.1684301793187597,
+          "n": 56540,
+          "std_population_hartree": 0.0858981714452027,
+          "std_sample_hartree": 0.08589893107830225
+        },
+        "validation": {
+          "iqr_hartree": 0.08030687720121579,
+          "maximum_hartree": 0.4627565687626847,
+          "mean_hartree": -0.001855312023890681,
+          "minimum_hartree": -0.8247820592427582,
+          "n": 7068,
+          "std_population_hartree": 0.08781616260404869,
+          "std_sample_hartree": 0.087822375498931
+        }
+      },
+      "E_ref-BoE_DFTB-valid": {
+        "train": {
+          "iqr_hartree": 0.0833244110006045,
+          "maximum_hartree": 2.4950773052736546,
+          "mean_hartree": -0.0007476419792001275,
+          "minimum_hartree": -2.1852758885264008,
+          "n": 56540,
+          "std_population_hartree": 0.08918211701745199,
+          "std_sample_hartree": 0.08918290569184208
+        },
+        "validation": {
+          "iqr_hartree": 0.0845370251020497,
+          "maximum_hartree": 1.78597807283973,
+          "mean_hartree": -0.00022189877698954388,
+          "minimum_hartree": -0.998624613686901,
+          "n": 7068,
+          "std_population_hartree": 0.09070733679877951,
+          "std_sample_hartree": 0.09071375424098915
+        }
+      }
+    },
+    "exact_common_mask_within_each_split": true,
+    "identity_max_abs_error_hartree": {
+      "test": {
+        "DFTB_ref-BoE_max_abs_hartree": 0.0,
+        "Delta_DFTB-ref-BoE_max_abs_hartree": 0.0,
+        "E_ref-BoE_max_abs_hartree": 8.586881206085195e-16
+      },
+      "train": {
+        "DFTB_ref-BoE_max_abs_hartree": 0.0,
+        "Delta_DFTB-ref-BoE_max_abs_hartree": 0.0,
+        "E_ref-BoE_max_abs_hartree": 9.71445146547012e-16
+      },
+      "validation": {
+        "DFTB_ref-BoE_max_abs_hartree": 0.0,
+        "Delta_DFTB-ref-BoE_max_abs_hartree": 0.0,
+        "E_ref-BoE_max_abs_hartree": 9.749145934989656e-16
+      }
+    },
+    "row_order": "canonical Sep15 split order after DFTB-success filtering",
+    "target_count": 3,
+    "test_statistics": "intentionally_not_calculated"
+  }
+}

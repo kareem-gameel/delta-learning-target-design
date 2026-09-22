@@ -1,0 +1,8 @@
+{
+  "linear_mae_improvement": 1.4140648830081308,
+  "linear_iqr_shrinkage": 10.86723710018978,
+  "linear_nmae_increase": 7.685104998203461,
+  "mlp_vs_linear_iqr_shrinkage": 1.37879815011859,
+  "mlp_vs_linear_nmae_increase": 3.266077116874685,
+  "mlp_vs_linear_mae_increase": 2.3687855373128914
+}

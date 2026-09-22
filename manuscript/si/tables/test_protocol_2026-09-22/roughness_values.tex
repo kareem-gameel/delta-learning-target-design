@@ -1,0 +1,28 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\caption{Architecture-proxy roughness and normalized test errors. Primary graph: 7,104 common test molecules; DFTB$^\dagger$ graph: 7,068 DFTB-valid test molecules. Each error and roughness uses its matching test IQR. DFTB positions are visual controls, not members of the regression.}
+\begin{tabular}{lrrrrr}
+\toprule
+Target & Graph IQR (Ha) & PRE $D_{\rm IQR}$ & PRE+A $D_{\rm IQR}$ & SchNet $n$-MAE & GemNet $n$-MAE \\
+\midrule
+\(E_{\rm ref}^{\rm DFT}\) & 0.918321 & 0.6036 & 0.5477 & 0.0217 & 0.0145 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.084504 & 1.1522 & 1.1271 & 0.1852 & 0.1118 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.061288 & 1.7086 & 1.6583 & 0.4026 & 0.3652 \\
+\(E_{\rm ref}^{\rm xTB}\) & 0.975633 & 0.5875 & 0.5330 & 0.0188 & 0.0120 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 0.086765 & 1.0771 & 1.0512 & 0.1615 & 0.0965 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 0.205796 & 0.3782 & 0.3637 & 0.0499 & 0.0403 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.051679 & 1.0005 & 0.9640 & 0.1852 & 0.1276 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 0.041208 & 1.9043 & 1.7533 & 0.3573 & 0.2675 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.025236 & 4.0925 & 3.7107 & 0.7666 & 0.7460 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 0.032934 & 3.9588 & 3.7353 & 0.4901 & 0.4055 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.019944 & 12.3036 & 10.6818 & 0.9165 & 0.9172 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.027351 & 3.7630 & 3.5243 & 0.5881 & 0.5012 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.017979 & 9.6504 & 8.5331 & 0.8600 & 0.8467 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 0.087331 & 1.1936 & 1.1725 & 0.1601 & 0.0969 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.079243 & 1.1839 & 1.1693 & 0.1529 & 0.1001 \\
+\bottomrule
+\end{tabular}
+\end{table}

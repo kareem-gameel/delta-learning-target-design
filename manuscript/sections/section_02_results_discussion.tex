@@ -1,269 +1,174 @@
-\section{Results \& Discussion}
-\label{sec:results-discussion}
+\section{Results}
+\label{sec:results}
 
-\subsection{Target Preprocessing in MLIPs}
-\label{sec:target-preprocessing-mlips}
+\subsection{Target shrinkage does not guarantee learnability}
+\label{sec:reference-correction}
 
-\subsubsection{Standard preprocessing already redesigns the target}
-\label{sec:standard-preprocessing-target-redesign}
+To examine whether target shrinkage and model-relative learnability are equivalent, we first test a standard target-preprocessing protocol used in machine-learning interatomic potentials (MLIPs) \cite{tran2023oc22,schutt2023schnetpack2,pelaez2024torchmdnet2}. These reference corrections are widely used to improve optimization and training stability. First, fixed element-wise atomic references are subtracted from the total DFT energy to yield the reference-corrected energy, \(E_{\rm ref}\). Next, a linear Bag-of-Elements (BoE) model fitted to elemental counts is subtracted, defining the residual target:
 
-We begin by examining the target preprocessing routinely applied in machine-learning interatomic potentials. Throughout this work, we use the aligned neutral subset of the tmQM dataset \cite{balcells2020tmqm}, containing 71,042 organometallic complexes randomly partitioned into training, validation, and test sets (Methods, Section~\ref{sec:methods-datasets-targets}). Following standard MLIP practice, raw DFT total energies are first transformed by subtracting the DFT energies of isolated atoms. Throughout this work, we refer to the resulting target as the reference-corrected energy, \(E_{\rm ref}\). Related atom-reference corrections are built into widely used MLIP toolkits, including SchNetPack single-atom reference energies and TorchMD-Net Atomref priors \cite{schutt2023schnetpack2,pelaez2024torchmdnet2}.
+\begin{equation}
+E_{\rm ref,BoE}=E_{\rm ref}-E_{\rm BoE}.
+\label{eq:boe-reference-correction}
+\end{equation}
 
-A second preprocessing step then fits a linear regression using the elemental composition of each molecule as input. This regression acts as a simple composition-based baseline, commonly referred to as the Bag-of-Elements (BoE) model, producing the final training target
-\[
-  E_{\rm ref,BoE} = E_{\rm ref} - E_{\rm BoE}.
-\]
-This BoE-corrected target represents the standard training target used by many modern MLIP implementations and therefore serves as the natural starting point for the present study. The closest large-scale precedents are OC22, which fits per-element energy coefficients and subtracts the corresponding linear reference from total DFT energies, and OMol25/UMA, which first apply a heat-of-formation-like reference based on isolated-atom DFT energies and tabulated atomic formation enthalpies, then apply the same OC22-style linear reference \cite{tran2023oc22,levine2025omol25,wood2025uma}. ODAC25 likewise applies the OC22 linear-reference protocol to total DFT energies, explicitly to improve training stability and convergence \cite{sriram2025odac25}. Viewed from this perspective, the BoE correction is not merely a normalization step. It is a predictive baseline whose contribution is subtracted from the reference target before learning. In other words, the standard MLIP preprocessing pipeline already constitutes a form of delta learning, where the graph neural network is trained on the residual remaining after removing a simpler model.
+Because the subtracted references are added back at inference, this procedure constitutes stacked delta learning. The MAE of the residual prediction is exactly equal to that of the complete stacked prediction (SI Section~1).
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\linewidth]{fig_boe_target_preprocessing}
-  \caption{Target preprocessing in MLIPs as delta learning. Atom-reference correction defines \(E_{\rm ref}\), and the subsequent BoE correction subtracts a fitted composition baseline to define the residual target \(E_{\rm ref,BoE}\).}
-  \label{fig:boe-target-preprocessing}
+  \includegraphics[width=\linewidth]{fig01_reference_correction}
+  \caption{\textbf{Target scale and GemNet accuracy after BoE correction.} \textbf{a,} Test-set IQR for \(E_{\rm ref}\) and its linear- and MLP-BoE residuals. \textbf{b,} Mean GemNet test MAE. \textbf{c,} Normalized MAE, \(n\text{-MAE}_{\rm test}=\operatorname{MAE}_{\rm test}/\operatorname{IQR}_{\rm test}(y)\). Error bars show sample standard deviations across three seeds.}
+  \label{fig:reference-correction}
 \end{figure}
 
-The BoE baseline alone explains approximately \(98.5\%\) of the variance in \(E_{\rm ref}\) (Figure~\ref{fig:boe-target-preprocessing}a). By removing this dominant compositional contribution, the residual variance decreases from \(0.536\) to \(0.00825~{\rm Ha}^2\), a reduction by a factor of approximately \(65\) on the full aligned dataset. Reference corrections of this kind are typically justified as improving optimization, convergence, or numerical stability during training \cite{tran2023oc22,wood2025uma,sriram2025odac25}. However, our results show improvements that extend beyond the optimization process itself. Training GemNet on \(E_{\rm ref,BoE}\) and adding the BoE baseline back at inference improves held-out tmQM test performance from \(0.0139\) to \(0.0103~{\rm Ha}\) on the same full-target scale, as confirmed by the parity plots shown in Figure~S1. The same target transformation also improves out-of-distribution transfer to QM9 \cite{ramakrishnan2014quantum} after mean-shift calibration, reducing the MAE from \(0.0350\) to \(0.0156~{\rm Ha}\). Considering that the only difference between the two models is a simple linear-regression correction applied before training, the magnitude of this improvement is striking. A linear model containing only elemental counts substantially improves the performance of a graph neural network with approximately \(1.7\) million trainable parameters. This observation strongly suggests that redefining the target changes the learning problem itself.
+In addition to its conventional role in improving optimization and training stability, linear BoE correction reduces the mean tmQM test MAE by a factor of \(1.41\) (Fig.~\ref{fig:reference-correction}b). BoE correction is therefore a successful form of delta learning. However, this improvement could arise either from target shrinkage or from a transformation that makes the residual better aligned with GemNet's inductive bias and, consequently, easier to learn relative to its scale.
 
-\subsubsection{Target scale is not the same as learnability}
-\label{sec:target-scale-vs-learnability}
+To distinguish these effects, we use the normalized MAE, \(n\text{-MAE}_{\rm test}=\operatorname{MAE}_{\rm test}/\operatorname{IQR}_{\rm test}(y)\), where the interquartile range (IQR) measures the central scale of the test target. The \(n\)-MAE provides an empirical, model-dependent measure of learning difficulty after accounting for target scale. Under a pure rescaling, MAE and IQR change by the same factor, leaving \(n\)-MAE unchanged. An algebraic rescaling control confirms this invariance (SI Note~2). An increase in \(n\)-MAE after a target transformation therefore indicates that the transformed target is harder for the same model to learn relative to its own scale, whereas a decrease indicates improved model-relative learnability.
 
-A natural explanation is that the BoE correction helps because it leaves a substantially smaller-scale residual, and that this shrinkage in variance makes the target easier to optimize and smoother to learn. If this interpretation is conclusive, then constructing baselines that remove even more target variance should continue to improve model performance.
+For linear BoE correction, the \(n\)-MAE of \(E_{\rm ref,BoE}\) is \(7.7\)-fold larger than that of \(E_{\rm ref}\) (Fig.~\ref{fig:reference-correction}c), while the target IQR decreases by a factor of \(10.9\) (Fig.~\ref{fig:reference-correction}a). The reduction in absolute MAE therefore does not result from improved model-relative learnability. Instead, the substantial target shrinkage outweighs the increase in normalized learning difficulty.
 
-However, the delta-learning literature discussed above suggests that this expectation need not hold universally: lower-variance or more accurate baselines do not automatically produce more transferable residual models \cite{atz2022deltaqml,chen2023solutiondelta,krug2025aha}. Understanding why the variance-removal hypothesis may break down requires separating two effects that are often conflated: target scale and relative target roughness. Target scale controls the magnitude of the absolute error, whereas relative roughness controls how difficult the target is to learn relative to its own size.
+The linear BoE result demonstrated that substantial target shrinkage can improve absolute performance despite reducing normalized learnability. To test whether further target shrinkage continues to improve downstream performance, we replace linear BoE with a nonlinear MLP fitted to the same elemental-count inputs. This control increases baseline flexibility while holding its input information fixed. The MLP residual is \(1.38\)-fold smaller by IQR, but its \(n\)-MAE is \(3.27\)-fold larger, resulting in a \(2.37\)-fold increase in absolute MAE (Fig.~\ref{fig:reference-correction}). SchNet shows the same trend (SI Section~1). This result rejects the assumption that progressively removing more target variation necessarily produces progressively better residual learning.
 
-We illustrate this distinction using the \emph{Synthetic Target-Rescaling Test}, a one-dimensional experiment designed to isolate target scale from target shape. Starting from a target \(y(x)\) with a fixed envelope and oscillatory structure, we construct scaled targets \(0.75y(x)\), \(0.5y(x)\), and \(0.25y(x)\). Scaling changes only the amplitude of the function: the positions of peaks, valleys, oscillations, and rough regions remain identical. The learning problem is therefore not geometrically simplified; the same function is merely rescaled. For each target, the same small feed-forward neural network is trained from scratch under an identical optimization protocol, so the only changing factor is the amplitude of \(y(x)\) (Methods, Section~\ref{sec:methods-synthetic-rescaling}).
+These results establish the central problem addressed in this work: baseline accuracy and its accompanying residual scale reduction alone cannot predetermine the success of a target transformation. While the normalized error assesses scale-independent learnability of the target, it remains a post-hoc metric only available after training. A practical target-design strategy therefore requires a pre-training measure that estimates how a baseline transformation changes the normalized learnability of its residual.
+
+\subsection{Pre-training roughness quantifies model-relative learnability}
+\label{sec:pretraining-roughness}
+
+To evaluate whether a baseline residual will be learnable downstream, we measure its smoothness relative to structural information accessible to the target neural network. However, because the trained internal representations of message-passing networks such as SchNet and GemNet are learned during optimization, they are unavailable \textit{a priori}. We address this by constructing fixed, explicit geometric feature spaces, termed \textbf{representation proxies}, that approximate the geometric information available to each architecture:
+
+\begin{itemize}
+  \item \textbf{Pair-Radial Expansion (PRE):} a two-body feature space that expands element-resolved pairwise interatomic distances, \(r_{ij}\), using Gaussian radial basis functions up to a local spatial cutoff. By capturing distance distributions without explicit angular information, PRE serves as a representation proxy for pairwise message-passing architectures such as SchNet.
+  \item \textbf{PRE with angular terms (PRE+A):} an extended three-body feature space that augments PRE with central-element-resolved triplet angle distributions, \(\theta_{ijk}\). By capturing angular geometry in addition to pairwise distances, PRE+A serves as a proxy for directional, triplet-based architectures such as GemNet.
+\end{itemize}
+
+Detailed descriptor formulations, radial basis dimensions, and hyperparameter choices are provided in Methods (Sections~\ref{sec:methods-baselines} and~\ref{sec:methods-roughness-diagnostics}) and SI Methods.
+
+By mapping molecules into these proxy feature spaces, we can evaluate target variation before model optimization. We construct a \(k\)-nearest-neighbour graph connecting test molecules with similar standardized descriptor vectors. Edge weights, \(w_{ij}\), encode feature-space similarity through a locally scaled Gaussian kernel of cosine distance:
+\begin{equation}
+  w_{ij}=\exp\!\left(-\frac{d_{ij}^{2}}{\sigma_i\sigma_j}\right),
+  \label{eq:dirichlet-edge-weight}
+\end{equation}
+Here, \(d_{ij}\) is the cosine distance between standardized descriptor vectors for molecules \(i\) and \(j\), and \(\sigma_i\) is a local distance scale, defined as the distance from molecule \(i\) to its \(k\)-th nearest neighbour.
+
+Using these edge weights, we quantify target variation through the IQR-normalized graph Dirichlet roughness, \(D_{\rm IQR}\) \cite{belkin2006manifold}:
+\begin{equation}
+  D_{\rm IQR}(y)=\frac{1}{\sum_{\{i,j\}\in\mathcal E}w_{ij}}
+  \sum_{\{i,j\}\in\mathcal E}
+  w_{ij}\frac{(y_i-y_j)^2}{\operatorname{IQR}_{\rm test}(y)^2}.
+  \label{eq:dirichlet-roughness}
+\end{equation}
+Here, \(\mathcal E\) is the set of unique undirected graph edges. For targets with nonzero IQR, this formulation normalizes local squared target differences by the squared central target spread, making \(D_{\rm IQR}\) invariant to nonzero uniform target rescaling. A lower value indicates that molecules with similar proxy descriptors have similar target labels relative to this central spread. This provides an architecture-informed, pre-training diagnostic for assessing residual learnability without first training a downstream GNN; its predictive value is tested in the following comparisons.
+
+Applying this normalized roughness metric to the composition-corrected energy targets, we find that \(D_{\rm IQR}\) increases from \(0.548\) for \(E_{\rm ref}\) to \(1.127\) for linear-BoE and \(1.658\) for MLP-BoE. This ordering matches the post-training \(n\)-MAE ordering observed in Figure~\ref{fig:reference-correction}. The MLP-BoE residual is similarly rougher than linear-BoE in the SchNet-aligned PRE space (\(1.709\) versus \(1.152\); SI Note~6).
+
+In the following sections, we further test whether \(D_{\rm IQR}\) can serve as a reliable qualitative ordering proxy for target roughness and whether that roughness describes the intrinsic learnability assessed post-training using \(n\)-MAE.
+
+\subsection{Residual roughness guides target design beyond baseline accuracy}
+\label{sec:residual-design}
+
+To test whether \(D_{\rm IQR}\) reliably predicts downstream learnability, we systematically evaluated how different baseline physical approximations alter residual scale, roughness, and deep model performance. Our goal is to construct simple, computationally inexpensive baseline models that predict the atom- and composition-referenced DFT energy, \(E_{\rm ref,BoE}^{\rm DFT}\). Subtraction of these predictions, \(\widehat{E}_b\), yields the transformed residual target, \(\Delta^b\), on which the downstream GNN models are trained.
+
+We compare three descriptor-based baselines, BoB, PRE, and PRE+A, that capture progressively richer structural information. Alongside these, we evaluate xTB as our primary semiempirical comparison and DFTB as a supporting control. Table~\ref{tab:baseline-models} summarizes the five approaches:
+
+\begin{enumerate}
+  \item \textbf{Bag-of-Bonds (BoB):} a simple global descriptor tracking RDKit-derived typed-bond counts to capture basic compositional and functional-group variation, rather than the Coulomb-matrix entries used in the conventional BoB descriptor.
+  \item \textbf{Pair-Radial Expansion (PRE):} repurposing the pairwise geometric representation introduced in Section~\ref{sec:pretraining-roughness} as an explicit input descriptor to capture local two-body geometry.
+  \item \textbf{PRE with angular terms (PRE+A):} repurposing the three-body geometric representation from Section~\ref{sec:pretraining-roughness} as an input descriptor to capture local pairwise and angular geometry.
+  \item \textbf{Extended tight-binding (xTB):} a semiempirical quantum-mechanical baseline providing molecule-wide electronic-structure information beyond the local geometric cutoffs of the descriptors.
+  \item \textbf{Density functional tight-binding (DFTB\(\dagger\)):} a second semiempirical quantum-mechanical baseline used to test whether the trends observed with xTB extend to another electronic-structure method.
+\end{enumerate}
+
+\begin{table}[H]
+  \centering
+  \caption{\textbf{Baseline models used for target transformation.}}
+  \label{tab:baseline-models}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}@{}}
+    \toprule
+    Baseline model & Input features & Fitting approach & Physical/representation target \\
+    \midrule
+    BoB & Typed-bond counts (\mbox{RDKit}) & Linear / MLP & Compositional and functional-group variation \\
+    PRE & Pairwise distances (\(r_{ij}\)) & Linear / MLP & Local two-body geometry (SchNet proxy) \\
+    PRE+A & Distances and angles (\(r_{ij},\theta_{ijk}\)) & Linear / MLP & Local three-body geometry (GemNet proxy) \\
+    xTB & Atomic identities and molecular coordinates & Semiempirical QM & Non-local electronic and higher-order interactions \\
+    DFTB\(\dagger\) & Atomic identities and molecular coordinates & Semiempirical QM & Molecule-wide electronic structure; supporting comparison with xTB \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+For each descriptor (BoB, PRE, and PRE+A), we fit both a linear regression model and a nonlinear multilayer perceptron (MLP); the MLPs share a unified hidden architecture (Methods). This dual-fitting strategy enables two controlled evaluations: varying the input descriptor under a fixed MLP architecture assesses how baseline information content alters residual structure, while comparing linear and MLP fits within the same descriptor family isolates the effect of baseline fitting capacity. For each supervised baseline \(b\), the target residual is defined as:
+
+\begin{equation}
+\Delta^b=E_{\rm ref,BoE}^{\rm DFT}-\widehat{E}_b,
+\label{eq:descriptor-delta}
+\end{equation}
+
+In parallel, we evaluate xTB to provide a physics-based baseline that accounts for non-local electronic interactions \cite{bannwarth2019gfn2xtb}. Its residual, \(\Delta^{\rm xTB}\), is computed after applying the same atom- and composition-referencing protocol:
+
+\begin{equation}
+\Delta^{\rm xTB}
+=E_{\rm ref,BoE}^{\rm DFT}-E_{\rm ref,BoE}^{\rm xTB}.
+\label{eq:xtb-delta}
+\end{equation}
+
+The DFTB residual is constructed in the same way, using the atom- and composition-referenced DFTB energy \cite{elstner1998sccdftb,hourahine2020dftbplus}. DFTB calculations failed for 362 neutral tmQM molecules, so this control uses the successful-calculation subset and one GNN seed per architecture. DFTB\(\dagger\) is shown in the main figures for comparison but excluded from pooled correlations and regression fits. Matched-subset comparisons and calculation details are provided in SI Note~8.
+
+Comparing MLP baselines across descriptor families reveals a clear trade-off between target accuracy and learnability. Progressing from BoB to PRE and PRE+A progressively increases baseline accuracy and reduces residual magnitude (Fig.~\ref{fig:residual-design}a,c). Judged strictly by baseline accuracy or residual scale, PRE+A would appear to offer the optimal \(\Delta\)-learning target. However, our roughness analysis yields a different conclusion. Although these baselines reduce target IQR by factors of \(3.3\), \(4.2\), and \(4.7\), respectively, they increase representation-space target roughness (\(D_{\rm IQR}\)) by factors of \(3.3\), \(9.5\), and \(7.6\) within GemNet-aligned PRE+A space (Fig.~\ref{fig:residual-design}b). Consequently, these smaller residuals remain rougher, and none improves GemNet test MAE over direct training on \(E_{\rm ref,BoE}\).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig02_residual_design}
+  \caption{\textbf{Baseline accuracy, residual roughness, and GemNet test performance.} \textbf{a,} Test residual IQR. \textbf{b,} Normalized roughness on the test PRE+A graph (log scale). \textbf{c,} Baseline-only test MAE (filled circles) and GemNet residual test MAE (open diamonds). Dashed lines mark the DFT-BoE parent or direct-GemNet reference; arrows show the corresponding changes. Main GNN results are three-seed means; error bars and shading show sample SD. Magenta DFTB\(^\dagger\) is a single-seed, valid-subset control, excluded from pooled analyses. Short magenta ticks mark its matched-subset parent references (SI Note~8).}
+  \label{fig:residual-design}
+\end{figure}
+
+This degradation in learnability persists even when baseline input features remain fixed. Comparing linear and MLP fits within each descriptor family shows that increasing baseline expressivity consistently yields smaller yet rougher residuals, degrading GemNet test performance (Fig.~\ref{fig:residual-design}). For instance, transitioning from a linear to an MLP fit on BoB features reduces residual IQR by an additional factor of \(1.6\), yet GemNet test MAE increases \(1.7\)-fold. Thus, stripping away additional target variance without considering representation alignment can actively impede model generalization.
+
+The poorer test performance on these rough residuals persists after normalization by test target IQR. For GemNet, the MLP-PRE residual has a normalized test error \(7.2\)-fold higher than the xTB residual. SchNet exhibits a similar discrepancy, with a \(4.9\)-fold difference (SI Note~6). Thus, even after accounting for target scale, the smaller MLP-PRE residual remains harder to predict on unseen structures.
+
+In contrast, xTB leaves a larger residual than the BoB, PRE, and PRE+A baselines, yet GNNs trained on this residual achieve lower test errors. Among the primary baselines in Figure~\ref{fig:residual-design}, xTB is the only one that lowers both normalized roughness and GemNet test MAE: \(D_{\rm IQR}\) falls from \(1.127\) to \(0.964\), while mean test MAE falls from \(0.00945\) to \(0.00660\)~Ha. xTB therefore provides our primary evidence that smaller residuals are not necessarily easier for a GNN to learn.
+
+DFTB provides a contrasting control on its valid subset: its residual is also relatively large, and has slightly higher roughness than the matched DFT parent in both PRE and PRE+A spaces. In PRE+A space, \(D_{\rm IQR}\) rises from \(1.113\) to \(1.169\), while the matched seed-101 GemNet test MAE falls from \(0.00979\) to \(0.00794\)~Ha (SI Note~8). DFTB remains a separate semiempirical control, not part of the pooled analysis. These results do not suggest that larger residuals are inherently better. Rather, they show that an effective baseline must leave a residual that the downstream model can learn, not simply one with a smaller magnitude.
+
+\subsection{Model-relative target roughness predicts scale-normalized learnability}
+\label{sec:roughness-predicts}
+
+Can target roughness measured prior to training identify which targets a GNN will learn more accurately? We address this by comparing representation-space roughness (\(D_{\rm IQR}\)) with scale-normalized test error (\(n\text{-MAE}=\operatorname{MAE}_{\rm test}/\operatorname{IQR}_{\rm test}(y)\)). Graph-based smoothness provides a geometric framework for relating labels to neighbouring representations.\cite{belkin2006manifold} Normalized error assesses how accurately a model predicts each target relative to that target's intrinsic spread, enabling comparisons across energy targets with widely different scales.
+
+We evaluated all 13 primary targets: atom-referenced DFT energy, linear and MLP Bag-of-Elements (BoE) residuals, referenced xTB energies and their DFT residuals, and linear and MLP residuals derived from BoB, PRE, and PRE+A representations. Because the proxy feature graph remains fixed across targets for a given architecture, differences in \(D_{\rm IQR}\) reflect how target values vary relative to their spread between neighbouring molecules, rather than changes in graph connectivity.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\linewidth]{fig_scaled_target_rescaling_bipanel}
-  \caption{Target rescaling reduces absolute error without simplifying the relative learning problem. (a) Scaled versions of the same one-dimensional target preserve the locations of all peaks, valleys, and oscillatory regions. (b) The raw validation MAE decreases approximately linearly with target scale, while \(n\)-MAE, defined as MAE normalized by the target IQR, remains essentially unchanged.}
-  \label{fig:scaled-target-rescaling}
+  \includegraphics[width=0.90\linewidth]{fig04_roughness_nmae}
+  \caption{\textbf{Model-relative roughness and normalized GemNet test error.} Mean GemNet test \(n\)-MAE, defined as \(\operatorname{MAE}_{\rm test}/\operatorname{IQR}_{\rm test}(y)\), is plotted against test \(D_{\rm IQR}\) for 13 primary targets. Roughness is measured on the standardized test PRE+A graph, and the horizontal axis is logarithmic. Marker shapes identify the target classes shown in the legend. Points show means across three GNN seeds. The dashed line is the semi-log regression over the 13 primary target means (\(R^2=0.905\)). Magenta DFTB\(^\dagger\) points are single-seed, valid-subset controls, excluded from the regression and correlations.}
+  \label{fig:roughness-nmae}
 \end{figure}
 
-As expected, the raw validation MAE decreases nearly linearly with the target scale (Figure~\ref{fig:scaled-target-rescaling}). To distinguish this trivial scale effect from intrinsic learnability, we also report normalized MAE, denoted \(n\)-MAE and defined as MAE divided by the target interquartile range, \({\rm IQR}(y)\). Absolute MAE measures error in the original target units, whereas \(n\)-MAE measures error relative to the spread of the target being learned. Under pure rescaling, raw MAE decreases with the amplitude of \(y(x)\), but \(n\)-MAE remains essentially unchanged. Thus, shrinking a target can reduce the absolute MAE without making the target intrinsically easier to learn. It only rescales the same learning problem.
+Across these primary targets, GemNet's normalized test error increases approximately linearly with \(\log D_{\rm IQR}\), yielding \(R^2=0.905\) in PRE+A space (Fig.~\ref{fig:roughness-nmae}). SchNet exhibits a corresponding association in PRE space (\(R^2=0.946\); SI Note~6). Practically, targets that vary more sharply between structurally similar molecules tend to be harder for downstream GNNs to learn relative to their spread. Leave-one-target-out sensitivity checks show that this trend is not driven by any single target, maintaining \(R^2\in[0.872,0.927]\) for GemNet and \(R^2\in[0.927,0.965]\) for SchNet (SI Note~7). These ranges describe refitted associations, not cross-validated prediction scores.
 
-This distinction is critical for interpreting the BoE correction. The variance of \(E_{\rm ref,BoE}\) is substantially smaller than that of \(E_{\rm ref}\), and its absolute GemNet MAE is correspondingly lower. However, this does not imply that \(E_{\rm ref,BoE}\) is smoother or easier to learn relative to its own scale. In fact, its normalized error increases: GemNet achieves an \(n\)-MAE of \(0.015\) on \(E_{\rm ref}\), but \(0.119\) on \(E_{\rm ref,BoE}\). The BoE correction therefore creates a smaller target, but not automatically an intrinsically easier target.
+Because \(D_{\rm IQR}\) and \(n\)-MAE share target IQR as a scaling factor, their correlation may partly reflect shared-denominator normalization.\cite{pearson1897spurious} We conducted sensitivity controls to assess the contribution of molecular-neighbourhood alignment beyond this coupling. Removing IQR normalization from both axes reduces \(R^2\) to 0.019 for GemNet and 0.067 for SchNet, showing that the strong normalized association does not extend to the relationship between log raw roughness and absolute test error (SI Note~7).
 
-\subsubsection{A model-aligned roughness diagnostic}
-\label{sec:model-aligned-roughness-diagnostic}
+To assess the contribution of label alignment with molecular graph geometry, we performed 5,000 joint-label permutations (SI Note~7). Shuffling target values across molecules preserves target distributions and IQRs while severing their connection to chemical structure; graphs and GNN test errors remain fixed. Although target distributions and normalization sustain a high shuffled correlation (median \(R^2=0.862\) for GemNet and 0.855 for SchNet), the observed positive correlation exceeds every shuffled result for both models (one-sided \(p\approx0.00020\), using the plus-one correction;\cite{phipson2010permutation} SI Note~7). Furthermore, among all three target pairs whose IQRs differed by at most 10\%, the smoother target also had the lower mean normalized test error for both SchNet and GemNet (SI Note~7).
 
-To test whether this change in learnability reflects the target landscape itself, roughness must be measured in a feature space aligned with the model being evaluated. A target may be smooth in one representation and rough in another, so a roughness score defined in an unrelated descriptor space would not necessarily explain GemNet performance. We therefore use the Pair-Radial Expansion with Angular terms (PRE+A) descriptor as a fixed proxy for GemNet's effective representation. The Pair-Radial Expansion (PRE) encodes local chemical environments by expanding short-range, element-resolved interatomic distances into radial basis functions. PRE+A augments this pair-distance representation with compact local angular terms. This choice mirrors the two geometric primitives that GemNet uses explicitly in message passing: pairwise distances and triplet angular interactions \cite{gasteiger2021gemnet}. At the same time, PRE+A is deterministic and independent of the training target, avoiding the circularity that would arise from measuring roughness in a learned GemNet representation whose geometry may itself change with the target.
+Together, these results support architecture-aligned target roughness (\(D_{\rm IQR}\)) as a scale-invariant candidate pre-training diagnostic of relative target learnability. Molecular-neighbourhood alignment contributes information beyond the shuffled target-distribution baseline, although normalization contributes substantially to the observed association. These retrospective results do not establish a causal mechanism or guarantee predictive performance for new target families.
 
-We then construct a \(k\)-nearest-neighbor graph in PRE+A space, where edges connect molecules with similar local geometric environments. In the main GemNet diagnostic, PRE+A features are scaled by their feature-wise standard deviations, zero-variance features are removed, and neighborhoods are defined by cosine similarity with \(k=10\) (Methods, Section~\ref{sec:methods-roughness-diagnostics}). Cosine neighborhoods emphasize similarity in the pattern of local pair-and-angular environments rather than the overall magnitude of the descriptor vector. If a target is well aligned with GemNet's inductive bias, neighboring molecules in this graph should have similar target values. We quantify this local variation using the IQR-normalized graph Dirichlet roughness, adapted from graph-Laplacian smoothness measures used in manifold regularization \cite{belkin2006manifold},
-\[
-  D_{\rm IQR}(y)
-  =
-  \frac{1}{|\mathcal{E}|}
-  \sum_{(i,j)\in\mathcal{E}}
-  \frac{(y_i - y_j)^2}{{\rm IQR}(y)^2},
-\]
-where \(\mathcal{E}\) denotes the set of graph edges. Equivalently, \(D_{\rm IQR}\) is the squared ratio between the edge RMSE and the target IQR. This score measures the average squared target jump between neighboring molecules, normalized by the central scale of the target itself. It is therefore invariant to pure rescaling of \(y\) and directly describes scale-independent roughness over the model's effective feature space. Larger values indicate that nearby molecules in PRE+A space have rapidly fluctuating target values relative to the target's own scale, making the residual harder to interpolate.
+\subsection{Target design controls out-of-domain transfer}
+\label{sec:ood-transfer}
 
-Using this standardized PRE+A cosine graph, the IQR-normalized roughness increases from \(0.593\) for \(E_{\rm ref}\) to \(1.463\) for \(E_{\rm ref,BoE}\). Contrary to the simple variance-shrinkage interpretation, the BoE residual is therefore much rougher relative to its own scale. This increased relative roughness is reflected in the normalized model error: GemNet achieves \(n\)-MAE \(=0.015\) when trained on \(E_{\rm ref}\), but \(n\)-MAE \(=0.119\) when trained on \(E_{\rm ref,BoE}\). Thus, \(E_{\rm ref,BoE}\) is harder to fit relative to its own scale. However, the reduction in target variance is large enough to compensate for this increased relative difficulty, so the absolute MAE of the BoE-preprocessed model remains lower than that of the model trained directly on \(E_{\rm ref}\).
+To evaluate whether favourable target design enhances transferability beyond the training distribution, we tested model predictions on the QM9 dataset \cite{ramakrishnan2014quantum}. While QM9 shares elements with tmQM, it shifts the chemical domain from transition-metal complexes to small organic molecules, altering molecular size, bonding motifs, and coordination environments. To isolate this chemical domain shift from discrepancies in electronic-structure fidelity, QM9 DFT reference energies were recomputed at the identical level of theory used for tmQM, with transformed targets generated using frozen, train-only baseline parameters (SI Methods).
 
-\subsubsection{Working target-design hypothesis}
-\label{sec:working-target-design-hypothesis}
-
-This establishes the central target-design hypothesis of this work. A useful delta-learning baseline should satisfy two conceptual criteria simultaneously. The first is a \emph{scale criterion}: the baseline should reduce the spread of the target, so that the neural network is asked to predict a smaller residual. The second is a \emph{relative-roughness criterion}: after accounting for this reduced scale, the residual should remain no rougher, and ideally become smoother, over the model's effective representation space. In other words, target design should make the residual smaller without making it more irregular in the feature space where the model actually learns.
-
-These criteria are not tied to a unique numerical descriptor. Target scale can be measured by variance, which is sensitive to heavy tails, or by IQR, which reflects the central bulk of the target distribution. Likewise, relative roughness depends on how the effective feature space is approximated and how local neighborhoods are defined, including the descriptor, distance metric, number of nearest neighbors, feature scaling or standardization, and scale used for normalization. We therefore treat normalized Dirichlet roughness as a model-informed diagnostic of target irregularity rather than a deterministic property of the target itself. The hypothesis makes an operational prediction: if a baseline reduces target scale and preserves or reduces normalized roughness under model-relevant diagnostics, lower absolute error should be expected. If target scale decreases but normalized roughness increases, delta learning becomes a compensation tradeoff. The residual is smaller, which tends to reduce absolute error, but it is also harder to learn per unit scale. Whether performance improves then depends on which effect dominates.
-
-We next test this hypothesis by constructing additional baselines beyond the BoE correction. The goal is to determine whether delta learning can be used deliberately as a target-design strategy: not merely to shrink the target, but also to maintain or reduce scale-independent roughness in the model's effective feature space. We further ask whether physics-informed principles can guide baseline choice toward residuals that combine reduced variance with reduced relative roughness.
-
-\subsection{Constructing Residual Targets Beyond BoE}
-\label{sec:residual-targets-beyond-boe}
-
-\subsubsection{Baseline construction}
-\label{sec:baseline-construction}
-
-We next ask whether the standard BoE-corrected target can be further improved by subtracting additional correlated baselines. The starting point is the MLIP preprocessing pipeline described above: raw DFT energies are first corrected by subtracting isolated-atom DFT reference energies, and the resulting \(E_{\rm ref}\) target is then corrected by subtracting a composition-only BoE regression. For the remainder of this analysis, we treat \(E_{\rm ref,BoE}\) as the parent target and construct additional residual targets of the form
-\[
-  \Delta^{b}
-  =
-  E_{\rm ref,BoE} - \hat{E}_{b},
-\]
-where \(\hat{E}_{b}\) is the prediction of a baseline model fit to \(E_{\rm ref,BoE}\). Under the common variance-removal interpretation, baselines that are more strongly correlated with \(E_{\rm ref,BoE}\), and therefore leave smaller residuals, should provide better targets for subsequent GemNet training.
-
-Physically, \(E_{\rm ref,BoE}\) is closely related to a formation- or atomization-like energy: the isolated-atom and composition-dominated contributions have already been removed, leaving geometry-dependent energetic terms. Schematically, the remaining target may be viewed as a hierarchy of body-order contributions,
-\[
-  E_{\rm form/atom}
-  =
-  E_{\rm pair}
-  +
-  E_{\rm triplet}
-  +
-  E_{\rm quadruplet}
-  +
-  \cdots .
-\]
-This decomposition is not intended as a unique energy partitioning, but it provides a useful organizing principle for target design. GemNet is aligned with the lower orders of this hierarchy: it explicitly represents pair distances and triplet angular geometry within a \(6~\text{\AA}\) cutoff, while higher-body-order and longer-range effects are captured only implicitly through stacked local message passing \cite{gasteiger2020dimenet,gasteiger2021gemnet}.
-
-We therefore construct a set of classical descriptor baselines that remove increasingly expressive local interaction components from \(E_{\rm ref,BoE}\). The Bag-of-Bonds (BoB) descriptor is a compact topological pair baseline with \(4{,}950\) features \cite{hansen2015bob}. It encodes pair bonding information through a Coulomb-matrix-like representation, but does not provide the same continuous local geometric resolution as GemNet. PRE is a pair-radial descriptor with \(34{,}650\) features that represents short-range, element-resolved pair-distance environments. PRE+A augments PRE with local angular information, yielding \(45{,}738\) total features and providing the closest fixed descriptor analogue to GemNet's explicit pair-distance and triplet-angle representation.
-
-For each descriptor, we fit an MLP baseline to \(E_{\rm ref,BoE}\). The same MLP architecture and training protocol are used for BoB, PRE, and PRE+A; only the input feature space is changed (Methods, Section~\ref{sec:methods-baselines}). The resulting residual targets are
-\[
-\begin{aligned}
-  \Delta^{\rm BoB}
-  &=
-  E_{\rm ref,BoE} - \hat{E}_{\rm BoB}, \\
-  \Delta^{\rm PRE}
-  &=
-  E_{\rm ref,BoE} - \hat{E}_{\rm PRE}, \\
-  \Delta^{\rm PRE+A}
-  &=
-  E_{\rm ref,BoE} - \hat{E}_{\rm PRE+A}.
-\end{aligned}
-\]
-This construction isolates the role of representation: BoB, PRE, and PRE+A differ in the physical information provided to the same nonlinear regression model.
-
-As a contrasting physics-based baseline, we also consider xTB, a semiempirical tight-binding quantum-mechanical model \cite{bannwarth2019gfn2xtb}. Unlike the descriptor MLPs, xTB is not a flexible supervised fit to the DFT residual target. Instead, it provides an independent approximate electronic-structure energy. After applying the same atom-reference and BoE corrections to the xTB energies, we define
-\[
-  \Delta^{\rm xTB}
-  =
-  E_{\rm ref,BoE} - E_{\rm xTB,ref,BoE}.
-\]
-This baseline is conceptually distinct from BoB, PRE, and PRE+A. The descriptor baselines are classical and local, but can fit the dominant local pair and angular components of \(E_{\rm ref,BoE}\) with relatively high accuracy. xTB is lower-fidelity on this corrected DFT target, but in principle contains quantum-mechanical many-body and longer-range effects that are absent from purely local classical descriptors. This baseline panel therefore separates two questions that are often conflated: how accurately does the baseline predict \(E_{\rm ref,BoE}\), and what kind of residual does it leave for the GNN? Target construction and residual reconstruction are detailed in Methods, Sections~\ref{sec:methods-baselines} and~\ref{sec:methods-gnn-training}.
-
-\subsubsection{Baseline accuracy and residual scale}
-\label{sec:baseline-accuracy-residual-scale}
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.95\linewidth]{mlp_baseline_dft_ref_boe_mae_residual_iqr}
-  \caption{Baseline accuracy and residual scale for additional delta-learning targets constructed from \(E_{\rm ref,BoE}\). (a) Validation MAE of xTB and descriptor MLP baselines against \(E_{\rm ref,BoE}\). (b) Residual target scale measured by IQR (bars) and variance (red line). IQR reflects the central spread of the residual distribution, whereas variance is more sensitive to heavy tails and outliers; the two scale measures need not rank baselines identically.}
-  \label{fig:baseline-mae-residual-iqr}
-\end{figure}
-
-The resulting baseline panel separates baseline accuracy from two related but distinct measures of residual scale (Figure~\ref{fig:baseline-mae-residual-iqr}). xTB is the least accurate baseline and leaves the largest central residual scale by IQR. Within the descriptor sequence, the validation MAE decreases from BoB to PRE to PRE+A, and the residual IQR shrinks in the same order. However, residual variance does not follow this monotonic trend: because variance is tail-sensitive, PRE+A has the smallest IQR but the largest residual variance among the descriptor baselines. Thus, shrinking the central bulk of the target does not necessarily imply shrinking its tail-sensitive variance. If baseline accuracy and residual-scale reduction were sufficient to determine delta-learning success, the descriptor baselines, and especially PRE+A by validation MAE and IQR, would be expected to provide favorable targets for GemNet residual learning.
-
-\subsubsection{Residual learning performance}
-\label{sec:residual-learning-performance}
-
-We test this prediction by training GemNet on each residual target and reconstructing the corresponding \(E_{\rm ref,BoE}\) prediction as
-\[
-  \hat{E}_{\rm ref,BoE}^{\,b}
-  =
-  \hat{E}_{b}
-  +
-  \hat{\Delta}^{\,b}_{\rm GemNet}.
-\]
-Because the residual target is defined as \(\Delta^b = E_{\rm ref,BoE}-\hat{E}_b\), the stacked-model error is exactly the residual-prediction error,
-\[
-  \hat{E}_{\rm ref,BoE}^{\,b} - E_{\rm ref,BoE}
-  =
-  \hat{\Delta}^{\,b}_{\rm GemNet} - \Delta^b .
-\]
-Thus, the reported MAE on the reconstructed \(E_{\rm ref,BoE}\) scale is mathematically identical to the MAE with which GemNet learns the residual target. This equivalence is central to our interpretation: if a residual is more learnable, the final stacked-model error is determined directly by the residual MAE. All models are evaluated on the same tmQM validation split.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.95\linewidth]{baseline_to_gemnet_residual_mae_cleveland}
-  \caption{Baseline accuracy does not predict GemNet residual-learning performance. Filled circles show the validation MAE of each baseline on \(E_{\rm ref,BoE}\), and open diamonds show the reconstructed validation MAE after training GemNet on the corresponding residual target. Because the same baseline defines the residual and is added back at inference, this reconstructed MAE is equivalent to the residual-target MAE. The dashed vertical line marks direct GemNet training on \(E_{\rm ref,BoE}\) without residualization. All values are tmQM validation-set MAEs in Hartree using the same split.}
-  \label{fig:baseline-to-gemnet-residual-mae}
-\end{figure}
-
-The GemNet results invert the expectation based on baseline accuracy (Figure~\ref{fig:baseline-to-gemnet-residual-mae}). The xTB baseline is the least accurate standalone predictor of \(E_{\rm ref,BoE}\), with a validation MAE of \(0.0350~{\rm Ha}\), yet its residual is the easiest for GemNet to learn: training on \(\Delta^{\rm xTB}\) reduces the reconstructed validation MAE to \(0.0064~{\rm Ha}\), substantially below direct GemNet training on \(E_{\rm ref,BoE}\) (\(0.0101~{\rm Ha}\)). This reconstructed MAE is mathematically identical to the residual-target MAE when the same baseline is added back at inference (Methods, Section~\ref{sec:methods-gnn-training}). In contrast, the descriptor MLP baselines become progressively more accurate from BoB to PRE to PRE+A, with validation MAEs of \(0.0212\), \(0.0189\), and \(0.0171~{\rm Ha}\), respectively, but GemNet training on their residuals yields only limited improvement over the baselines themselves (\(0.0174\), \(0.0181\), and \(0.0168~{\rm Ha}\)). These residualized descriptor models also remain worse than direct GemNet training on \(E_{\rm ref,BoE}\).
-
-Together, these GemNet results show that the common assumptions behind delta learning are incomplete. All four baselines reduce the target scale relative to \(E_{\rm ref,BoE}\), but the amount of variance removed does not predict residual model performance. The more accurate descriptor baselines leave smaller residuals, yet these residuals are not easier for GemNet to learn. Conversely, xTB leaves the largest residual among the baselines, but produces the largest improvement after residual learning. The SchNet analogue shows the same qualitative residual-learning trend (Figure~S2). The same conclusion holds if baseline quality is described by Pearson or Spearman correlation with \(E_{\rm ref,BoE}\): stronger baseline-target correlation does not predict better residual GemNet performance (Figure~S3). The next question is therefore whether the successful residual differs not merely in size or correlation, but in how smoothly it varies over the representation available to the model.
-
-\subsubsection{Relative roughness of the residual targets}
-\label{sec:relative-roughness-residual-targets}
-
-We therefore test the second part of the target-design hypothesis using the standardized PRE+A cosine diagnostic defined above (Methods, Section~\ref{sec:methods-roughness-diagnostics}). All roughness values are measured on the tmQM validation split using the same \(k=10\) nearest-neighbor graph, so differences arise from the target values rather than from changes in the representation. Because the numerical value of Dirichlet roughness depends on graph-construction choices, including \(k\), the similarity metric, and feature scaling, we interpret it as a rough estimate of target irregularity in a fixed proxy space rather than as an intrinsic property of the target. PRE+A is used here as a GemNet-aligned estimate of the local pair-and-angular information available to the model.
-
-This roughness analysis supports the interpretation suggested by the performance inversion. Although \(\Delta^{\rm xTB}\) has the largest central scale among the residual targets, it is the only residual that is smoother than \(E_{\rm ref,BoE}\) under the main GemNet diagnostic, with \(D_{\rm IQR}\) decreasing from \(1.463\) to \(1.155\). The descriptor residuals show the opposite behavior: despite their smaller scale, their normalized roughness increases to \(2.326\), \(2.668\), and \(12.955\) for the linear \(\Delta^{\rm BoB}\), \(\Delta^{\rm PRE}\), and \(\Delta^{\rm PRE+A}\) targets, respectively. The MLP descriptor residuals are rougher still, with \(D_{\rm IQR}=5.015\), \(11.358\), and \(23.268\). Thus, these baselines shrink the target but make the residual more irregular relative to its own scale. The paired comparison for xTB and the MLP descriptor baselines is shown in Figure~\ref{fig:baseline-to-residual-dirichlet}.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.95\linewidth]{baseline_to_residual_normalized_dirichlet_cleveland}
-  \caption{Effect of residualization on model-aligned roughness for xTB and MLP descriptor baselines. Filled circles mark the common starting target, \(E_{\rm ref,BoE}\), and open diamonds mark the residual target obtained after subtracting each baseline. Roughness is measured on the tmQM validation split as IQR-normalized graph Dirichlet roughness on a \(k=10\) cosine nearest-neighbor graph built from standardized PRE+A descriptors. xTB lowers relative roughness, whereas the MLP-BoB, MLP-PRE, and MLP-PRE+A residuals become progressively rougher despite having smaller target scales.}
-  \label{fig:baseline-to-residual-dirichlet}
-\end{figure}
-
-This provides a direct operational test of the two-criterion target-design hypothesis. All baselines shrink the variance of \(E_{\rm ref,BoE}\). Therefore, if variance reduction were accompanied by preserved or reduced scale-normalized roughness, residual learning should improve. This happens only for xTB: \(\Delta^{\rm xTB}\) is smaller than \(E_{\rm ref,BoE}\), smoother in PRE+A space, and improves GemNet. BoB, PRE, and PRE+A also shrink the target, but they increase scale-normalized roughness; correspondingly, their residuals do not improve GemNet. Variance shrinkage is therefore useful only when it does not come at the cost of a rougher residual learning problem. Using two scale diagnostics is useful here because variance and IQR probe different aspects of target scale: variance penalizes heavy tails, whereas IQR describes the central residual distribution. The same qualitative separation is obtained for SchNet \cite{schutt2017schnet} when roughness is measured in standardized PRE space, a pair-distance proxy for SchNet's representation (Figure~S4), and alternative raw-feature diagnostics are reported in Table~S1. This comparison establishes that baseline accuracy, target correlation, and residual scale are insufficient design rules. It does not yet isolate whether the failure of the descriptor baselines comes from their physical content or from the flexibility of the fitted baseline model, which motivates a controlled ridge-versus-MLP comparison within the same descriptor spaces.
-
-\subsection{Baseline Accuracy Within Model-Aligned Descriptor Spaces}
-\label{sec:baseline-accuracy-model-aligned-descriptors}
-
-The comparison above shows that baseline accuracy across physically different baselines is not predictive: xTB is the least accurate standalone baseline, yet produces the best GemNet residual. We next ask a more controlled question. Within the same descriptor family, does making the baseline more flexible, and therefore able to remove more of the descriptor-aligned target variation, improve downstream residual learning?
-
-To test this, we construct two versions of the BoB, PRE, and PRE+A residual targets. The first uses ridge regression on the descriptor features, while the second uses the nonlinear MLP baselines described above (Methods, Section~\ref{sec:methods-baselines}). For a fixed descriptor, these two baselines are designed to remove the same kind of physical information, but with different fitting capacity. The MLP versions systematically shrink the central scale of the residual targets relative to their ridge counterparts, as measured by IQR (Table~S2). Under an accuracy- or scale-based interpretation of delta learning, these smaller residuals should be at least as favorable for GemNet and SchNet training.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.95\linewidth]{gemnet_val_mae_linear_vs_mlp_delta_baselines}
-  \caption{Increasing descriptor-baseline flexibility shrinks the residual target but does not improve GemNet residual learning. For each descriptor family, the left panel compares the residual IQR left by a linear ridge baseline and an MLP baseline, while the right panel shows the reconstructed GemNet validation MAE after training on the corresponding residual target. The dashed line marks direct GemNet training on \(E_{\rm ref,BoE}\) without residualization. Although the MLP baselines leave smaller central residual scales in every descriptor family, they do not yield lower GemNet validation MAE.}
-  \label{fig:gemnet-linear-vs-mlp-delta-baselines}
-\end{figure}
-
-The results show the opposite trend for the most direct descriptor controls (Figure~\ref{fig:gemnet-linear-vs-mlp-delta-baselines}). For BoB, the MLP residual has a substantially smaller IQR than the ridge residual (\(0.0260\) versus \(0.0411~{\rm Ha}\)), but GemNet performance worsens from \(0.0108\) to \(0.0174~{\rm Ha}\). For PRE, the MLP residual again has a smaller IQR than the ridge residual (\(0.0201\) versus \(0.0232~{\rm Ha}\)), but GemNet worsens from \(0.0123\) to \(0.0181~{\rm Ha}\). PRE+A is more mixed: the MLP residual has the smallest IQR in the descriptor panel, but produces no meaningful GemNet improvement over the ridge residual (\(0.0168\) versus \(0.0165~{\rm Ha}\)).
-
-\clearpage
+Evaluating out-of-domain (OOD) performance across distinct chemical families can introduce systematic dataset-level energy offsets due to divergent stoichiometry and size distributions. Because raw OOD MAE combines these global offsets with molecule-to-molecule errors, we assessed trend preservation using two complementary metrics: Kendall rank correlation (\(\tau\)), which quantifies energetic ordering, and mean-shifted MAE, which measures residual scatter after removing a single dataset-wide offset (SI Note~5). This offset is estimated from the QM9 reference labels, rendering mean-shifted MAE an oracle diagnostic rather than an independently calibrated prediction score. All reconstructed routes were mapped back onto the parent DFT-BoE energy target prior to comparison.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\linewidth]{gnn_residual_learning_architecture_bipanel}
-  \caption{Residual-learning outcomes depend on the downstream architecture. Each point reports the reconstructed validation MAE on the \(E_{\rm ref,BoE}\) scale after training the indicated GNN on the corresponding residual target. The dashed vertical line marks direct training on \(E_{\rm ref,BoE}\), and the shaded region marks residual targets that improve over direct learning for that architecture. For GemNet, only the xTB residual improves over direct learning. For SchNet, xTB remains the best baseline, but simple linear BoB and PRE residuals also improve over direct learning.}
-  \label{fig:gnn-residual-learning-architecture}
+  \includegraphics[width=\linewidth]{fig03_qm9_transfer}
+  \caption{\textbf{Out-of-domain GemNet transfer from tmQM to QM9.} \textbf{a,} Raw MAE. \textbf{b,} Mean-shifted MAE using one offset estimated from QM9 labels. \textbf{c,} Kendall correlation. Diamonds show baseline-plus-GemNet predictions against \(E_{\rm ref,BoE}\); dashed lines mark direct GemNet. Primary results are three-seed means with sample-SD bars on 128,988 common molecules. Magenta DFTB\(^\dagger\) is a seed-101 control on 128,978 valid molecules; its short reference ticks and arrows use direct seed 101 on the same subset (SI Notes~5 and 8).}
+  \label{fig:qm9-transfer}
 \end{figure}
 
-The architecture-dependent view in Figure~\ref{fig:gnn-residual-learning-architecture} highlights an important distinction. For GemNet, xTB is the only residual target that surpasses direct training on \(E_{\rm ref,BoE}\). In contrast, SchNet also benefits from the simple ridge BoB and PRE residuals, improving from direct training on \(E_{\rm ref,BoE}\) (\(0.0153~{\rm Ha}\)) to \(0.0142\) and \(0.0125~{\rm Ha}\), respectively. Thus, for a SchNet model with \(455{,}809\) trainable parameters, a simple linear-regression preprocessing step can improve performance beyond the conventional BoE-preprocessed target. However, xTB still produces the best residual for SchNet (\(0.0093~{\rm Ha}\)), as it does for GemNet. The SchNet result therefore does not weaken the target-design argument; it sharpens it. Whether a baseline helps depends on the downstream model, and higher baseline flexibility is beneficial only if it removes components that the model would otherwise struggle to learn rather than removing signal the model could have learned cleanly itself. The residual-scale counterpart for this SchNet comparison is shown in Figure~S5, and the numerical values are reported in Table~S2.
+Among all primary GemNet routes evaluated on QM9, the composition-referenced xTB residual achieved the best mean transfer performance across the three reported metrics (Fig.~\ref{fig:qm9-transfer}). Learning on the xTB residual reduced mean-shifted MAE from \(0.01641\)~Ha for direct GemNet to \(0.00598\)~Ha while increasing Kendall \(\tau\) from \(0.726\) to \(0.901\) (Fig.~\ref{fig:qm9-transfer}b,c). It also yielded the lowest raw MAE, reducing error from \(0.2478\) to \(0.0248\)~Ha (Fig.~\ref{fig:qm9-transfer}a), showing that its transfer advantage does not rely on mean-shift offset calibration. In contrast, no local descriptor baseline improved upon direct GemNet on both trend metrics; linear PRE+A slightly increased mean Kendall correlation (\(\tau=0.738\)) but increased mean-shifted MAE to \(0.03351\)~Ha (Fig.~\ref{fig:qm9-transfer}b,c). Furthermore, GemNet preserved the ordering of the predicted xTB residual itself (\(\tau=0.789\) on the common QM9 cohort), supporting transfer of the learned residual correction rather than only the reconstructed energy ranking (SI Note~5). SchNet exhibited parallel improvements on the xTB residual, reducing mean-shifted MAE from \(0.01563\) to \(0.00665\)~Ha and increasing Kendall \(\tau\) from \(0.746\) to \(0.895\) (SI Note~5).
 
-This control breaks the strongest form of the accuracy hypothesis. A more flexible baseline can leave a smaller residual without making that residual more learnable by the downstream GNN. In fact, when the baseline is built from descriptors that are already aligned with the model's local inductive bias, increasing baseline capacity can remove more of the smooth, model-accessible signal and leave a residual dominated by the components that remain difficult for the model. The result is not a universal penalty for accurate baselines, but it rules out the general claim that higher baseline accuracy or smaller residual scale should automatically improve residual learning. Accuracy is useful only when it is spent on target components that the downstream model would otherwise struggle to learn.
+Semiempirical density-functional tight-binding (DFTB\(^\dagger\)) provided supporting evidence on its valid subset, reducing raw MAE from \(0.2547\) to \(0.0563\)~Ha, reducing mean-shifted MAE from \(0.01917\) to \(0.01253\)~Ha, and increasing Kendall \(\tau\) from \(0.671\) to \(0.790\) relative to matched-subset direct GemNet (SI Notes~5 and 8). This seed-101 control uses a different training subset and does not provide a three-seed uncertainty estimate.
 
-\subsection{Transferability to QM9}
-\label{sec:qm9-transferability}
-
-In-domain validation tests whether a residual target is learnable within the same chemical distribution used for training. A stronger test is whether the learned residual transfers to a different chemical domain. We therefore evaluate the tmQM-trained models on QM9 \cite{balcells2020tmqm,ramakrishnan2014quantum}. This is an out-of-distribution test because the training data consist of neutral organometallic complexes, whereas QM9 contains small organic molecules. The shift changes elemental composition, bonding motifs, coordination environments, molecular size distribution, and the statistics of the corrected energy target. Thus, QM9 does not test interpolation within tmQM; it tests whether the residual model captures energy variations that remain meaningful outside the organometallic training domain.
-
-Cross-domain energy prediction also contains an unavoidable dataset-level bias. Even after isolated-atom and BoE corrections, tmQM and QM9 can differ in their average residual energy because their elemental compositions and chemical environments are different. A raw absolute error would therefore mix two effects: a constant domain offset and the model's ability to reproduce relative molecular energy variations. To separate these effects, we report QM9 errors after mean-shift calibration, which removes one scalar bias from each set of predictions (Methods, Section~\ref{sec:methods-qm9-transfer}). This calibration does not change the molecular ordering, scatter, or trend fidelity of the predictions; it only removes the constant offset. We use it here as a diagnostic of transferable trend learning, which is often the chemically relevant quantity because reaction energies, stability differences, and comparisons within chemical series depend on relative rather than absolute offsets.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.95\linewidth]{qm9_transfer_architecture_bipanel}
-  \caption{QM9 transfer performance after mean-shift calibration. Each point reports the reconstructed QM9 MAE on the \(E_{\rm ref,BoE}\) scale after training the indicated GNN on tmQM and evaluating on QM9. The dashed vertical line marks direct transfer of the same architecture trained on \(E_{\rm ref,BoE}\), and the shaded region marks residual targets that improve over direct transfer. xTB improves transfer for both GemNet and SchNet, whereas descriptor residuals generally degrade transfer despite reducing target scale within tmQM.}
-  \label{fig:qm9-transfer-architecture}
-\end{figure}
-
-Under this stricter transfer test, the distinction between xTB and descriptor baselines becomes sharper (Figure~\ref{fig:qm9-transfer-architecture}; Table~S3). For GemNet, direct transfer of the conventionally preprocessed \(E_{\rm ref,BoE}\) target gives a QM9 MAE of \(0.0156~{\rm Ha}\). The xTB residual reduces this error to \(0.0062~{\rm Ha}\). In contrast, all descriptor residuals perform worse than direct transfer: linear BoB, PRE, and PRE+A give \(0.0189\), \(0.0332\), and \(0.0348~{\rm Ha}\), while the corresponding MLP residuals give \(0.0301\), \(0.0598\), and \(0.0700~{\rm Ha}\). Thus, for GemNet, the same conclusion holds in-domain and out-of-domain: xTB is the only tested baseline that produces a residual target that is both easier to learn and more transferable.
-
-SchNet reveals a more informative failure mode. In-domain, simple linear BoB and PRE residuals improve over direct SchNet training on \(E_{\rm ref,BoE}\). On QM9, however, these improvements do not transfer. Direct SchNet transfer gives \(0.0138~{\rm Ha}\), whereas the linear BoB and PRE residual stacks degrade to \(0.0440\) and \(0.0533~{\rm Ha}\), respectively. This indicates that in-domain residual learnability is not sufficient for transferability: a baseline can simplify the target within tmQM while leaving a learned correction that does not extrapolate to organic chemical space. The xTB residual again behaves differently, reducing the SchNet QM9 MAE to \(0.0070~{\rm Ha}\), the best SchNet transfer result in the panel.
-
-These results show that the benefit of delta learning is not determined by whether a baseline improves in-domain validation error alone. Descriptor baselines can remove local pair or angular structure in a way that is useful within the training distribution but not portable across the organometallic-to-organic domain shift. xTB is different because its baseline is not a dataset-fitted local descriptor. As a semiempirical quantum-mechanical model, it can remove electronic, global, and many-body contributions with physical meaning across molecular domains. The remaining residual is therefore not only learnable by local GNNs, but also more transferable between chemical spaces. The remaining question is therefore physical: what kind of target component should a useful baseline remove?
-
-\subsection{Physical Interpretation: Complementarity Rather Than Accuracy}
-\label{sec:physical-interpretation-complementarity}
-
-The inversion between baseline accuracy and residual-learning performance suggests a physical interpretation of target design. A useful baseline need not be the most accurate standalone predictor of the target, nor the baseline that leaves the smallest residual. Instead, it should remove components that are difficult for the downstream model to represent. In this sense, the relevant design criterion is not simply correlation with the target, but complementarity to the model's inductive bias.
-
-\subsubsection{Descriptor baselines remove what GemNet already learns}
-\label{sec:descriptor-baselines-remove-learnable-signal}
-
-This distinction explains why the descriptor MLP baselines provide little benefit. BoB, PRE, and PRE+A are local classical descriptors that encode bonding, pair-distance, and angular information. These are precisely the kinds of short-range geometric components that GemNet is already designed to learn with high fidelity through its radial and angular message-passing structure. GemNet therefore does not appear to have a capacity bottleneck for these components. Subtracting a small supervised MLP baseline removes signal that is already well aligned with GemNet, while leaving a residual enriched in the harder components that remain after local pair and angular structure have been removed. The result is a smaller residual, but not a better learning problem.
-
-The increased roughness of the descriptor residuals is therefore not surprising. PRE and PRE+A define local geometric feature spaces that are closely related to the PRE+A graph used in the roughness analysis. A baseline trained on these descriptors preferentially removes the part of \(E_{\rm ref,BoE}\) that varies coherently with local pair-distance and angular features. The remaining residual is consequently enriched in target variation that is less well organized by the same PRE+A neighborhoods. Since GemNet uses closely related local pair and angular primitives, these residuals are expected to be less aligned with the model's natural representation, even though their absolute scale is smaller.
-
-\subsubsection{xTB removes part of the model-misaligned signal}
-\label{sec:xtb-removes-model-misaligned-signal}
-
-xTB behaves differently. Although it is a less accurate baseline on \(E_{\rm ref,BoE}\), it is not merely another local descriptor fit to the same geometric primitives as GemNet. As a semiempirical quantum-mechanical model, xTB can partially capture electronic and many-body effects that are not explicitly represented by GemNet's local pair-distance and triplet-angle features. These may include higher-order local interactions, charge redistribution, and longer-range electronic contributions. Even if xTB captures short-range interactions less accurately than the descriptor MLP baselines, it can remove components that are less naturally aligned with GemNet's representation.
-
-At the same time, xTB should not be interpreted as removing only the hard part of the target. The corrected xTB baseline, \(E_{\rm xTB,ref,BoE}\), is itself smoother than \(E_{\rm ref,BoE}\) in the standardized PRE+A cosine diagnostic, with \(D_{\rm IQR}\) decreasing from \(1.463\) to \(1.278\). This indicates that xTB also captures target variation that is well organized by GemNet-like local geometric features. Its advantage is therefore more specific: xTB captures a substantial amount of learnable structure while also removing a smaller but consequential component of the target that is poorly organized by PRE+A.
-
-The PRE+A roughness analysis provides direct support for this interpretation. Because PRE+A encodes the local pair-distance and angular information most closely aligned with GemNet, a decrease in normalized roughness after subtracting xTB implies that xTB removes target variation that is poorly organized by this local feature space. The xTB residual does not have the smallest IQR, so its advantage is not that it simply produces the smallest central residual. Instead, it reduces the tail-sensitive variance and lowers the normalized roughness in PRE+A space, indicating that it removes samples or energetic components that appear irregular with respect to GemNet's effective local representation. This does not prove a unique physical decomposition of the energy, but it is consistent with xTB capturing part of the higher-order, electronic, or longer-range contribution that GemNet learns less naturally. The descriptor baselines do the opposite: they shrink the central residual scale, but make the residual rougher over the same feature space.
-
-\subsubsection{A complementarity principle for baseline design}
-\label{sec:complementarity-principle-baseline-design}
-
-The resulting target-design principle is therefore physics-informed. Baseline selection should not be driven only by standalone accuracy, target correlation, or residual scale. It should be guided by the relationship between the baseline and the downstream model: what physical components does the model represent explicitly, what components does it learn only indirectly or poorly, and what components can the baseline remove? This refines the usual accuracy-based intuition. Within the descriptor controls, increasing the fitting capacity of local geometric baselines does not reliably improve residual learnability, even when the residual scale decreases. This is consistent with the baseline removing an increasing fraction of the smooth, GemNet-aligned signal while leaving a residual dominated by components that are less organized by the same local representation. Because the residual scale is reduced, remaining baseline errors or high-frequency artifacts may also become large relative to the target being learned.
-
-Greater baseline accuracy is therefore useful only when the added accuracy removes components that the downstream model would otherwise learn poorly. Accuracy spent primarily on components already well captured by the downstream model can make the residual less learnable and can even hurt the reconstructed full-target accuracy. More accurate local baselines can fail if they primarily subtract learnable, model-aligned structure, whereas more accurate quantum-mechanical baselines are expected to help when their additional fidelity captures nonlocal, electronic, or many-body components that are less aligned with the model's inductive bias. The design problem is therefore not to find the most accurate baseline in isolation, but to find a complementary baseline that reduces target scale while preserving, or improving, residual smoothness in the representation space of the downstream model.
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.95\linewidth]{gemnet_iqr_nmae_vs_pre_plus_a_std_iqr_norm_dirichlet_cosine_linear_mlp}
-  \caption{Summary of scale-independent target roughness and GemNet learning difficulty across the targets considered in this work. The horizontal axis reports \(D_{\rm IQR}\), measured on a \(k=10\) cosine nearest-neighbor graph built from standardized PRE+A descriptors on the tmQM validation split. The vertical axis reports GemNet validation \(n\)-MAE, defined as MAE divided by the target IQR. The panel includes the original reference target, the BoE-corrected target, the corrected xTB baseline target, the xTB residual, and the linear and MLP descriptor residuals. Higher roughness generally corresponds to larger scale-normalized GemNet error, supporting the use of model-aligned roughness as an operational diagnostic of target learnability.}
-  \label{fig:gemnet-roughness-nmae-summary}
-\end{figure}
-
-Figure~\ref{fig:gemnet-roughness-nmae-summary} summarizes the full target panel. Across targets spanning the original reference energy, standard MLIP preprocessing, physics-based xTB correction, and descriptor residualization, the standardized PRE+A cosine roughness tracks GemNet \(n\)-MAE closely (\(r_{\log x}=0.96\), \(\rho=0.95\)). This correlation should not be interpreted as a deterministic law: the roughness value depends on the proxy representation, feature scaling, similarity metric, and neighborhood graph. Nevertheless, it captures the central point of the target-design argument. Target transformations succeed when they reduce target scale without making the residual rougher in the representation space where the downstream model learns.
+These results motivate the principle of \textbf{baseline complementarity} in physical target design. Baselines constructed from local geometric descriptors share information with message-passing GNNs and may remove smooth variations that message-passing layers naturally learn while leaving behind residuals that are rough relative to their scale. In contrast, semiempirical quantum methods supply molecule-wide electronic-structure priors---including interactions beyond standard spatial cutoffs---that may complement downstream neural architectures. Tu and Rowley demonstrated such complementarity for long-range interactions, showing that a DFTB3 baseline supplies intermolecular interactions beyond a local neural network's cutoff and improves transferability over direct learning \cite{tu2026transferable}. While target scale and representation smoothness provide complementary diagnostics rather than strict guarantees for transfer, combining semiempirical physical baselines with architecture-aligned GNNs improves out-of-domain generalization in the present comparisons; the specific physical mechanism remains unresolved.

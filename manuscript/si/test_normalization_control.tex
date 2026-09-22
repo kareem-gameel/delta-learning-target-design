@@ -1,0 +1,36 @@
+\subsubsection*{Molecular neighbourhood information beyond shared normalization}
+A weaker raw correlation alone does not establish that the normalized association is artificial. We repeat the original control with 5,000 joint test-label permutations (seed 20260914), applying the same molecule permutation to all 13 targets and both architecture proxies. This preserves target distributions, IQRs, and cross-target relationships while disrupting label alignment with molecular neighbourhoods. Graphs, weights, and mean GNN test errors remain fixed; no GNN is retrained. DFTB is excluded. These controls are retrospective, not preregistered.
+
+\begin{table}[H]
+\centering\small
+\caption{\textbf{Corrected-test shared-normalization permutation control.} Fits use 13 primary targets per architecture. Null intervals are the 2.5th--97.5th percentiles over 5,000 joint molecule-label permutations, not confidence intervals for prediction. The one-sided $p$ uses signed Pearson $r$, not $R^2$.}
+\label{tab:test-normalization-permutation}
+\begin{tabular}{lrrrr}\toprule
+Model & Observed $R^2$ & Null median $R^2$ & Null 95\% interval & $p$ \\
+\midrule
+GemNet & 0.905 & 0.862 & 0.834--0.885 & 0.00020 \\
+SchNet & 0.946 & 0.855 & 0.831--0.879 & 0.00020 \\
+\bottomrule\end{tabular}
+\end{table}
+
+For both models, the observed signed Pearson correlation of \(\ln D_{\rm IQR}\) with test \(n\)-MAE exceeds all 5,000 shuffled values: one-sided plus-one \(p=1/5001\approx0.00020\), conditional on this panel and randomization scheme, without adjustment for the two architecture comparisons. High shuffled median \(R^2\) values (GemNet: 0.862; SchNet: 0.855) show that target distributions and normalization contribute substantially. The stronger observed associations support additional information from label--geometry alignment beyond this conditional null, not a purely physical explanation or universal learnability law. The observed-minus-shuffled \(R^2\) is not a decomposition of explained variance.
+
+\begin{table}[H]
+\centering\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.5}
+\caption{\textbf{All similar-test-IQR primary target pairs.} The larger IQR is at most 1.10 times the smaller; selection does not use roughness or errors. Values follow target order. Roughness uses PRE for SchNet and PRE+A for GemNet; normalized error is mean test MAE/test IQR. These descriptive comparisons are not independent confirmation on new data.}
+\label{tab:test-similar-iqr}
+\begin{tabular}{llrrr}\toprule
+Model & Targets & IQR (Ha) & $D_{\rm IQR}$ & $n$-MAE \\
+\midrule
+GemNet & $E^{\rm DFT}_{\rm ref}\to E^{\rm xTB}_{\rm ref}$ & $0.91832\to0.97563$ & $0.548\to0.533$ & $0.015\to0.012$ \\
+GemNet & $E^{\rm DFT}_{\rm ref,BoE}\to E^{\rm xTB}_{\rm ref,BoE}$ & $0.08450\to0.08677$ & $1.127\to1.051$ & $0.112\to0.096$ \\
+GemNet & $\Delta^{\rm BoB}_{\rm MLP}\to\Delta^{\rm PRE+A}_{\rm lin}$ & $0.02524\to0.02735$ & $3.711\to3.524$ & $0.746\to0.501$ \\
+SchNet & $E^{\rm DFT}_{\rm ref}\to E^{\rm xTB}_{\rm ref}$ & $0.91832\to0.97563$ & $0.604\to0.587$ & $0.022\to0.019$ \\
+SchNet & $E^{\rm DFT}_{\rm ref,BoE}\to E^{\rm xTB}_{\rm ref,BoE}$ & $0.08450\to0.08677$ & $1.152\to1.077$ & $0.185\to0.161$ \\
+SchNet & $\Delta^{\rm BoB}_{\rm MLP}\to\Delta^{\rm PRE+A}_{\rm lin}$ & $0.02524\to0.02735$ & $4.092\to3.763$ & $0.767\to0.588$ \\
+\bottomrule\end{tabular}
+\end{table}
+
+The original 10\% IQR-matching threshold selects three pairs, all concordant in roughness and normalized-error ordering for both models. Linear PRE+A has 8.4\% larger IQR than MLP-BoB, but lower roughness and normalized error. Matching narrows, but does not eliminate, denominator differences. Together, these controls support a geometry-sensitive component while retaining the shared-normalization limitation; they do not establish causality.

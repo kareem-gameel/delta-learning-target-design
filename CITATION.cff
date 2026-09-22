@@ -1,11 +1,29 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the associated manuscript and release archive."
-title: "Delta Learning as Target Design for Transferable Machine-Learning Interatomic Potentials"
+message: "If you use this software, please cite the associated manuscript and corrected GitHub release."
+title: "The Mechanics of Delta Learning: Target Design for Generalizable Scientific Machine Learning"
+type: software
 authors:
   - family-names: "Gameel"
-    given-names: "Kareem"
-repository-code: "https://github.com/kareem-gameel/delta-learning-target-design"
+    given-names: "Kareem M."
+    orcid: "https://orcid.org/0000-0002-1168-9830"
+  - family-names: "Neporozhnii"
+    given-names: "Ihor"
+    orcid: "https://orcid.org/0000-0001-9906-8010"
+  - family-names: "Hoogland"
+    given-names: "Sjoerd"
+    orcid: "https://orcid.org/0000-0002-3099-585X"
+  - family-names: "Voznyy"
+    given-names: "Oleksandr"
+    orcid: "https://orcid.org/0000-0002-8656-5074"
+version: "0.2.0-corrected"
+date-released: 2026-09-22
 license: MIT
-date-released: 2026-07-01
-version: "0.1.0"
-
+repository-code: "https://github.com/kareem-gameel/delta-learning-target-design"
+keywords:
+  - delta learning
+  - machine-learning interatomic potentials
+  - GemNet
+  - SchNet
+  - tmQM
+  - QM9
+  - target design

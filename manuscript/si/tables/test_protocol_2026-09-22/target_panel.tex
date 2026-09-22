@@ -1,0 +1,28 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\caption{Complete target and evaluation panel. Counts are molecules per seed; both architectures use the same counts. DFTB$^\dagger$ rows are display-only controls for pooled analyses.}
+\begin{tabular}{llrrrrr}
+\toprule
+ID & Target & Seeds & Train & Validation & Test & QM9 \\
+\midrule
+T1 & \(E_{\rm ref}^{\rm DFT}\) & 3 & 56,830 & 7,104 & 7,104 & 130,807 \\
+T2 & \(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 3 & 56,830 & 7,104 & 7,104 & 130,807 \\
+T3 & \(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 3 & 56,830 & 7,104 & 7,104 & 130,807 \\
+T4 & \(E_{\rm ref}^{\rm xTB}\) & 3 & 56,830 & 7,104 & 7,104 & 130,807 \\
+T5 & \(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 3 & 56,830 & 7,104 & 7,104 & 130,807 \\
+T6 & \(\Delta^{\rm xTB}_{\rm ref}\) & 3 & 56,830 & 7,104 & 7,104 & 130,807 \\
+T7 & \(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 3 & 56,830 & 7,104 & 7,104 & 130,807 \\
+T8 & \(\Delta^{\rm BoB}_{\rm lin}\) & 3 & 56,821 & 7,103 & 7,104 & 130,807 \\
+T9 & \(\Delta^{\rm BoB}_{\rm MLP}\) & 3 & 56,821 & 7,103 & 7,104 & 130,807 \\
+T10 & \(\Delta^{\rm PRE}_{\rm lin}\) & 3 & 56,821 & 7,103 & 7,104 & 128,988 \\
+T11 & \(\Delta^{\rm PRE}_{\rm MLP}\) & 3 & 56,821 & 7,103 & 7,104 & 128,988 \\
+T12 & \(\Delta^{\rm PRE+A}_{\rm lin}\) & 3 & 56,821 & 7,103 & 7,104 & 128,988 \\
+T13 & \(\Delta^{\rm PRE+A}_{\rm MLP}\) & 3 & 56,821 & 7,103 & 7,104 & 128,988 \\
+T14$\dagger$ & \(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 1 & 56,540 & 7,068 & 7,068 & 130,797 \\
+T15$\dagger$ & \(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 1 & 56,540 & 7,068 & 7,068 & 130,797 \\
+\bottomrule
+\end{tabular}
+\end{table}

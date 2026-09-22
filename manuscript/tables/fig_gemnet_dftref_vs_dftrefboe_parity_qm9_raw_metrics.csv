@@ -1,5 +1,0 @@
-panel,title,source_csv,n,r2,mae,rmse
-a,tmQM test: GemNet($E_{\rm ref}$),/Users/kareem/PycharmProjects/deltaML_Paper/New_Analysis/manuscript_support/inputs/tmqm_test_gemnet_dft_ref_predictions.csv,7104,0.9989514236565251,0.013916847832988508,0.023637679433078256
-b,"tmQM test: BoE + GemNet($E_{\rm ref,BoE}$)",/Users/kareem/PycharmProjects/deltaML_Paper/New_Analysis/manuscript_support/inputs/tmqm_test_gemnet_dft_ref_boe_predictions.csv,7104,0.9992874602019233,0.010345469720115253,0.01948540217603106
-c,QM9 raw transfer: GemNet($E_{\rm ref}$),/Users/kareem/PycharmProjects/deltaML_Paper/New_Analysis/qm9_dft_ref_boe_transfer/outputs/requested_parity_against_DFT_ref/qm9_requested_parity_predictions_against_DFT_ref.csv,130807,-152.0596307020812,1.0495630583045734,1.0511011963807242
-d,"QM9 raw transfer: BoE + GemNet($E_{\rm ref,BoE}$)",/Users/kareem/PycharmProjects/deltaML_Paper/New_Analysis/qm9_dft_ref_boe_transfer/outputs/qm9_DFT_ref_BoE_gemnet_predictions.csv,130807,-7.44303729084368,0.24579833212917818,0.24686729226598284

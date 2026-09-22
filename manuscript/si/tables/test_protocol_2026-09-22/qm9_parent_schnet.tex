@@ -1,0 +1,25 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\caption{SchNet transfer after reconstruction onto the common DFT-BoE parent. Primary routes use the identical 128,988-molecule descriptor-common QM9 cohort; DFTB$^\dagger$ uses its 128,978-molecule intersection. RMSE and $R^2$ are means of seed-level oracle-shifted metrics. Kendall ordering is shift-invariant.}
+\begin{tabular}{lrrrr}
+\toprule
+Route & Oracle MAE & RMSE & $R^2$ & Kendall $\tau$ \\
+\midrule
+\(E_{\rm ref}^{\rm DFT}\) & 0.020707 $\pm$ 0.002107 & 0.037080 & 0.467 & 0.749 $\pm$ 0.008 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.015634 $\pm$ 0.000814 & 0.028811 & 0.681 & 0.746 $\pm$ 0.015 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.030699 $\pm$ 0.000419 & 0.043151 & 0.285 & 0.549 $\pm$ 0.034 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 0.006603 $\pm$ 0.001017 & 0.009128 & 0.967 & 0.898 $\pm$ 0.013 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.006647 $\pm$ 0.000190 & 0.009381 & 0.966 & 0.895 $\pm$ 0.001 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 0.017229 $\pm$ 0.000583 & 0.030164 & 0.650 & 0.718 $\pm$ 0.012 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.033290 $\pm$ 0.000453 & 0.045189 & 0.216 & 0.473 $\pm$ 0.009 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 0.019612 $\pm$ 0.000547 & 0.032431 & 0.596 & 0.687 $\pm$ 0.002 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.060797 $\pm$ 0.000118 & 0.108187 & -3.495 & 0.506 $\pm$ 0.006 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.034096 $\pm$ 0.002906 & 0.066634 & -0.709 & 0.734 $\pm$ 0.002 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.065843 $\pm$ 0.000111 & 0.117543 & -4.306 & 0.710 $\pm$ 0.000 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.011623 & 0.016650 & 0.893 & 0.810 \\
+\bottomrule
+\end{tabular}
+\end{table}

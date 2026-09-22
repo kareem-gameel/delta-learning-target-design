@@ -1,0 +1,22 @@
+{
+  "iqr_reduction_mlp": {
+    "Delta_MLP_BoB-ref-BoE": 3.3485113735183196,
+    "Delta_MLP_PRE-ref-BoE": 4.237093557197431,
+    "Delta_MLP_PRE_plus_A-ref-BoE": 4.700104747632834
+  },
+  "roughness_increase_mlp": {
+    "Delta_MLP_BoB-ref-BoE": 3.2923341001910207,
+    "Delta_MLP_PRE-ref-BoE": 9.477525135194245,
+    "Delta_MLP_PRE_plus_A-ref-BoE": 7.57112115852529
+  },
+  "bob_linear_to_mlp_iqr_reduction": 1.6328828706523828,
+  "bob_linear_to_mlp_test_mae_increase": 1.7077094224202547,
+  "normalized_test_error_ratio": {
+    "gemnet": 7.186427030455874,
+    "schnet": 4.949394794961329
+  },
+  "figure2_source_sha256": "1edb9dd93b9eaf8054f9a9b92c2f05e365b6056157b900f06daaae95c1191b1f",
+  "evaluation_split": "test",
+  "scale_and_roughness_split": "test",
+  "comparison_scope": "Primary GemNet comparisons; DFTB is a separate seed-101 valid-subset control."
+}

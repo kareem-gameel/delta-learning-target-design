@@ -1,0 +1,28 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\caption{GemNet individual-seed tmqm native-target MAEs (Ha). All predictions use each run's best-validation checkpoint. A dash denotes an intentionally unrun DFTB seed, not a zero error.}
+\begin{tabular}{lrrr}
+\toprule
+Target & 101 & 102 & 103 \\
+\midrule
+\(E_{\rm ref}^{\rm DFT}\) & 0.013696 & 0.012885 & 0.013498 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.009917 & 0.008979 & 0.009448 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.021859 & 0.022624 & 0.022656 \\
+\(E_{\rm ref}^{\rm xTB}\) & 0.012397 & 0.011287 & 0.011471 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 0.008404 & 0.008368 & 0.008343 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 0.008307 & 0.008003 & 0.008548 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.006606 & 0.006544 & 0.006638 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 0.011443 & 0.010813 & 0.010816 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.018887 & 0.018777 & 0.018813 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 0.013208 & 0.013675 & 0.013182 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.018298 & 0.018200 & 0.018381 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.013711 & 0.013497 & 0.013921 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.015221 & 0.015229 & 0.015217 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 0.008462 & -- & -- \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.007936 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

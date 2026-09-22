@@ -1,0 +1,17 @@
+{
+  "unique_runs": 82,
+  "main_runs": 78,
+  "dftb_runs": 4,
+  "datasets": [
+    "tmqm",
+    "qm9"
+  ],
+  "max_mae_reproduction_difference": 6.661338147750939e-16,
+  "qm9_common13_n": 128988,
+  "qm9_common15_n": 128978,
+  "train_validation_test_disjoint": true,
+  "all_target_registry_checksums_match": true,
+  "all_prediction_ids_unique_and_aligned": true,
+  "checkpoint_paths_match_across_test_and_qm9": true,
+  "no_fitting_or_inference_performed": true
+}

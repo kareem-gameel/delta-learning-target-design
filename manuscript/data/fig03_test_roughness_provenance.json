@@ -1,0 +1,53 @@
+{
+  "figure_number": 3,
+  "asset_path": "figures/fig04_roughness_nmae",
+  "inputs": {
+    "roughness_error_plot_data.csv": {
+      "path": "si/data/test_protocol_2026-09-22/roughness_error_plot_data.csv",
+      "sha256": "369c769eb58de48ea041448d8a6e940268bb6ebd59d14e8deecf7b9b87ea80e2"
+    },
+    "correlations.csv": {
+      "path": "si/data/test_protocol_2026-09-22/correlations.csv",
+      "sha256": "10cc8b5cec85824f9a405e22bad6802ec770498d4b816c3014919b79e6b8e02b"
+    },
+    "target_registry.csv": {
+      "path": "si/data/test_protocol_2026-09-22/target_registry.csv",
+      "sha256": "17a99894529a130f0d5cbc6dcb774792c4aebdb8d37d3154411d066a7c8721e1"
+    },
+    "tmqm_final_ledger.csv": {
+      "path": "si/data/test_protocol_2026-09-22/tmqm_final_ledger.csv",
+      "sha256": "5f0cd4592e1fb86fa6181081f6bb345a5d8fefc2bba330f3cdc358172f5d15a7"
+    }
+  },
+  "split": "test",
+  "normalization": "test MAE / same-target test IQR",
+  "fitting_target_ids": [
+    "E_ref",
+    "xTB_ref",
+    "E_ref-BoE",
+    "xTB_ref-BoE",
+    "Delta_MLP_BoE-ref",
+    "Delta_BoB-ref-BoE",
+    "Delta_MLP_BoB-ref-BoE",
+    "Delta_PRE-ref-BoE",
+    "Delta_MLP_PRE-ref-BoE",
+    "Delta_PRE_plus_A-ref-BoE",
+    "Delta_MLP_PRE_plus_A-ref-BoE",
+    "Delta_xTB-ref",
+    "Delta_xTB-ref-BoE"
+  ],
+  "display_only_target_ids": [
+    "DFTB_ref-BoE",
+    "Delta_DFTB-ref-BoE"
+  ],
+  "n_fitting_targets": 13,
+  "n_displayed_targets": 15,
+  "r_squared": 0.9052881529117827,
+  "pearson": 0.9514663172765406,
+  "spearman": 0.945054945054945,
+  "kendall": 0.8205128205128204,
+  "slope": 0.29009187003485093,
+  "intercept": 0.17825565408457303,
+  "uncertainty": "Sample SD retained in source CSV but not plotted; primary points are means of seeds 101, 102, and 103; DFTB has seed 101 only.",
+  "interpretation": "Descriptive in-sample cross-target fit, not a prospective performance guarantee."
+}
