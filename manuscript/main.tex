@@ -33,10 +33,9 @@
 \maketitle
 
 \begin{abstract}
-Delta learning---training machine learning models on residual errors relative to baseline physical approximations---is often used across scientific domains to predict complex physical systems. However, baseline selection remains largely empirical, governed by the assumption that increasingly accurate baselines with smaller residual scales inherently improve downstream performance. Here, we show that residual scale alone is an insufficient heuristic for learnability and introduce a two-dimensional target-design framework that evaluates baseline transformations across both scale reduction and model-relative smoothness. Investigating molecular graph neural network (GNN) architectures on total energy targets reveals that more accurate local descriptor baselines can leave smaller residual targets that are disproportionately rough within architecture-informed proxy spaces and harder to learn relative to their scale. In contrast, an xTB baseline reduces both scale and normalized roughness while improving in-domain and out-of-domain prediction. A DFTB control improves prediction despite a small increase in normalized roughness, showing that smoothness is a diagnostic rather than a necessary condition for lower absolute error. We introduce scale-normalized graph Dirichlet roughness ($D_{\mathrm{IQR}}$) as a candidate pre-training diagnostic for residual learnability. Its association with normalized test error contains a substantial shared-normalization contribution, with permutation controls supporting additional molecular-neighbourhood information. These results motivate baseline complementarity as a target-design principle, positioning target space formulation alongside model architecture as an important axis for scientific machine learning.
+In scientific machine learning, $\Delta$-learning trains models on residual errors relative to approximate baselines, assuming that smaller residual scales inherently yield better downstream accuracy. Here, we demonstrate that residual scale alone is an insufficient heuristic for learnability. For molecular total energies, replacing a linear baseline with a neural network fitted to the same elemental counts reduced the residual scale, yet more than doubled GemNet’s prediction error. Across local structural descriptors, more flexible baselines produced smaller residuals that varied sharply between structurally similar molecules. By contrast, semi-empirical baselines left larger residuals, yet yielded lower test error and improved out-of-domain transferability. Across the targets studied, scale-normalized graph Dirichlet roughness tracked scale-normalized prediction error, suggesting its use as a pre-training diagnostic for target selection. These results motivate \emph{baseline complementarity} as a target-design principle in scientific machine learning: a useful baseline captures contributions the downstream architecture struggles to predict.
 \end{abstract}
 
-\linenumbers
 
 \input{sections/section_01_introduction}
 \input{sections/section_02_results_discussion}
@@ -57,7 +56,6 @@ K.M.G. conceived and designed the study, performed the computational experiments
 
 The authors declare no competing interests.
 
-\nolinenumbers
 \clearpage
 \includepdf[pages=-]{supplement.pdf}
 

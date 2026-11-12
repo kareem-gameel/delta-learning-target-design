@@ -55,6 +55,11 @@
     "sha256": "fcd186ea89dff85570cf325b99ecd97b7364f6bcdc10923c8b95d86967ea9cea"
   },
   {
+    "file": "manuscript/data/qm9_xtb_only_comparison_summary.csv",
+    "size_bytes": 755,
+    "sha256": "f3b822742d9d6f8858d4efb62a490c475083d3f80b2c024e864c5ad150cf655f"
+  },
+  {
     "file": "manuscript/data/section23_corrected_test_ratios.json",
     "size_bytes": 859,
     "sha256": "9c6710d57740503b741483c7ae343ad6b39843b17a56a6178baf2eb7de57ce0f"
@@ -138,6 +143,16 @@
     "file": "manuscript/si/data/test_protocol_2026-09-22/dftb_target_audit.json",
     "size_bytes": 10410,
     "sha256": "d23ad8c96949eef245a1e7527386a4bc439ddb14409d2adc7fd26252ede8e26e"
+  },
+  {
+    "file": "manuscript/si/data/test_protocol_2026-09-22/epoch80_training_per_run.csv",
+    "size_bytes": 8616,
+    "sha256": "9a18db384d6ef16c7a3adb8c33392efd07cd5e5f91f49810705ffdaf69a0a1e1"
+  },
+  {
+    "file": "manuscript/si/data/test_protocol_2026-09-22/epoch80_training_summary.csv",
+    "size_bytes": 2081,
+    "sha256": "8208b829e1228f3b86a837516eaaa2d6119a306a82e44008933c35873653f5e0"
   },
   {
     "file": "manuscript/si/data/test_protocol_2026-09-22/extended_metrics_per_seed.csv",

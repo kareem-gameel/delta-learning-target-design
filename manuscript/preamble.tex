@@ -12,7 +12,6 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{siunitx}
-\usepackage{lineno}
 \usepackage{orcidlink}
 \usepackage{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
@@ -31,5 +30,5 @@
   separate-uncertainty=true
 }
 
-\renewcommand{\linenumberfont}{\normalfont\tiny\sffamily\color{gray}}
-\setlength\linenumbersep{10pt}
+% V2 review highlighting; supports page breaks.
+\usepackage{mdframed}

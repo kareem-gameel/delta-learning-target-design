@@ -90,6 +90,14 @@ Johannes Gasteiger, Florian Becker, and Stephan G{\"u}nnemann.
 \newblock In {\em Advances in Neural Information Processing Systems},
   volume~34, pages 6790--6802, 2021.
 
+\bibitem{bannwarth2019gfn2xtb}
+Christoph Bannwarth, Sebastian Ehlert, and Stefan Grimme.
+\newblock {GFN2-xTB}: An accurate and broadly parametrized self-consistent
+  tight-binding quantum chemical method with multipole electrostatics and
+  density-dependent dispersion contributions.
+\newblock {\em Journal of Chemical Theory and Computation}, 15(3):1652--1671,
+  2019.
+
 \bibitem{balcells2020tmqm}
 David Balcells and Bastian~Bjerkem Skjelstad.
 \newblock {tmQM} dataset: Quantum geometries and properties of 86k transition
@@ -121,13 +129,11 @@ Raul~P. Pelaez, Guillem Simeon, Raimondas Galvelis, Antonio Mirarchi, Peter
 \newblock {\em Journal of Chemical Theory and Computation}, 20(10):4076--4087,
   2024.
 
-\bibitem{bannwarth2019gfn2xtb}
-Christoph Bannwarth, Sebastian Ehlert, and Stefan Grimme.
-\newblock {GFN2-xTB}: An accurate and broadly parametrized self-consistent
-  tight-binding quantum chemical method with multipole electrostatics and
-  density-dependent dispersion contributions.
-\newblock {\em Journal of Chemical Theory and Computation}, 15(3):1652--1671,
-  2019.
+\bibitem{tu2026transferable}
+Nguyen Thien~Phuc Tu and Christopher~N. Rowley.
+\newblock {$\Delta$}-learning for transferable machine learning interatomic
+  potentials.
+\newblock {\em The Journal of Chemical Physics}, 165:054114, 2026.
 
 \bibitem{elstner1998sccdftb}
 Marcus Elstner, Dirk Porezag, Gerd Jungnickel, Jens Elsner, Michael Haugk,
@@ -164,12 +170,6 @@ Belinda Phipson and Gordon~K. Smyth.
   when permutations are randomly drawn.
 \newblock {\em Statistical Applications in Genetics and Molecular Biology},
   9(1):39, 2010.
-
-\bibitem{tu2026transferable}
-Nguyen Thien~Phuc Tu and Christopher~N. Rowley.
-\newblock {$\Delta$}-learning for transferable machine learning interatomic
-  potentials.
-\newblock {\em The Journal of Chemical Physics}, 165:054114, 2026.
 
 \bibitem{mardirossian2016wb97mv}
 Narbe Mardirossian and Martin Head-Gordon.

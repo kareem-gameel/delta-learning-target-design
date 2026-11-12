@@ -8,7 +8,6 @@
 \end{figure}}
 \begin{document}
 \maketitle
-\linenumbers
 
 \section*{Scope and Reporting Conventions}
 This supplement asks how target construction changes the difficulty of learning molecular energies and their transfer between chemical domains. SchNet and GemNet are evaluated on the same 13 target definitions, with independent GNN seeds 101, 102, and 103 for every target. Each run is evaluated on the tmQM test split and on QM9 using its own best-validation checkpoint. The 78 main runs are supplemented by four DFTB runs: two targets, two architectures, and seed 101 only.
@@ -29,6 +28,9 @@ Composition referencing removes a large, learnable contribution to the atom-refe
 
 \sifig{scale_and_test_error}{\textbf{Target scale and test error.} Test IQR and tmQM test MAE for all targets. Error bars are sample SD over three GNN seeds. Magenta DFTB\(\dagger\) points are single-seed, reduced-cohort controls.}{fig:si-scale}
 \sitab{test_summary}
+
+\sitab{epoch80_train_val_test}
+
 
 Direct xTB and DFTB energy-prediction rows describe how well each GNN learns the semiempirical energy itself. They are not DFT reconstruction errors. For a residual \(\Delta^b=y-b\), in contrast, the stacked predictor \(\hat y=b+\widehat{\Delta}^b\) satisfies
 \begin{equation}

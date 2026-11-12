@@ -15,8 +15,8 @@ authors:
   - family-names: "Voznyy"
     given-names: "Oleksandr"
     orcid: "https://orcid.org/0000-0002-8656-5074"
-version: "0.2.0-corrected"
-date-released: 2026-09-22
+version: "0.3.0"
+date-released: 2026-11-11
 license: MIT
 repository-code: "https://github.com/kareem-gameel/delta-learning-target-design"
 keywords:

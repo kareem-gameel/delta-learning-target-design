@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - 2026-11-11
+
+- Publish the revised manuscript and SI with Table S3, its epoch-80 source data for all 82 runs, and the standalone xTB transfer comparison.
+
 ## 0.2.0-corrected - 2026-09-22
 
 - Replaced historical target provenance with the corrected train-only Sep15

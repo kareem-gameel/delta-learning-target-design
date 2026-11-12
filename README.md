@@ -4,10 +4,7 @@ Code, processed evidence, manuscript source, and reproducibility checks for
 **The Mechanics of Delta Learning: Target Design for Generalizable Scientific
 Machine Learning**.
 
-This is the Sep15 corrected release, `v0.2.0-corrected`. It replaces the historical
-full-dataset baseline-fitting protocol with targets generated from baselines
-fitted only on the fixed tmQM training split. Fitted parameters are frozen
-before validation and test target generation.
+Manuscript revision **v2** is available in release `v0.3.0`. Read the [combined manuscript and SI](manuscript/build/main.pdf) or the [standalone SI](manuscript/supplement.pdf). Supplementary Table S3 compares final-epoch training MAE with validation and test MAE at the validation-selected checkpoint. The September [v0.2.0-corrected release](https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected) preserves the original manuscript and corrected test protocol. The files under `manuscript/submission/` document that September submission.
 
 ## Evidence contract
 
@@ -90,7 +87,7 @@ normalization.
 
 The corrected manuscript and SI are complete and included in `manuscript/`.
 The combined PDF is `manuscript/build/main.pdf`, the standalone SI is
-`manuscript/supplement.pdf`, and the arXiv source archive is
+`manuscript/supplement.pdf`, and the historical v1 arXiv source archive is
 `manuscript/submission/Sep15_arxiv_source.zip`. The manuscript license is
 CC BY-NC-ND 4.0. This release does not itself submit the paper to arXiv.
 
