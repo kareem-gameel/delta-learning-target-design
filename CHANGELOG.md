@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 - 2026-11-13
+
+- Update the Discussion sentence on in-domain accuracy and transfer to QM9 and refresh the combined manuscript PDF.
+
 ## 0.3.1 - 2026-11-13
 
 - Update the manuscript title, citation metadata, and combined and standalone SI PDFs.

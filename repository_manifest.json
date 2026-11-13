@@ -6,13 +6,13 @@
   },
   {
     "file": "CHANGELOG.md",
-    "size_bytes": 969,
-    "sha256": "9184995656170d4ba1a6d8995331dc8b82b65e3a262041ccac50b108efd1c40f"
+    "size_bytes": 1109,
+    "sha256": "807ee96deb160b9ea873e723744612c5dd60843b996289f9b7129ed2e929bf94"
   },
   {
     "file": "CITATION.cff",
     "size_bytes": 937,
-    "sha256": "8ad78ed70e784c3cb0c18e18ddad56e59d40dc44bb678b4fc05a4b7e7453d450"
+    "sha256": "9d8529ddbb53120ebcfdd23cd3f2c4e9ad3b5c9209b026b515c6067116a54495"
   },
   {
     "file": "CONTRIBUTING.md",
@@ -37,7 +37,7 @@
   {
     "file": "README.md",
     "size_bytes": 4492,
-    "sha256": "791371760e4ace348ff2f0a80933c9342f41b4085281b67ac3152eb9fc7863a4"
+    "sha256": "c96b6ce15885ad52b47b98c699c1180b86bcb750ed299aea14b67cd866f095b5"
   },
   {
     "file": "RELEASE_CHECKLIST.md",
@@ -47,7 +47,7 @@
   {
     "file": "RELEASE_STATUS.md",
     "size_bytes": 342,
-    "sha256": "1977c63b47598ddc59a86aeeb1b7a73709ae081002faca1853b6778c8707d7b3"
+    "sha256": "310a1d60f16deec3d73eee5e6cbcdf685fd74dac0442b86971d7b9216a8ed0cd"
   },
   {
     "file": "configs/angular_feature_metadata.json",
@@ -141,8 +141,8 @@
   },
   {
     "file": "manuscript/build/main.pdf",
-    "size_bytes": 789793,
-    "sha256": "c38717b09aee8a1fe6f0c3f8cf55d248a35dc9ca0cfe97f72998df373a04b4b3"
+    "size_bytes": 789790,
+    "sha256": "369992996b9dd4e702fe13209fa096fa14255b07142aa426b20d85ddbb263389"
   },
   {
     "file": "manuscript/data/fig01_per_seed.csv",
@@ -306,8 +306,8 @@
   },
   {
     "file": "manuscript/sections/section_07_discussion.tex",
-    "size_bytes": 3736,
-    "sha256": "d2a64ea3bcf61a0215c0e9b1047a7faedef2f37fdfb63a28f9be6ddba81992c6"
+    "size_bytes": 3735,
+    "sha256": "12d8b02903f32996cab4d9fa9000e3dd62fb1b4029a23901947b600ff92fae55"
   },
   {
     "file": "manuscript/sections/section_08_methods.tex",
