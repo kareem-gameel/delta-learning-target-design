@@ -6,6 +6,7 @@ Code, processed evidence, manuscript source, and reproducibility checks for
 Manuscript revision **v2** is available in release `v0.4.2`. Read the [combined manuscript and SI](manuscript/build/main.pdf) or the [standalone SI](manuscript/supplement.pdf). Supplementary Table S3 compares final-epoch training MAE with validation and test MAE at the validation-selected checkpoint. The September [v0.2.0-corrected release](https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected) preserves the original manuscript and corrected test protocol. The files under `manuscript/submission/` document that September submission.
 
 Download the [QM9 Psi4 total energies and documentation](manuscript/data/qm9_psi4) for 130,807 molecules in Hartree and kcal/mol.
+Cite the dataset: Kareem M. Gameel and Oleksandr Voznyy (2026), *Psi4 total electronic energies of 130,807 QM9 molecules at the ωB97M-V/def2-SVPD level of theory*. Zenodo. DOI: [10.5281/zenodo.24203175](https://doi.org/10.5281/zenodo.24203175).
 
 ## Evidence contract
 
