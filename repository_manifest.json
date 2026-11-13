@@ -6,13 +6,13 @@
   },
   {
     "file": "CHANGELOG.md",
-    "size_bytes": 1568,
-    "sha256": "81b4718dc51c30508506578dc230cbfca8001bd91ddb5101aa7ef755b39aa585"
+    "size_bytes": 1694,
+    "sha256": "30bb22f7e31a9f1e960114f490503da15abc435750809a489275bb92feef66ba"
   },
   {
     "file": "CITATION.cff",
-    "size_bytes": 977,
-    "sha256": "5e1114e7d4815b98adaa3a95f9633826bbb09be353ff5e6d66cc4bee745dacd7"
+    "size_bytes": 969,
+    "sha256": "961f4453f780f6b45fc8d605a87364139941f9fb17e008953f91e744cc5b93ba"
   },
   {
     "file": "CONTRIBUTING.md",
@@ -36,8 +36,8 @@
   },
   {
     "file": "README.md",
-    "size_bytes": 4663,
-    "sha256": "3ae5c5d2621a6ac44c82f08685a1f37edf0c7544acc5e78afc1f5b7b95896d17"
+    "size_bytes": 4655,
+    "sha256": "9217d2a47b5505620896d2b35c9066c8acdb9b4d327387924d9ea1299f506ce4"
   },
   {
     "file": "RELEASE_CHECKLIST.md",
@@ -47,7 +47,7 @@
   {
     "file": "RELEASE_STATUS.md",
     "size_bytes": 342,
-    "sha256": "31a3232577e40318b88da9d271b0e58ebecc4071db5d4f266346effbb9c857db"
+    "sha256": "a7e762e6f8fa131215a5fff6f393a376ec8e7844b83313dc4739bb0edf2c07dc"
   },
   {
     "file": "configs/angular_feature_metadata.json",
@@ -136,18 +136,18 @@
   },
   {
     "file": "manuscript/bib/references.bib",
-    "size_bytes": 18316,
-    "sha256": "e049b44d68454d9c419e0d362e03bd89d8eac7bae6383df4d56a219d267933dd"
+    "size_bytes": 18308,
+    "sha256": "4011eb9770da29d99a6afb3ba5f790e726ca6691ae12dddf23942be343abf835"
   },
   {
     "file": "manuscript/build/main.pdf",
-    "size_bytes": 783725,
-    "sha256": "e71668cc4b5aae22a5a8486dd74f193f3de0bee89014add0f99cd7526fbebc36"
+    "size_bytes": 783634,
+    "sha256": "bbe9628753dd72164fe7be9effab4c8580252b7c798149fda2ca87a16f59001f"
   },
   {
     "file": "manuscript/build/manuscript-only.pdf",
-    "size_bytes": 426327,
-    "sha256": "8fb39b96ec8af0a5bdf931c22687901f325debd95182ee38aa9dab54b46f8158"
+    "size_bytes": 426273,
+    "sha256": "8297fc72195eb4d809e9a79d32a44698740365f629e47e6b6be5f9e442464c68"
   },
   {
     "file": "manuscript/data/fig01_per_seed.csv",
@@ -271,13 +271,13 @@
   },
   {
     "file": "manuscript/main.bbl",
-    "size_bytes": 11595,
-    "sha256": "2ca390aa337443c4debcf86229eb5f807755e81d7389bbc47cba48d9a12f1b2b"
+    "size_bytes": 11587,
+    "sha256": "f12f0b4bae7bd92ec82b8ff63ec69b99233ad6590bb35df6897c19203e19ad43"
   },
   {
     "file": "manuscript/main.tex",
-    "size_bytes": 4464,
-    "sha256": "05f691cc924554c203c00dfa5700becf85bd598f9162a8f03239cd324d550f12"
+    "size_bytes": 4456,
+    "sha256": "1bb80d2bcb383cd2b9a3ac76c094229fe77f6ae8acc641a761f02f3ef133319f"
   },
   {
     "file": "manuscript/preamble.tex",
@@ -336,13 +336,13 @@
   },
   {
     "file": "manuscript/si/build/supplementary_information.bbl",
-    "size_bytes": 463,
-    "sha256": "2525ca377ca6949fb97e0392aa2d83dcc80c3ea95b5e041c3720494c6ecb135f"
+    "size_bytes": 455,
+    "sha256": "d7f81749589e97be5ee9967da75222b6e1f6a6296af8cc46328ca146c13647f6"
   },
   {
     "file": "manuscript/si/build/supplementary_information.pdf",
-    "size_bytes": 556921,
-    "sha256": "4a9b788ed15ac70b5a7f1750fbf4888765c74d9644d82265291105163d4d9787"
+    "size_bytes": 556924,
+    "sha256": "6e36d0ba23d6482825db738fa0bbe5a10c20987a72fdc194945da8e6da277921"
   },
   {
     "file": "manuscript/si/corrected_content.tex",
@@ -641,8 +641,8 @@
   },
   {
     "file": "manuscript/si/supplementary_information.tex",
-    "size_bytes": 1400,
-    "sha256": "6b9afcee7fa78edfc89919565183981bafbaf93e11f26096ea5619274f739510"
+    "size_bytes": 1392,
+    "sha256": "22763591cbf9845cc6ef559b9b2efac2b13350c7aa5255a168f1980e79f4631f"
   },
   {
     "file": "manuscript/si/tables/test_protocol_2026-09-22/baseline_fit_seeds.tex",
@@ -751,8 +751,8 @@
   },
   {
     "file": "manuscript/supplement.pdf",
-    "size_bytes": 556921,
-    "sha256": "4a9b788ed15ac70b5a7f1750fbf4888765c74d9644d82265291105163d4d9787"
+    "size_bytes": 556924,
+    "sha256": "6e36d0ba23d6482825db738fa0bbe5a10c20987a72fdc194945da8e6da277921"
   },
   {
     "file": "pyproject.toml",

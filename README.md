@@ -1,9 +1,9 @@
 # Delta Target Design
 
 Code, processed evidence, manuscript source, and reproducibility checks for
-**When better baselines make worse models: separating residual scale from learnability to guide target design in delta learning**.
+**When a better baseline makes delta learning worse: separating residual scale from learnability to guide target design**.
 
-Manuscript revision **v2** is available in release `v0.4.1`. Read the [combined manuscript and SI](manuscript/build/main.pdf) or the [standalone SI](manuscript/supplement.pdf). Supplementary Table S3 compares final-epoch training MAE with validation and test MAE at the validation-selected checkpoint. The September [v0.2.0-corrected release](https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected) preserves the original manuscript and corrected test protocol. The files under `manuscript/submission/` document that September submission.
+Manuscript revision **v2** is available in release `v0.4.2`. Read the [combined manuscript and SI](manuscript/build/main.pdf) or the [standalone SI](manuscript/supplement.pdf). Supplementary Table S3 compares final-epoch training MAE with validation and test MAE at the validation-selected checkpoint. The September [v0.2.0-corrected release](https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected) preserves the original manuscript and corrected test protocol. The files under `manuscript/submission/` document that September submission.
 
 Download the [QM9 Psi4 total energies and documentation](manuscript/data/qm9_psi4) for 130,807 molecules in Hartree and kcal/mol.
 

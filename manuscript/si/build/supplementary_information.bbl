@@ -2,12 +2,12 @@
 
 \bibitem{gameel2026correctedRelease}
 Kareem~M. Gameel, Ihor Neporozhnii, Sjoerd Hoogland, and Oleksandr Voznyy.
-\newblock When better baselines make worse models: separating residual scale
-  from learnability to guide target design in delta learning (code and data
+\newblock When a better baseline makes delta learning worse: separating
+  residual scale from learnability to guide target design (code and data
   release).
 \newblock
-  \url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.4.1},
+  \url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.4.2},
   2026.
-\newblock Version v0.4.1.
+\newblock Version v0.4.2.
 
 \end{thebibliography}

@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.2
+
+Updated the v2 manuscript and Supplementary Information to the singular title and refreshed the release citation.
+
 ## v0.4.1
 
 Final v2 manuscript and SI with the revised title, results in kcal/mol, training and test IQRs, and the published QM9 dataset citation (https://doi.org/10.5281/zenodo.24203175).

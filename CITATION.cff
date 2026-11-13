@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the associated manuscript and corrected GitHub release."
-title: "When better baselines make worse models: separating residual scale from learnability to guide target design in delta learning"
+title: "When a better baseline makes delta learning worse: separating residual scale from learnability to guide target design"
 type: software
 authors:
   - family-names: "Gameel"
@@ -15,7 +15,7 @@ authors:
   - family-names: "Voznyy"
     given-names: "Oleksandr"
     orcid: "https://orcid.org/0000-0002-8656-5074"
-version: "0.4.1"
+version: "0.4.2"
 date-released: 2026-11-13
 license: MIT
 repository-code: "https://github.com/kareem-gameel/delta-learning-target-design"
