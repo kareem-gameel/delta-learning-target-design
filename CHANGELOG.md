@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 - 2026-11-13
+
+- Update the manuscript title, citation metadata, and combined and standalone SI PDFs.
+
 ## 0.3.0 - 2026-11-11
 
 - Publish the revised manuscript and SI with Table S3, its epoch-80 source data for all 82 runs, and the standalone xTB transfer comparison.

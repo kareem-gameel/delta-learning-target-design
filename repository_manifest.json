@@ -6,13 +6,13 @@
   },
   {
     "file": "CHANGELOG.md",
-    "size_bytes": 858,
-    "sha256": "e693c174323e09b3bd0790248895852b3f77055018ec964787f67e4a2e790af9"
+    "size_bytes": 969,
+    "sha256": "9184995656170d4ba1a6d8995331dc8b82b65e3a262041ccac50b108efd1c40f"
   },
   {
     "file": "CITATION.cff",
-    "size_bytes": 944,
-    "sha256": "226f646eb72a92c27724584f2fa4fa198ee71184640f62c822a7aa87a3cba047"
+    "size_bytes": 937,
+    "sha256": "8ad78ed70e784c3cb0c18e18ddad56e59d40dc44bb678b4fc05a4b7e7453d450"
   },
   {
     "file": "CONTRIBUTING.md",
@@ -36,8 +36,8 @@
   },
   {
     "file": "README.md",
-    "size_bytes": 4499,
-    "sha256": "917ab5c2032535875ee6f93992a6eca3f28c3e0327e12d4f1fa62d97427f0176"
+    "size_bytes": 4492,
+    "sha256": "791371760e4ace348ff2f0a80933c9342f41b4085281b67ac3152eb9fc7863a4"
   },
   {
     "file": "RELEASE_CHECKLIST.md",
@@ -47,7 +47,7 @@
   {
     "file": "RELEASE_STATUS.md",
     "size_bytes": 342,
-    "sha256": "f7299c2267ac5509234c384c17a5dad9e3397e587e21ba79e6898af40dc31a0a"
+    "sha256": "1977c63b47598ddc59a86aeeb1b7a73709ae081002faca1853b6778c8707d7b3"
   },
   {
     "file": "configs/angular_feature_metadata.json",
@@ -141,8 +141,8 @@
   },
   {
     "file": "manuscript/build/main.pdf",
-    "size_bytes": 789982,
-    "sha256": "fdb57e97d3eb9068f47c2800d97fe7fa6958b62127d0453f4a38091401906cb8"
+    "size_bytes": 789793,
+    "sha256": "c38717b09aee8a1fe6f0c3f8cf55d248a35dc9ca0cfe97f72998df373a04b4b3"
   },
   {
     "file": "manuscript/data/fig01_per_seed.csv",
@@ -261,8 +261,8 @@
   },
   {
     "file": "manuscript/main.tex",
-    "size_bytes": 4165,
-    "sha256": "b5bc644fee46abc1bcb98c58285ad372e82c3729d961f17ef43de81171fcb1b1"
+    "size_bytes": 4158,
+    "sha256": "005094b23b2b5d1a2a7b69f3f24f17b17df998b8523d186aa882da0213ab6aff"
   },
   {
     "file": "manuscript/preamble.tex",
@@ -326,8 +326,8 @@
   },
   {
     "file": "manuscript/si/build/supplementary_information.pdf",
-    "size_bytes": 594708,
-    "sha256": "28691a13c676db99877430693f20c900f8c27be13253e4dcfeabf887438496c3"
+    "size_bytes": 594538,
+    "sha256": "7f995a9f21bbde13ff294daa8edbc108c4cee81879077972ee1a1f8a46847b18"
   },
   {
     "file": "manuscript/si/corrected_content.tex",
@@ -626,8 +626,8 @@
   },
   {
     "file": "manuscript/si/supplementary_information.tex",
-    "size_bytes": 1367,
-    "sha256": "8ba1eff5a60e058cf9bc2bd8e378bbc3f5c394bfa72736274376844c3785822b"
+    "size_bytes": 1360,
+    "sha256": "3c9aafb8e99b6013bc6b923ad94807d3ff70eb3a4654ea06b63bdaf70271963a"
   },
   {
     "file": "manuscript/si/tables/test_protocol_2026-09-22/baseline_fit_seeds.tex",
@@ -736,8 +736,8 @@
   },
   {
     "file": "manuscript/supplement.pdf",
-    "size_bytes": 594708,
-    "sha256": "28691a13c676db99877430693f20c900f8c27be13253e4dcfeabf887438496c3"
+    "size_bytes": 594538,
+    "sha256": "7f995a9f21bbde13ff294daa8edbc108c4cee81879077972ee1a1f8a46847b18"
   },
   {
     "file": "pyproject.toml",
