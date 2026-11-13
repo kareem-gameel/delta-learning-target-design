@@ -3,26 +3,26 @@
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.35}
-\caption{Native-target test MAE (Ha), mean $\pm$ sample SD across seeds 101, 102, and 103. DFTB$^\dagger$ has seed 101 only. xTB and DFTB direct-energy rows measure their own energies, not DFT reconstruction error.}
+\caption{Native-target test MAE (kcal/mol), mean $\pm$ sample SD across seeds 101, 102, and 103. DFTB$^\dagger$ has seed 101 only. xTB and DFTB direct-energy rows measure their own energies, not DFT reconstruction error.}
 \begin{tabular}{lrr}
 \toprule
 Target & SchNet test MAE & GemNet test MAE \\
 \midrule
-\(E_{\rm ref}^{\rm DFT}\) & 0.019917 $\pm$ 0.000178 & 0.013360 $\pm$ 0.000423 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.015648 $\pm$ 0.000077 & 0.009448 $\pm$ 0.000469 \\
-\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.024672 $\pm$ 0.000112 & 0.022380 $\pm$ 0.000452 \\
-\(E_{\rm ref}^{\rm xTB}\) & 0.018337 $\pm$ 0.000099 & 0.011718 $\pm$ 0.000595 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 0.014011 $\pm$ 0.000258 & 0.008372 $\pm$ 0.000031 \\
-\(\Delta^{\rm xTB}_{\rm ref}\) & 0.010269 $\pm$ 0.000128 & 0.008286 $\pm$ 0.000273 \\
-\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.009569 $\pm$ 0.000101 & 0.006596 $\pm$ 0.000048 \\
-\(\Delta^{\rm BoB}_{\rm lin}\) & 0.014724 $\pm$ 0.000167 & 0.011024 $\pm$ 0.000363 \\
-\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.019347 $\pm$ 0.000287 & 0.018826 $\pm$ 0.000056 \\
-\(\Delta^{\rm PRE}_{\rm lin}\) & 0.016139 $\pm$ 0.001004 & 0.013355 $\pm$ 0.000278 \\
-\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.018278 $\pm$ 0.000070 & 0.018293 $\pm$ 0.000090 \\
-\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.016086 $\pm$ 0.001178 & 0.013710 $\pm$ 0.000212 \\
-\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.015462 $\pm$ 0.000035 & 0.015222 $\pm$ 0.000006 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 0.013980 & 0.008462 \\
-\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.012119 & 0.007936 \\
+\(E_{\rm ref}^{\rm DFT}\) & 12.498 $\pm$ 0.112 & 8.383 $\pm$ 0.266 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 9.819 $\pm$ 0.048 & 5.929 $\pm$ 0.294 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 15.482 $\pm$ 0.070 & 14.043 $\pm$ 0.283 \\
+\(E_{\rm ref}^{\rm xTB}\) & 11.506 $\pm$ 0.062 & 7.353 $\pm$ 0.373 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 8.792 $\pm$ 0.162 & 5.253 $\pm$ 0.019 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 6.444 $\pm$ 0.080 & 5.200 $\pm$ 0.171 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 6.005 $\pm$ 0.064 & 4.139 $\pm$ 0.030 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 9.239 $\pm$ 0.105 & 6.918 $\pm$ 0.228 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 12.140 $\pm$ 0.180 & 11.813 $\pm$ 0.035 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 10.128 $\pm$ 0.630 & 8.380 $\pm$ 0.174 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 11.469 $\pm$ 0.044 & 11.479 $\pm$ 0.057 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 10.094 $\pm$ 0.739 & 8.603 $\pm$ 0.133 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 9.703 $\pm$ 0.022 & 9.552 $\pm$ 0.004 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 8.773 & 5.310 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 7.605 & 4.980 \\
 \bottomrule
 \end{tabular}
 \end{table}

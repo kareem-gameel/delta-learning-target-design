@@ -3,19 +3,19 @@
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.35}
-\caption{Frozen baseline performance against the DFT-BoE parent (Ha). Errors and correlations refer to the baseline alone; test labels are used here only for post-training evaluation. DFTB$^\dagger$ uses its valid subset.}
+\caption{Frozen baseline performance against the DFT-BoE parent (kcal/mol). Errors and correlations refer to the baseline alone; test labels are used here only for post-training evaluation. DFTB$^\dagger$ uses its valid subset.}
 \begin{tabular}{lrrrr}
 \toprule
 Residual & Test MAE & Test RMSE & Pearson $r$ & Spearman $\rho$ \\
 \midrule
-\(\Delta^{\rm BoB}_{\rm lin}\) & 0.029315 & 0.047333 & 0.839 & 0.823 \\
-\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.021124 & 0.041346 & 0.881 & 0.901 \\
-\(\Delta^{\rm PRE}_{\rm lin}\) & 0.024967 & 0.057663 & 0.771 & 0.893 \\
-\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.018746 & 0.068647 & 0.731 & 0.934 \\
-\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.021128 & 0.047002 & 0.847 & 0.923 \\
-\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.016335 & 0.053602 & 0.811 & 0.950 \\
-\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.035716 & 0.050873 & 0.830 & 0.787 \\
-\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.058773 & 0.086576 & 0.560 & 0.504 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 18.395 & 29.702 & 0.839 & 0.823 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 13.255 & 25.945 & 0.881 & 0.901 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 15.667 & 36.184 & 0.771 & 0.893 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 11.763 & 43.076 & 0.731 & 0.934 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 13.258 & 29.494 & 0.847 & 0.923 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 10.251 & 33.636 & 0.811 & 0.950 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 22.412 & 31.923 & 0.830 & 0.787 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 36.880 & 54.327 & 0.560 & 0.504 \\
 \bottomrule
 \end{tabular}
 \end{table}

@@ -6,20 +6,20 @@
 \caption{GemNet transfer after reconstruction onto the common DFT-BoE parent. Primary routes use the identical 128,988-molecule descriptor-common QM9 cohort; DFTB$^\dagger$ uses its 128,978-molecule intersection. RMSE and $R^2$ are means of seed-level oracle-shifted metrics. Kendall ordering is shift-invariant.}
 \begin{tabular}{lrrrr}
 \toprule
-Route & Oracle MAE & RMSE & $R^2$ & Kendall $\tau$ \\
+Route & Oracle MAE (kcal/mol) & RMSE (kcal/mol) & $R^2$ & Kendall $\tau$ \\
 \midrule
-\(E_{\rm ref}^{\rm DFT}\) & 0.039317 $\pm$ 0.018274 & 0.062145 & -0.697 & 0.651 $\pm$ 0.029 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.016407 $\pm$ 0.002413 & 0.030401 & 0.643 & 0.726 $\pm$ 0.048 \\
-\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.031678 $\pm$ 0.000363 & 0.044438 & 0.242 & 0.547 $\pm$ 0.024 \\
-\(\Delta^{\rm xTB}_{\rm ref}\) & 0.006311 $\pm$ 0.000461 & 0.008690 & 0.971 & 0.896 $\pm$ 0.009 \\
-\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.005982 $\pm$ 0.000095 & 0.008393 & 0.973 & 0.901 $\pm$ 0.001 \\
-\(\Delta^{\rm BoB}_{\rm lin}\) & 0.018193 $\pm$ 0.001493 & 0.032728 & 0.587 & 0.698 $\pm$ 0.030 \\
-\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.033881 $\pm$ 0.000583 & 0.045824 & 0.193 & 0.494 $\pm$ 0.029 \\
-\(\Delta^{\rm PRE}_{\rm lin}\) & 0.019325 $\pm$ 0.000974 & 0.032730 & 0.588 & 0.703 $\pm$ 0.017 \\
-\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.060508 $\pm$ 0.000347 & 0.107942 & -3.475 & 0.502 $\pm$ 0.008 \\
-\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.033508 $\pm$ 0.001345 & 0.066759 & -0.712 & 0.738 $\pm$ 0.007 \\
-\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.065508 $\pm$ 0.000444 & 0.117164 & -4.272 & 0.711 $\pm$ 0.001 \\
-\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.012526 & 0.018161 & 0.873 & 0.790 \\
+\(E_{\rm ref}^{\rm DFT}\) & 24.672 $\pm$ 11.467 & 38.997 & -0.697 & 0.651 $\pm$ 0.029 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 10.296 $\pm$ 1.514 & 19.077 & 0.643 & 0.726 $\pm$ 0.048 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 19.878 $\pm$ 0.228 & 27.885 & 0.242 & 0.547 $\pm$ 0.024 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 3.960 $\pm$ 0.289 & 5.453 & 0.971 & 0.896 $\pm$ 0.009 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 3.754 $\pm$ 0.059 & 5.267 & 0.973 & 0.901 $\pm$ 0.001 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 11.416 $\pm$ 0.937 & 20.537 & 0.587 & 0.698 $\pm$ 0.030 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 21.261 $\pm$ 0.366 & 28.755 & 0.193 & 0.494 $\pm$ 0.029 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 12.127 $\pm$ 0.611 & 20.539 & 0.588 & 0.703 $\pm$ 0.017 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 37.969 $\pm$ 0.218 & 67.734 & -3.475 & 0.502 $\pm$ 0.008 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 21.027 $\pm$ 0.844 & 41.892 & -0.712 & 0.738 $\pm$ 0.007 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 41.107 $\pm$ 0.278 & 73.521 & -4.272 & 0.711 $\pm$ 0.001 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 7.860 & 11.396 & 0.873 & 0.790 \\
 \bottomrule
 \end{tabular}
 \end{table}

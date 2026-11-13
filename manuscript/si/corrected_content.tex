@@ -12,7 +12,7 @@
 \section*{Scope and Reporting Conventions}
 This supplement asks how target construction changes the difficulty of learning molecular energies and their transfer between chemical domains. SchNet and GemNet are evaluated on the same 13 target definitions, with independent GNN seeds 101, 102, and 103 for every target. Each run is evaluated on the tmQM test split and on QM9 using its own best-validation checkpoint. The 78 main runs are supplemented by four DFTB runs: two targets, two architectures, and seed 101 only.
 
-Unless stated otherwise, errors are in Hartree (Ha), and uncertainty denotes the sample standard deviation of independently evaluated seed-level scores. Predictions are not averaged into an ensemble. A smaller error measures better performance on that target; it does not by itself explain the physical origin of the improvement.
+Unless stated otherwise, errors are in kcal/mol, and uncertainty denotes the sample standard deviation of independently evaluated seed-level scores. Predictions are not averaged into an ensemble. A smaller error measures better performance on that target; it does not by itself explain the physical origin of the improvement.
 
 DFTB is shown in \textcolor[HTML]{B52B79}{magenta} and marked \(\dagger\) in every comparison figure. It is a supporting control, not a member of the primary target panel. DFTB is excluded from all pooled correlations, regression fits, target-ranking statistics, leave-one-target-out analyses, and primary-panel summaries. Its own single-run metrics and explicitly matched-subset comparisons are reported separately. No across-seed error bar is assigned to a single DFTB run.
 
@@ -24,7 +24,7 @@ The architecture comparison is matched within every target: both architectures u
 \clearpage
 \section*{Supplementary Section 1: Target Preprocessing and Scale Controls}
 \subsection*{Supplementary Note 1: Direct Preprocessing Controls}
-Composition referencing removes a large, learnable contribution to the atom-referenced DFT energy. With a linear BoE reference, test MAE falls from \(0.019917\pm0.000178\) to \(0.015648\pm0.000077\) Ha for SchNet and from \(0.013360\pm0.000423\) to \(0.009448\pm0.000469\) Ha for GemNet. The nonlinear BoE baseline narrows the residual further, but downstream errors increase to \(0.024672\pm0.000112\) and \(0.022380\pm0.000452\) Ha, respectively. A smaller residual distribution therefore does not guarantee an easier regression problem.
+Composition referencing removes a large, learnable contribution to the atom-referenced DFT energy. With a linear BoE reference, test MAE falls from \(12.498\pm0.112\) to \(9.819\pm0.048\) kcal/mol for SchNet and from \(8.383\pm0.266\) to \(5.929\pm0.294\) kcal/mol for GemNet. The nonlinear BoE baseline narrows the residual further, but downstream errors increase to \(15.482\pm0.070\) and \(14.043\pm0.283\) kcal/mol, respectively. A smaller residual distribution therefore does not guarantee an easier regression problem.
 
 \sifig{scale_and_test_error}{\textbf{Target scale and test error.} Test IQR and tmQM test MAE for all targets. Error bars are sample SD over three GNN seeds. Magenta DFTB\(\dagger\) points are single-seed, reduced-cohort controls.}{fig:si-scale}
 \sitab{test_summary}
@@ -61,7 +61,7 @@ A useful baseline must do more than reproduce the parent energy accurately: the 
 
 More accurate descriptor baselines need not yield better downstream predictors. BoB, PRE, and PRE+A MLPs have smaller baseline errors than their corresponding linear models, yet none of their residual targets beats direct DFT-BoE learning for GemNet. For SchNet, linear BoB improves on direct learning, whereas linear PRE and PRE+A do not improve the mean test MAE. The latter two targets also have larger seed variability than most other SchNet targets.
 
-The xTB BoE-referenced residual has the smallest mean tmQM test MAE in the 13-target panel for both architectures: \(0.009569\pm0.000101\) Ha for SchNet and \(0.006596\pm0.000048\) Ha for GemNet. Relative to direct DFT-BoE learning, these are \result{schnet/xtb_gain}-fold and \result{gemnet/xtb_gain}-fold lower errors. This is an empirical target-design result, not proof of a particular electronic or geometric mechanism.
+The xTB BoE-referenced residual has the smallest mean tmQM test MAE in the 13-target panel for both architectures: \(6.005\pm0.064\) kcal/mol for SchNet and \(4.139\pm0.030\) kcal/mol for GemNet. Relative to direct DFT-BoE learning, these are \result{schnet/xtb_gain}-fold and \result{gemnet/xtb_gain}-fold lower errors. This is an empirical target-design result, not proof of a particular electronic or geometric mechanism.
 
 \subsection*{Supplementary Note 4: Descriptor Baseline Capacity}
 The linear and MLP descriptor models have the same parent target and, within each descriptor family, the same inputs and split memberships. Changing the fitting model tests baseline capacity without changing the DFT reference convention. Comparing descriptors under the common 512--128-hidden-unit MLP design tests information content, although input dimensions and total parameter counts differ.
@@ -93,9 +93,9 @@ Equation~\ref{eq:si-error-equivalence} allows raw MAE to be scored in residual s
 \sitab{qm9_parent_schnet}
 \sitab{qm9_parent_gemnet}
 
-On the matched main cohort, both xTB residual formulations retain substantially smaller oracle-shifted errors than the descriptor-MLP residuals. The BoE-referenced xTB route gives approximately \(0.00665\) Ha for SchNet and \(0.00598\) Ha for GemNet, with Kendall \(\tau\) near \(0.895\) and \(0.901\). The atom-referenced xTB residual is also competitive; composition referencing does not uniformly improve every transfer metric for both architectures.
+On the matched main cohort, both xTB residual formulations retain substantially smaller oracle-shifted errors than the descriptor-MLP residuals. The BoE-referenced xTB route gives approximately \(4.17\) kcal/mol for SchNet and \(3.75\) kcal/mol for GemNet, with Kendall \(\tau\) near \(0.895\) and \(0.901\). The atom-referenced xTB residual is also competitive; composition referencing does not uniformly improve every transfer metric for both architectures.
 
-MLP-PRE and MLP-PRE+A have oracle-shifted errors near \(0.061\)--\(0.066\) Ha and negative parent-energy \(R^2\), despite small in-domain residual widths. PRE+A can retain a moderate Kendall ordering while having poor RMSE and \(R^2\): rank fidelity does not protect against large amplitude errors or outliers. These failures limit claims that a flexible fitted baseline necessarily improves transfer.
+MLP-PRE and MLP-PRE+A have oracle-shifted errors near \(38\)--\(41\) kcal/mol and negative parent-energy \(R^2\), despite small in-domain residual widths. PRE+A can retain a moderate Kendall ordering while having poor RMSE and \(R^2\): rank fidelity does not protect against large amplitude errors or outliers. These failures limit claims that a flexible fitted baseline necessarily improves transfer.
 \sifig{qm9_trend_and_scatter}{\textbf{Trend fidelity and remaining QM9 error.} Kendall \(\tau\) versus oracle-shifted MAE after DFT-BoE reconstruction. Main routes use 128,988 common molecules; DFTB\(\dagger\) uses its 128,978-molecule intersection and is not pooled with the main routes.}{fig:si-qm9-trends}
 
 \clearpage
@@ -147,7 +147,7 @@ DFTB tests whether another semiempirical baseline can yield a useful residual. I
 
 Raw DFTB calculations and fixed standard-molecule reference inputs were reused; the learned composition correction was newly fitted on successful tmQM training molecules only. Historical fitted residuals were not used. The DFT parent is the canonical train-only DFT-BoE target restricted to the valid mask. Frozen DFTB coefficients generate validation, test, and QM9 targets.
 
-On common DFTB-valid test molecules, the residual's \(D_{\rm IQR}\) is 1.184 in PRE and 1.169 in PRE+A, compared with 1.127 and 1.113 for the DFT parent under identical masks. This is a paired target-roughness comparison, not a comparison across different graph cohorts. The DFTB residual is slightly rougher than the parent in both proxies, despite improving matched-subset test MAE; lower normalized roughness is therefore not a necessary condition for lower absolute error. DFTB energy and residual GNNs reach test MAEs of 0.013980 and 0.012119 Ha for SchNet, and 0.008462 and 0.007936 Ha for GemNet. Direct DFTB energy and DFT residual remain different prediction tasks.
+On common DFTB-valid test molecules, the residual's \(D_{\rm IQR}\) is 1.184 in PRE and 1.169 in PRE+A, compared with 1.127 and 1.113 for the DFT parent under identical masks. This is a paired target-roughness comparison, not a comparison across different graph cohorts. The DFTB residual is slightly rougher than the parent in both proxies, despite improving matched-subset test MAE; lower normalized roughness is therefore not a necessary condition for lower absolute error. DFTB energy and residual GNNs reach test MAEs of 8.773 and 7.605 kcal/mol for SchNet, and 5.310 and 4.980 kcal/mol for GemNet. Direct DFTB energy and DFT residual remain different prediction tasks.
 \sitab{dftb_matched}
 
 The matched table evaluates seed-101 direct-DFT, xTB-residual, and DFTB-residual predictors on identical DFTB-valid test or QM9 molecules. This removes evaluation-mask differences, but does not equalize their training cohorts. No separately trained exact-DFTB-mask direct-DFT GNN is included in the completed 82-run matrix. The control therefore supports a qualified comparison, not an unrestricted DFTB ranking or a three-seed uncertainty estimate.
@@ -167,13 +167,13 @@ This SD measures training-seed variation for a fixed dataset and target. It is n
 \sitab{seeds_qm9_schnet}
 \sitab{seeds_qm9_gemnet}
 
-SchNet linear PRE and PRE+A show larger test variability than most other targets. Their seed-102 test MAEs are 0.017296 and 0.017444 Ha, compared with approximately 0.0154--0.0156 Ha for the other seeds. These runs are retained rather than discarded. Differences between mean scores should not be described as decisive when comparable to this variation.
+SchNet linear PRE and PRE+A show larger test variability than most other targets. Their seed-102 test MAEs are 10.853 and 10.947 kcal/mol, compared with approximately 9.7--9.8 kcal/mol for the other seeds. These runs are retained rather than discarded. Differences between mean scores should not be described as decisive when comparable to this variation.
 
 \subsection*{Baseline Fitting Seeds Are Separate}
 A baseline-only check repeated each MLP fit with seeds 102 and 103, holding architecture, inputs, train-only preprocessing, and checkpoint selection fixed. Baseline seed 101 remains canonical; predictions and residual targets were not averaged over fitting seeds.
 \sitab{baseline_fit_seeds}
 
-Baseline test MAE SD is below 0.0006 Ha in each family, but individual residual labels are not identical. Paired test residuals show rare large differences relative to the canonical fit, with maxima of 1.093 Ha for PRE and 0.866 Ha for PRE+A. These scores use the already stored, frozen test predictions without refitting or selecting among baseline seeds. The present GNN error bars do not quantify this additional variability. Robustness to baseline fitting seed would require downstream evaluation on those alternative targets.
+Baseline test MAE SD is below 0.38 kcal/mol in each family, but individual residual labels are not identical. Paired test residuals show rare large differences relative to the canonical fit, with maxima of 685.9 kcal/mol for PRE and 543.1 kcal/mol for PRE+A. These scores use the already stored, frozen test predictions without refitting or selecting among baseline seeds. The present GNN error bars do not quantify this additional variability. Robustness to baseline fitting seed would require downstream evaluation on those alternative targets.
 
 \clearpage
 \section*{Supplementary Section 7: Target Normalization Values and Prediction Audit}
@@ -182,7 +182,7 @@ Training means and population standard deviations agreed with the settings recor
 
 The primary test graphs contained 51,535 PRE edges and 53,533 PRE+A edges. The DFTB-valid graphs contained 51,268 and 53,246 edges, respectively.
 
-All 164 recomputed native-target MAEs agreed with the final ledgers to within \(6.7\times10^{-16}\) Ha. All split-file checksums matched the target registry, all split molecule sets were disjoint, and the tmQM and QM9 predictions used matching checkpoints. The release includes target and prediction manifests, checksums, and machine-readable evaluation summaries \cite{gameel2026correctedRelease}.
+All 164 recomputed native-target MAEs agreed with the final ledgers to within \(4.2\times10^{-13}\) kcal/mol. All split-file checksums matched the target registry, all split molecule sets were disjoint, and the tmQM and QM9 predictions used matching checkpoints. The release includes target and prediction manifests, checksums, and machine-readable evaluation summaries \cite{gameel2026correctedRelease}.
 
 \bibliographystyle{unsrt}
 \bibliography{bib/references}

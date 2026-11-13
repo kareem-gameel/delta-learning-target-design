@@ -108,6 +108,8 @@ def refresh_data() -> None:
 
 def draw() -> None:
     frame = pd.read_csv(SOURCE).fillna({"fit": ""})
+    for column in frame.filter(regex="_Ha$"):
+        frame[column.removesuffix("_Ha") + "_kcal"] = frame[column] * 627.5094740631
     assert frame["target_id"].tolist() == [row[0] for row in ROWS]
     plt.rcParams.update({
         "font.family": "DejaVu Sans", "font.size": 10,
@@ -119,7 +121,7 @@ def draw() -> None:
     fig, axes = plt.subplots(1, 3, figsize=(10.4, 5.2),
                              gridspec_kw={"width_ratios": [1, 1.03, 1.25]})
     parent = frame.iloc[0]
-    references = [parent["parent_iqr_Ha"], parent["parent_D_IQR"], parent["direct_mae_mean_Ha"]]
+    references = [parent["parent_iqr_kcal"], parent["parent_D_IQR"], parent["direct_mae_mean_kcal"]]
     for index, ax in enumerate(axes):
         for low, high in [(4.43, 6.13), (0.43, 2.13)]:
             ax.axhspan(low, high, color="#F1F4F6", linewidth=0, zorder=0)
@@ -146,43 +148,43 @@ def draw() -> None:
 
     for yy, row in zip(y, frame.itertuples(), strict=True):
         color = COLORS[row.family]
-        axes[0].barh(yy, row.residual_iqr_Ha, height=0.46, color=color,
+        axes[0].barh(yy, row.residual_iqr_kcal, height=0.46, color=color,
                      alpha=0.48 if row.fit == "linear" else 1, edgecolor=DARK, linewidth=0.65)
         inside = row.supporting_control
-        axes[0].text(row.residual_iqr_Ha + (-0.002 if inside else 0.0018), yy,
-                     f"{row.residual_iqr_Ha:.3f}", va="center", fontsize=8.5,
+        axes[0].text(row.residual_iqr_kcal + (-1.2 if inside else 1.1), yy,
+                     f"{row.residual_iqr_kcal:.1f}", va="center", fontsize=8.5,
                      ha="right" if inside else "left", color="white" if inside else "black")
         axes[1].annotate("", xy=(row.D_IQR, yy), xytext=(row.parent_D_IQR, yy),
                          arrowprops={"arrowstyle": "->", "color": color, "lw": 1.1}, zorder=2)
         axes[1].scatter(row.D_IQR, yy, s=40, color=color, edgecolor=DARK, linewidth=0.65, zorder=3)
-        axes[2].annotate("", xy=(row.gemnet_mae_mean_Ha, yy),
-                         xytext=(row.standalone_baseline_mae_Ha, yy),
+        axes[2].annotate("", xy=(row.gemnet_mae_mean_kcal, yy),
+                         xytext=(row.standalone_baseline_mae_kcal, yy),
                          arrowprops={"arrowstyle": "->", "color": color, "lw": 1.2}, zorder=2)
-        axes[2].scatter(row.standalone_baseline_mae_Ha, yy, s=38, color=color,
+        axes[2].scatter(row.standalone_baseline_mae_kcal, yy, s=38, color=color,
                         edgecolor=DARK, linewidth=0.65, zorder=3)
-        axes[2].plot(row.gemnet_mae_mean_Ha, yy, linestyle="none", marker="D",
+        axes[2].plot(row.gemnet_mae_mean_kcal, yy, linestyle="none", marker="D",
                      markersize=5.7, markerfacecolor="white", markeredgecolor=color,
                      markeredgewidth=1.25, zorder=4)
-        if row.gemnet_mae_sd_Ha > 0:
-            axes[2].errorbar(row.gemnet_mae_mean_Ha, yy, xerr=row.gemnet_mae_sd_Ha,
+        if row.gemnet_mae_sd_kcal > 0:
+            axes[2].errorbar(row.gemnet_mae_mean_kcal, yy, xerr=row.gemnet_mae_sd_kcal,
                              fmt="none", ecolor=color, elinewidth=1.1,
                              capsize=2, capthick=1.1, zorder=5)
         if row.supporting_control:
-            for ax, reference in zip(axes, [row.parent_iqr_Ha, row.parent_D_IQR, row.direct_mae_mean_Ha]):
+            for ax, reference in zip(axes, [row.parent_iqr_kcal, row.parent_D_IQR, row.direct_mae_mean_kcal]):
                 ax.vlines(reference, yy - .22, yy + .22, colors=color, linewidth=1.2, zorder=6)
-    axes[0].set_xlim(0, 0.097)
-    axes[0].set_xticks([0, 0.03, 0.06, 0.09])
-    axes[0].set_xlabel("Residual IQR (Ha)")
+    axes[0].set_xlim(0, 61)
+    axes[0].set_xticks([0, 20, 40, 60])
+    axes[0].set_xlabel("Residual IQR (kcal/mol)")
     axes[1].set_xscale("log")
     axes[1].set_xlim(0.83, 26)
     axes[1].set_xticks([1, 2, 5, 10, 20], labels=["1", "2", "5", "10", "20"])
     axes[1].minorticks_off()
     axes[1].set_xlabel(r"Normalized roughness, $D_{\rm IQR}$")
-    axes[2].set_xlim(0.003, 0.064)
-    axes[2].set_xticks([0.01, 0.03, 0.05])
-    axes[2].set_xlabel("Test MAE (Ha)")
-    axes[2].axvspan(parent["direct_mae_mean_Ha"] - parent["direct_mae_sd_Ha"],
-                    parent["direct_mae_mean_Ha"] + parent["direct_mae_sd_Ha"],
+    axes[2].set_xlim(2, 40)
+    axes[2].set_xticks([10, 20, 30, 40])
+    axes[2].set_xlabel("Test MAE (kcal/mol)")
+    axes[2].axvspan(parent["direct_mae_mean_kcal"] - parent["direct_mae_sd_kcal"],
+                    parent["direct_mae_mean_kcal"] + parent["direct_mae_sd_kcal"],
                     color=DARK, alpha=0.13, linewidth=0, zorder=1)
     axes[2].legend(handles=[
         Line2D([], [], linestyle="none", marker="o", markerfacecolor="#72818C", markeredgecolor=DARK,

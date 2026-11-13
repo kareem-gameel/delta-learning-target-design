@@ -3,17 +3,17 @@
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.35}
-\caption{Seed-101 DFT reconstruction on exactly matched DFTB-valid evaluation molecules (Ha). Shifted errors are oracle diagnostics. Training cohorts remain different: DFTB used only successful training molecules. These rows are not pooled into any primary analysis.}
+\caption{Seed-101 DFT reconstruction on exactly matched DFTB-valid evaluation molecules (kcal/mol). Shifted errors are oracle diagnostics. Training cohorts remain different: DFTB used only successful training molecules. These rows are not pooled into any primary analysis.}
 \begin{tabular}{llrrrrr}
 \toprule
 Dataset & Route & N & S raw & S shifted & G raw & G shifted \\
 \midrule
-tmqm & \(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 7,068 & 0.015563 & 0.015623 & 0.009794 & 0.009832 \\
-tmqm & \(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 7,068 & 0.009499 & 0.009480 & 0.006538 & 0.006560 \\
-tmqm & \(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 7,068 & 0.012119 & 0.012125 & 0.007936 & 0.007954 \\
-qm9 & \(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 130,797 & 0.252018 & 0.016036 & 0.255477 & 0.019912 \\
-qm9 & \(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 130,797 & 0.024872 & 0.006813 & 0.024622 & 0.006151 \\
-qm9 & \(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 130,797 & 0.053349 & 0.011783 & 0.056495 & 0.012578 \\
+tmqm & \(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 7,068 & 9.766 & 9.804 & 6.146 & 6.170 \\
+tmqm & \(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 7,068 & 5.961 & 5.949 & 4.102 & 4.116 \\
+tmqm & \(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 7,068 & 7.605 & 7.609 & 4.980 & 4.991 \\
+qm9 & \(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 130,797 & 158.143 & 10.063 & 160.314 & 12.495 \\
+qm9 & \(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 130,797 & 15.608 & 4.275 & 15.450 & 3.860 \\
+qm9 & \(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 130,797 & 33.477 & 7.394 & 35.451 & 7.893 \\
 \bottomrule
 \end{tabular}
 \end{table}

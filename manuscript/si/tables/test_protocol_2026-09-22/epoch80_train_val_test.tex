@@ -1,41 +1,41 @@
 \begin{table}[H]
 \centering\scriptsize
-\caption{Downstream training, validation, and test MAE (Ha). Training MAE averages all logged optimizer-step MAEs during epoch 80 as the weights evolve. Validation MAE is the best recorded validation score for each run, and test MAE is evaluated with that validation-selected checkpoint. Thus the training column describes the final epoch, rather than inference with frozen weights. Entries are means and sample SDs across seeds 101, 102, and 103. DFTB controls report seed 101 only.}
+\caption{Downstream training, validation, and test MAE (kcal/mol). Training MAE averages all logged optimizer-step MAEs during epoch 80 as the weights evolve. Validation MAE is the best recorded validation score for each run, and test MAE is evaluated with that validation-selected checkpoint. Thus the training column describes the final epoch, rather than inference with frozen weights. Entries are means and sample SDs across seeds 101, 102, and 103. DFTB controls report seed 101 only.}
 \label{tab:si-gemnet-training-window}
 \begin{tabular}{lccc}\toprule
 Target & Training (epoch 80) & Validation (selected) & Test (selected) \\
 \midrule
 \multicolumn{4}{l}{\textbf{GemNet}} \\
-\(E_{\rm ref}^{\rm DFT}\) & $0.00996\pm0.00124$ & $0.01310\pm0.00052$ & $0.01336\pm0.00042$ \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & $0.00179\pm0.00037$ & $0.00930\pm0.00046$ & $0.00945\pm0.00047$ \\
-\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & $0.00131\pm0.00002$ & $0.02190\pm0.00044$ & $0.02238\pm0.00045$ \\
-\(E_{\rm ref}^{\rm xTB}\) & $0.00946\pm0.00033$ & $0.01183\pm0.00075$ & $0.01172\pm0.00059$ \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & $0.00154\pm0.00001$ & $0.00853\pm0.00006$ & $0.00837\pm0.00003$ \\
-\(\Delta^{\rm xTB}_{\rm ref}\) & $0.00409\pm0.00027$ & $0.00810\pm0.00020$ & $0.00829\pm0.00027$ \\
-\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & $0.00100\pm0.00008$ & $0.00653\pm0.00012$ & $0.00660\pm0.00005$ \\
-\(\Delta^{\rm BoB}_{\rm lin}\) & $0.00102\pm0.00005$ & $0.01123\pm0.00025$ & $0.01102\pm0.00036$ \\
-\(\Delta^{\rm BoB}_{\rm MLP}\) & $0.00077\pm0.00033$ & $0.01853\pm0.00015$ & $0.01883\pm0.00006$ \\
-\(\Delta^{\rm PRE}_{\rm lin}\) & $0.00075\pm0.00010$ & $0.01380\pm0.00020$ & $0.01335\pm0.00028$ \\
-\(\Delta^{\rm PRE}_{\rm MLP}\) & $0.00355\pm0.00029$ & $0.01817\pm0.00012$ & $0.01829\pm0.00009$ \\
-\(\Delta^{\rm PRE+A}_{\rm lin}\) & $0.00071\pm0.00003$ & $0.01373\pm0.00006$ & $0.01371\pm0.00021$ \\
-\(\Delta^{\rm PRE+A}_{\rm MLP}\) & $0.00050\pm0.00019$ & $0.01563\pm0.00006$ & $0.01522\pm0.00001$ \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & $0.00177$ & $0.01130$ & $0.00846$ \\
-\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & $0.00128$ & $0.00920$ & $0.00794$ \\
+\(E_{\rm ref}^{\rm DFT}\) & $6.251\pm0.778$ & $8.220\pm0.326$ & $8.383\pm0.266$ \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & $1.120\pm0.235$ & $5.836\pm0.288$ & $5.929\pm0.294$ \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & $0.825\pm0.016$ & $13.742\pm0.274$ & $14.043\pm0.283$ \\
+\(E_{\rm ref}^{\rm xTB}\) & $5.934\pm0.206$ & $7.426\pm0.471$ & $7.353\pm0.373$ \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & $0.964\pm0.006$ & $5.355\pm0.036$ & $5.253\pm0.019$ \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & $2.564\pm0.171$ & $5.083\pm0.126$ & $5.200\pm0.171$ \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & $0.630\pm0.052$ & $4.100\pm0.072$ & $4.139\pm0.030$ \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & $0.641\pm0.031$ & $7.049\pm0.158$ & $6.918\pm0.228$ \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & $0.481\pm0.208$ & $11.630\pm0.096$ & $11.813\pm0.035$ \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & $0.473\pm0.061$ & $8.660\pm0.126$ & $8.380\pm0.174$ \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & $2.230\pm0.185$ & $11.400\pm0.072$ & $11.479\pm0.057$ \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & $0.444\pm0.020$ & $8.618\pm0.036$ & $8.603\pm0.133$ \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & $0.312\pm0.120$ & $9.810\pm0.036$ & $9.552\pm0.004$ \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & $1.110$ & $7.091$ & $5.310$ \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & $0.805$ & $5.773$ & $4.980$ \\
 \multicolumn{4}{l}{\textbf{SchNet}} \\
-\(E_{\rm ref}^{\rm DFT}\) & $0.02286\pm0.00087$ & $0.01940\pm0.00010$ & $0.01992\pm0.00018$ \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & $0.00650\pm0.00036$ & $0.01533\pm0.00006$ & $0.01565\pm0.00008$ \\
-\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & $0.00544\pm0.00025$ & $0.02377\pm0.00015$ & $0.02467\pm0.00011$ \\
-\(E_{\rm ref}^{\rm xTB}\) & $0.02133\pm0.00007$ & $0.01833\pm0.00006$ & $0.01834\pm0.00010$ \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & $0.00686\pm0.00015$ & $0.01387\pm0.00012$ & $0.01401\pm0.00026$ \\
-\(\Delta^{\rm xTB}_{\rm ref}\) & $0.01087\pm0.00011$ & $0.01007\pm0.00015$ & $0.01027\pm0.00013$ \\
-\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & $0.00377\pm0.00029$ & $0.00947\pm0.00006$ & $0.00957\pm0.00010$ \\
-\(\Delta^{\rm BoB}_{\rm lin}\) & $0.00355\pm0.00025$ & $0.01443\pm0.00012$ & $0.01472\pm0.00017$ \\
-\(\Delta^{\rm BoB}_{\rm MLP}\) & $0.00307\pm0.00036$ & $0.01893\pm0.00006$ & $0.01935\pm0.00029$ \\
-\(\Delta^{\rm PRE}_{\rm lin}\) & $0.00289\pm0.00020$ & $0.01597\pm0.00015$ & $0.01614\pm0.00100$ \\
-\(\Delta^{\rm PRE}_{\rm MLP}\) & $0.00198\pm0.00020$ & $0.01817\pm0.00006$ & $0.01828\pm0.00007$ \\
-\(\Delta^{\rm PRE+A}_{\rm lin}\) & $0.00295\pm0.00051$ & $0.01547\pm0.00006$ & $0.01609\pm0.00118$ \\
-\(\Delta^{\rm PRE+A}_{\rm MLP}\) & $0.00140\pm0.00008$ & $0.01587\pm0.00006$ & $0.01546\pm0.00003$ \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & $0.00682$ & $0.01400$ & $0.01398$ \\
-\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & $0.00495$ & $0.01170$ & $0.01212$ \\
+\(E_{\rm ref}^{\rm DFT}\) & $14.347\pm0.547$ & $12.174\pm0.063$ & $12.498\pm0.112$ \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & $4.077\pm0.224$ & $9.622\pm0.036$ & $9.819\pm0.048$ \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & $3.413\pm0.154$ & $14.914\pm0.096$ & $15.482\pm0.070$ \\
+\(E_{\rm ref}^{\rm xTB}\) & $13.384\pm0.047$ & $11.504\pm0.036$ & $11.506\pm0.062$ \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & $4.303\pm0.092$ & $8.701\pm0.072$ & $8.792\pm0.162$ \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & $6.819\pm0.068$ & $6.317\pm0.096$ & $6.444\pm0.080$ \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & $2.365\pm0.179$ & $5.940\pm0.036$ & $6.005\pm0.064$ \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & $2.227\pm0.160$ & $9.057\pm0.072$ & $9.239\pm0.105$ \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & $1.926\pm0.227$ & $11.881\pm0.036$ & $12.140\pm0.180$ \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & $1.814\pm0.125$ & $10.019\pm0.096$ & $10.128\pm0.630$ \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & $1.240\pm0.125$ & $11.400\pm0.036$ & $11.469\pm0.044$ \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & $1.852\pm0.320$ & $9.705\pm0.036$ & $10.094\pm0.739$ \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & $0.876\pm0.051$ & $9.956\pm0.036$ & $9.703\pm0.022$ \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & $4.282$ & $8.785$ & $8.773$ \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & $3.104$ & $7.342$ & $7.605$ \\
 \bottomrule\end{tabular}
 \end{table}

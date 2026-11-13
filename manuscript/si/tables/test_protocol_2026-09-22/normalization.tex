@@ -3,26 +3,26 @@
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.35}
-\caption{Target scales in Ha. Training means and population standard deviations were independently checked against all 82 configuration files and remain unchanged. Test IQR normalizes reported test errors and test-graph roughness; it is not used for training.}
-\begin{tabular}{lrrr}
+\caption{Target scales in kcal/mol. Training means and population standard deviations were independently checked against all 82 configuration files before unit conversion. Test IQR normalizes reported test errors and test-graph roughness; it is not used for training.}
+\begin{tabular}{lrrrr}
 \toprule
-Target & $\mu_{\rm train}$ & $\sigma_{\rm train}$ & IQR$_{\rm test}$ \\
+Target & $\mu_{\rm train}$ & $\sigma_{\rm train}$ & IQR$_{\rm train}$ & IQR$_{\rm test}$ \\
 \midrule
-\(E_{\rm ref}^{\rm DFT}\) & 1.035182 & 0.733244 & 0.918321 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.000000 & 0.091165 & 0.084504 \\
-\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.005657 & 0.065718 & 0.061288 \\
-\(E_{\rm ref}^{\rm xTB}\) & 0.986222 & 0.764581 & 0.975633 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 0.000000 & 0.095927 & 0.086765 \\
-\(\Delta^{\rm xTB}_{\rm ref}\) & 0.048960 & 0.251295 & 0.205796 \\
-\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.000000 & 0.055191 & 0.051679 \\
-\(\Delta^{\rm BoB}_{\rm lin}\) & 0.000000 & 0.051867 & 0.041208 \\
-\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.001850 & 0.029471 & 0.025236 \\
-\(\Delta^{\rm PRE}_{\rm lin}\) & -0.000000 & 0.040629 & 0.032934 \\
-\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.001371 & 0.011373 & 0.019944 \\
-\(\Delta^{\rm PRE+A}_{\rm lin}\) & -0.000000 & 0.033210 & 0.027351 \\
-\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.002017 & 0.010266 & 0.017979 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 0.000000 & 0.097167 & 0.087331 \\
-\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & -0.000748 & 0.085898 & 0.079243 \\
+\(E_{\rm ref}^{\rm DFT}\) & 649.587 & 460.118 & 581.826 & 576.255 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.000 & 57.207 & 52.611 & 53.027 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 3.550 & 41.239 & 34.324 & 38.459 \\
+\(E_{\rm ref}^{\rm xTB}\) & 618.864 & 479.782 & 613.724 & 612.219 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 0.000 & 60.195 & 55.969 & 54.446 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 30.723 & 157.690 & 130.719 & 129.139 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.000 & 34.633 & 31.857 & 32.429 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 0.000 & 32.547 & 25.383 & 25.858 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 1.161 & 18.493 & 5.947 & 15.836 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & -0.000 & 25.495 & 19.256 & 20.666 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.860 & 7.137 & 4.075 & 12.515 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & -0.000 & 20.840 & 15.686 & 17.163 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 1.266 & 6.442 & 4.032 & 11.282 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 0.000 & 60.973 & 55.799 & 54.801 \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & -0.469 & 53.902 & 49.596 & 49.725 \\
 \bottomrule
 \end{tabular}
 \end{table}

@@ -81,13 +81,16 @@ def main():
     fig, axes = plt.subplots(1, 3, figsize=(10.2, 3.15))
     x = np.arange(3)
     panels = [
-        ('target_iqr_Ha', None, 'Target IQR (Ha)', (.04, 1.45), '.3f'),
-        ('mae_mean_Ha', 'mae_sample_sd_Ha', 'GemNet test MAE (Ha)', (0, .026), '.4f'),
+        ('target_iqr_Ha', None, 'Target IQR (kcal/mol)', (25, 910), '.1f'),
+        ('mae_mean_Ha', 'mae_sample_sd_Ha', 'GemNet test MAE (kcal/mol)', (0, 16.4), '.2f'),
         ('nmae_mean', 'nmae_sample_sd', r'GemNet test $n$-MAE', (0, .43), '.3f'),
     ]
     for index, (ax, (key, sd_key, ylabel, ylim, fmt)) in enumerate(zip(axes, panels)):
         values = np.array([r[key] for r in rows])
         errors = np.array([r[sd_key] for r in rows]) if sd_key else np.zeros(3)
+        if key.endswith("_Ha"):
+            values *= 627.5094740631
+            errors *= 627.5094740631
         ax.bar(x, values, width=.62, color=colors, edgecolor='#1F2933', linewidth=.7)
         if sd_key:
             ax.errorbar(x, values, yerr=errors, fmt='none', ecolor='#1F2933',

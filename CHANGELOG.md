@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.1
+
+Final v2 manuscript and SI with the revised title, results in kcal/mol, training and test IQRs, and the published QM9 dataset citation (https://doi.org/10.5281/zenodo.24203175).
+
 ## 0.4.0 - 2026-11-13
 
 - Release molecule-level QM9 Psi4 energies and provenance, revised v2 sources, and rebuilt manuscript and SI PDFs.

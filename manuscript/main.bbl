@@ -86,6 +86,13 @@ Matteo Aldeghi, David~E. Graff, Nathan Frey, Joseph~A. Morrone, Edward~O.
 \newblock {\em Journal of Chemical Information and Modeling},
   62(19):4660--4671, September 2022.
 
+\bibitem{graff2023rogiXD}
+David~E. Graff, Edward~O. Pyzer-Knapp, Kirk~E. Jordan, Eugene~I. Shakhnovich,
+  and Connor~W. Coley.
+\newblock Evaluating the roughness of structure--property relationships using
+  pretrained molecular representations.
+\newblock {\em Digital Discovery}, 2(5):1452--1460, 2023.
+
 \bibitem{belkin2006manifold}
 Mikhail Belkin, Partha Niyogi, and Vikas Sindhwani.
 \newblock Manifold regularization: A geometric framework for learning from
@@ -232,10 +239,19 @@ Robert~M. Parrish, Lori~A. Burns, Daniel G.~A. Smith, Andrew~C. Simmonett,
 
 \bibitem{gameel2026correctedRelease}
 Kareem~M. Gameel, Ihor Neporozhnii, Sjoerd Hoogland, and Oleksandr Voznyy.
-\newblock The mechanics of delta learning: Corrected code and data release.
+\newblock When better baselines make worse models: separating residual scale
+  from learnability to guide target design in delta learning (code and data
+  release).
 \newblock
-  \url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.4.0},
+  \url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.4.1},
   2026.
-\newblock Version v0.4.0.
+\newblock Version v0.4.1.
+
+\bibitem{gameelQM9Psi4Dataset}
+Kareem~M. Gameel and Oleksandr Voznyy.
+\newblock {Psi4} total electronic energies of 130,807 {QM9} molecules at the
+  \ensuremath{\omega}{B97M-V/def2-SVPD} level of theory.
+\newblock Zenodo dataset. DOI: \url{https://doi.org/10.5281/zenodo.24203175},
+  2026.
 
 \end{thebibliography}

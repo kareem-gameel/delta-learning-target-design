@@ -3,26 +3,26 @@
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.35}
-\caption{SchNet individual-seed qm9 native-target MAEs (Ha). All predictions use each run's best-validation checkpoint. A dash denotes an intentionally unrun DFTB seed, not a zero error.}
+\caption{SchNet individual-seed qm9 native-target MAEs (kcal/mol). All predictions use each run's best-validation checkpoint. A dash denotes an intentionally unrun DFTB seed, not a zero error.}
 \begin{tabular}{lrrr}
 \toprule
 Target & 101 & 102 & 103 \\
 \midrule
-\(E_{\rm ref}^{\rm DFT}\) & 1.006303 & 1.005030 & 1.015885 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 0.252019 & 0.258079 & 0.259814 \\
-\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 0.483568 & 0.465546 & 0.471873 \\
-\(E_{\rm ref}^{\rm xTB}\) & 0.942838 & 0.944062 & 0.941814 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 0.274410 & 0.277747 & 0.271944 \\
-\(\Delta^{\rm xTB}_{\rm ref}\) & 0.055792 & 0.055150 & 0.058758 \\
-\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 0.024874 & 0.025531 & 0.021646 \\
-\(\Delta^{\rm BoB}_{\rm lin}\) & 0.273621 & 0.279276 & 0.276816 \\
-\(\Delta^{\rm BoB}_{\rm MLP}\) & 0.261957 & 0.266765 & 0.263364 \\
-\(\Delta^{\rm PRE}_{\rm lin}\) & 0.272982 & 0.277887 & 0.275026 \\
-\(\Delta^{\rm PRE}_{\rm MLP}\) & 0.213049 & 0.214906 & 0.214518 \\
-\(\Delta^{\rm PRE+A}_{\rm lin}\) & 0.258401 & 0.256111 & 0.255926 \\
-\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 0.215360 & 0.215299 & 0.215430 \\
-\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 0.306405 & -- & -- \\
-\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 0.053349 & -- & -- \\
+\(E_{\rm ref}^{\rm DFT}\) & 631.464 & 630.666 & 637.477 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\) & 158.144 & 161.947 & 163.036 \\
+\(E_{\rm ref,BoE\mbox{-}MLP}^{\rm DFT}\) & 303.443 & 292.135 & 296.104 \\
+\(E_{\rm ref}^{\rm xTB}\) & 591.640 & 592.408 & 590.997 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm xTB}\) & 172.195 & 174.289 & 170.648 \\
+\(\Delta^{\rm xTB}_{\rm ref}\) & 35.010 & 34.607 & 36.871 \\
+\(\Delta^{\rm xTB}_{\rm ref,BoE}\) & 15.609 & 16.021 & 13.583 \\
+\(\Delta^{\rm BoB}_{\rm lin}\) & 171.700 & 175.249 & 173.705 \\
+\(\Delta^{\rm BoB}_{\rm MLP}\) & 164.380 & 167.398 & 165.264 \\
+\(\Delta^{\rm PRE}_{\rm lin}\) & 171.299 & 174.377 & 172.582 \\
+\(\Delta^{\rm PRE}_{\rm MLP}\) & 133.690 & 134.855 & 134.612 \\
+\(\Delta^{\rm PRE+A}_{\rm lin}\) & 162.149 & 160.712 & 160.596 \\
+\(\Delta^{\rm PRE+A}_{\rm MLP}\) & 135.141 & 135.102 & 135.184 \\
+\(E_{\rm ref,BoE\mbox{-}lin}^{\rm DFTB\dagger}\) & 192.272 & -- & -- \\
+\(\Delta^{\rm DFTB\dagger}_{\rm ref,BoE}\) & 33.477 & -- & -- \\
 \bottomrule
 \end{tabular}
 \end{table}

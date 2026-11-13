@@ -50,12 +50,15 @@ q.to_csv(ROOT/'data/fig04_evaluation_metrics.csv',index=False)
     caveat='DFTB training subset differs; not pooled with primary routes',
     legacy_asset='fig03_qm9_transfer is displayed Figure 4'),indent=2)+'\n')
 
+energy_columns = [col for col in frame if 'mae' in col]
+frame[energy_columns] *= 627.5094740631
+
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.labelsize':10.5,
     'xtick.labelsize':9,'ytick.labelsize':9.5,'axes.linewidth':.8,'savefig.dpi':450,'pdf.fonttype':42})
 y=np.array([8.15,7.25,5.9,5.15,3.9,3.15,1.9,1.15])
 fig,axes=plt.subplots(1,3,figsize=(10.4,5.1))
-configs=[('mae',(0,.30),'Raw MAE (Ha)','.4f'),
-         ('shifted_mae',(0,.080),'Mean-shifted MAE (Ha)','.4f'),
+configs=[('mae',(0,190),'Raw MAE (kcal/mol)','.2f'),
+         ('shifted_mae',(0,51),'Mean-shifted MAE (kcal/mol)','.2f'),
          ('kendall',(.43,.95),r'Kendall correlation, $\tau$','.3f')]
 for i,(ax,(metric,limits,xlabel,fmt)) in enumerate(zip(axes,configs)):
     reference=frame['direct_'+metric].iloc[0]
@@ -86,7 +89,7 @@ for i,(ax,(metric,limits,xlabel,fmt)) in enumerate(zip(axes,configs)):
 axes[0].set_yticklabels([r'DFTB$^{\dagger}$' if r.family=='DFTB' else
     (r.family if not r.fit else f'{r.family} ({r.fit})') for r in frame.itertuples()])
 axes[1].set_yticklabels([]); axes[2].set_yticklabels([])
-axes[0].set_xticks([0,.1,.2,.3]); axes[1].set_xticks([0,.02,.04,.06,.08]); axes[2].set_xticks([.5,.7,.9])
+axes[0].set_xticks([0,50,100,150]); axes[1].set_xticks([0,10,20,30,40,50]); axes[2].set_xticks([.5,.7,.9])
 fig.subplots_adjust(left=.135,right=.99,top=.89,bottom=.15,wspace=.24)
 for ext in ['png','pdf']:
     fig.savefig(ROOT/f'figures/fig03_qm9_transfer.{ext}',bbox_inches='tight')

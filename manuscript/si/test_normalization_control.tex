@@ -22,14 +22,14 @@ For both models, the observed signed Pearson correlation of \(\ln D_{\rm IQR}\) 
 \caption{\textbf{All similar-test-IQR primary target pairs.} The larger IQR is at most 1.10 times the smaller; selection does not use roughness or errors. Values follow target order. Roughness uses PRE for SchNet and PRE+A for GemNet; normalized error is mean test MAE/test IQR. These descriptive comparisons are not independent confirmation on new data.}
 \label{tab:test-similar-iqr}
 \begin{tabular}{llrrr}\toprule
-Model & Targets & IQR (Ha) & $D_{\rm IQR}$ & $n$-MAE \\
+Model & Targets & IQR (kcal/mol) & $D_{\rm IQR}$ & $n$-MAE \\
 \midrule
-GemNet & $E^{\rm DFT}_{\rm ref}\to E^{\rm xTB}_{\rm ref}$ & $0.91832\to0.97563$ & $0.548\to0.533$ & $0.015\to0.012$ \\
-GemNet & $E^{\rm DFT}_{\rm ref,BoE}\to E^{\rm xTB}_{\rm ref,BoE}$ & $0.08450\to0.08677$ & $1.127\to1.051$ & $0.112\to0.096$ \\
-GemNet & $\Delta^{\rm BoB}_{\rm MLP}\to\Delta^{\rm PRE+A}_{\rm lin}$ & $0.02524\to0.02735$ & $3.711\to3.524$ & $0.746\to0.501$ \\
-SchNet & $E^{\rm DFT}_{\rm ref}\to E^{\rm xTB}_{\rm ref}$ & $0.91832\to0.97563$ & $0.604\to0.587$ & $0.022\to0.019$ \\
-SchNet & $E^{\rm DFT}_{\rm ref,BoE}\to E^{\rm xTB}_{\rm ref,BoE}$ & $0.08450\to0.08677$ & $1.152\to1.077$ & $0.185\to0.161$ \\
-SchNet & $\Delta^{\rm BoB}_{\rm MLP}\to\Delta^{\rm PRE+A}_{\rm lin}$ & $0.02524\to0.02735$ & $4.092\to3.763$ & $0.767\to0.588$ \\
+GemNet & $E^{\rm DFT}_{\rm ref}\to E^{\rm xTB}_{\rm ref}$ & $576.26\to612.22$ & $0.548\to0.533$ & $0.015\to0.012$ \\
+GemNet & $E^{\rm DFT}_{\rm ref,BoE}\to E^{\rm xTB}_{\rm ref,BoE}$ & $53.03\to54.45$ & $1.127\to1.051$ & $0.112\to0.096$ \\
+GemNet & $\Delta^{\rm BoB}_{\rm MLP}\to\Delta^{\rm PRE+A}_{\rm lin}$ & $15.84\to17.16$ & $3.711\to3.524$ & $0.746\to0.501$ \\
+SchNet & $E^{\rm DFT}_{\rm ref}\to E^{\rm xTB}_{\rm ref}$ & $576.26\to612.22$ & $0.604\to0.587$ & $0.022\to0.019$ \\
+SchNet & $E^{\rm DFT}_{\rm ref,BoE}\to E^{\rm xTB}_{\rm ref,BoE}$ & $53.03\to54.45$ & $1.152\to1.077$ & $0.185\to0.161$ \\
+SchNet & $\Delta^{\rm BoB}_{\rm MLP}\to\Delta^{\rm PRE+A}_{\rm lin}$ & $15.84\to17.16$ & $4.092\to3.763$ & $0.767\to0.588$ \\
 \bottomrule\end{tabular}
 \end{table}
 
