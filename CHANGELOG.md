@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 - 2026-11-13
+
+- Consolidate methods in the main manuscript and publish the combined, main-only, and supplementary PDFs.
+
 ## 0.3.2 - 2026-11-13
 
 - Update the Discussion sentence on in-domain accuracy and transfer to QM9 and refresh the combined manuscript PDF.

@@ -176,58 +176,13 @@ A baseline-only check repeated each MLP fit with seeds 102 and 103, holding arch
 Baseline test MAE SD is below 0.0006 Ha in each family, but individual residual labels are not identical. Paired test residuals show rare large differences relative to the canonical fit, with maxima of 1.093 Ha for PRE and 0.866 Ha for PRE+A. These scores use the already stored, frozen test predictions without refitting or selecting among baseline seeds. The present GNN error bars do not quantify this additional variability. Robustness to baseline fitting seed would require downstream evaluation on those alternative targets.
 
 \clearpage
-\section*{Supplementary Section 7: Supplementary Methods}
-\subsection*{Datasets, References, and Splits}
-The neutral tmQM benchmark has 71,038 molecules. Geometries derive from tmQM, and DFT energies are at \(\omega\)B97M-V/def2-SVPD \cite{balcells2020tmqm,mardirossian2016wb97mv,rappoport2010def2svpd}. QM9 DFT energies use the same level, evaluated with Psi4 \cite{parrish2017psi4}. QM9 supplies no fitted baseline or GNN parameters.
-
-Frozen split identifiers were retained during target regeneration. Joins use molecule IDs or explicitly mapped SIDs; CSV, LMDB, and prediction-array orders are not assumed to coincide. The corrected registry records exact split-file checksums. A filename containing \emph{full} denotes concatenated split rows evaluated with one frozen model, not a model fitted on all molecules.
-
-The fixed method-specific atom-reference convention is
-\begin{equation}
- E_{\rm ref}^{m}(i)=E_{\rm raw}^{m}(i)-\sum_Z n_Z(i)\epsilon_Z^{m}.
-\end{equation}
-Here \(\epsilon_Z^{m}\) belongs to an external reference convention, not a regression fitted to held-out molecular energies. Canonical DFT \(E_{\rm ref}\) values were retained as authoritative input; this is distinct from reusing a historical molecular-label-fitted composition reference.
-
-\subsection*{Train-Only Baseline Fitting}
-Linear BoE predicts atom-referenced energy from 44 elemental counts, with an intercept. Ridge regularization is selected by five-fold shuffled training-only cross-validation, split seed 42, and mean fold-held-out MAE. Standardization is refitted within each fold. Final coefficients use training data only and are frozen for validation, test, and transfer. DFT, xTB, and DFTB have separate BoE fits; DFTB uses only successful training molecules.
-
-The six descriptor baselines predict \(Y=E_{\rm ref,BoE\mbox{-}lin}^{\rm DFT}\), giving \(\Delta^b=Y-\hat E_b\). BoB is a 4,950-dimensional RDKit typed-bond-count descriptor, not conventional Coulomb-matrix Bag-of-Bonds. PRE has 34,650 pair-radial features, 35 Gaussian channels, and a \(6.0~\text{\AA}\) cutoff. Centres span 0.8--\(3.0~\text{\AA}\) at \(0.1~\text{\AA}\) intervals (width \(0.12~\text{\AA}\)), then 3.25--\(6.0~\text{\AA}\) at \(0.25~\text{\AA}\) intervals (width \(0.30~\text{\AA}\)). PRE+A adds 11,088 angular features, giving 45,738 total: 44 central elements, 21 unordered pairs of six radial shells, and 12 \(\cos\theta\) bins.
-
-Linear descriptor models remove training-zero-variance channels and divide by training population SD without centring. Filtering and scaling are refitted in every cross-validation fold. The descriptor ridge grid has 25 logarithmic values from \(10^{-6}\) to \(10^6\); selected values must not be grid endpoints. Final fits use only the descriptor-common training split.
-
-The four MLP baselines use hidden widths 512 and 128, SiLU, dropout 0.10, and a scalar linear output. MLP-BoE predicts \(E_{\rm ref}^{\rm DFT}\) from counts; descriptor MLPs predict \(Y\). AdamW uses learning rate \(10^{-3}\), weight decay \(10^{-4}\), SmoothL1 loss with \(\beta=0.10\), batch size 1024, clipping at 1, at most 800 epochs, and early-stopping patience 80 with minimum improvement \(10^{-5}\) Ha. Training data fit parameters and preprocessing; validation selects the lowest-MAE checkpoint. Thus training-only fitting does not mean validation labels were never used for model selection.
-
-\subsection*{Semiempirical Targets}
-GFN2-xTB supplies the xTB baseline \cite{bannwarth2019gfn2xtb}. Both referencing levels are included:
-\begin{align}
- \Delta_{\rm ref}^{\rm xTB}&=E_{\rm ref}^{\rm DFT}-E_{\rm ref}^{\rm xTB},\\
- \Delta_{\rm ref,BoE}^{\rm xTB}&=E_{\rm ref,BoE}^{\rm DFT}-E_{\rm ref,BoE}^{\rm xTB}.
-\end{align}
-DFTB is analogous after success filtering. DFTB+ uses SCC-DFTB/DFTB2 with PTBP Slater--Koster parameters, without third-order or dispersion corrections \cite{elstner1998sccdftb,hourahine2020dftbplus,dftborg2025ptbp}. This broad parameterization is a control, not a claim of optimal parameters for the molecular domain.
-
-\subsection*{GNN Configurations and Selection}
-Both architectures use energy-only learning, a \(6.0~\text{\AA}\) cutoff, on-the-fly graphs, no periodic boundary conditions, and no force regression. SchNet uses 128 hidden channels, 128 filters, six interactions, 50 Gaussian functions, and sum readout \cite{schutt2023schnetpack2}. GemNet-T uses three blocks, atom and edge widths 512, triplet and bilinear-triplet widths 64, radial and angular embedding widths 16, 128 radial functions, seven spherical functions, at most 50 neighbours, SiLU, and extensive summation \cite{gasteiger2021gemnet}. It uses Gaussian radial functions, spherical harmonics, and a polynomial envelope with exponent five.
-
-AdamW with AMSGrad starts at \(5\times10^{-4}\). ReduceLROnPlateau uses factor 0.8 and patience three. Configurations specify MSE energy loss, EMA decay 0.999, clipping at 10, validation every 5,000 steps, and an 80-epoch budget. SchNet batch size is 16; GemNet batch size is four, including evaluation. Validation controls scheduling and checkpoint selection; test and QM9 labels do not.
-
-Each target is standardized by its own training mean and population SD, shared between architectures and seeds. These were independently recalculated and checked against all 82 configurations, and are never fitted on validation, test, or QM9.
+\section*{Supplementary Section 7: Target Normalization Values and Prediction Audit}
+Training means and population standard deviations agreed with the settings recorded in all 82 model configurations.
 \sitab{normalization}
 
-\subsection*{Roughness and Statistical Scope}
-Standardized roughness graphs remove zero-variance channels on the test graph cohort and divide retained channels by that cohort's population SD without centring. This unsupervised transformation is distinct from train-only regressor preprocessing. Cosine distances between normalized vectors define neighbours; unique undirected union edges receive
-\begin{equation}
- w_{ij}=\exp[-d_{ij}^{2}/(\sigma_i\sigma_j)],
-\end{equation}
-where \(\sigma_i\) is the tenth-neighbour distance. The common test graph has 51,535 PRE or 53,533 PRE+A edges. Every main target uses identical edges and weights within an architecture. DFTB and its paired DFT parent use separately constructed valid-subset test graphs, with 51,268 PRE or 53,246 PRE+A edges.
+The primary test graphs contained 51,535 PRE edges and 53,533 PRE+A edges. The DFTB-valid graphs contained 51,268 and 53,246 edges, respectively.
 
-IQRs use linearly interpolated quartiles; variance normalization uses population variance. The primary fit is unweighted ordinary least squares across 13 target means, with an intercept and \(\ln D_{\rm IQR}\) predictor. Pearson \(r\), in-sample \(R^2\), Spearman \(\rho\), and Kendall \(\tau\) are descriptive. Targets are related transformations of the same molecules, so target-wise independence is not assumed. An explicit 13-target whitelist excludes DFTB before every pooled calculation.
-
-This corrected analysis reports two proxy graphs, normalization controls, panel-sensitivity checks, and 5,000 new joint test-label permutations with similar-IQR comparisons. Historical graph-grid results and synthetic-network rescaling fits are not presented as corrected-data experiments. The new permutation values use the corrected test protocol, not the historical validation results. The association does not establish a causal mechanism or guaranteed prospective ranking.
-
-\subsection*{Prediction Audit and Reproducibility}
-The inventory contains 82 unique runs with complete predictions for both evaluation datasets. The SI audit re-read prediction arrays, verified unique IDs and complete available-target coverage, and recomputed all 164 native-target MAEs. The largest difference from the final ledgers was \(6.7\times10^{-16}\) Ha. All split target files matched corrected-registry checksums, split molecule sets were disjoint, and test and QM9 checkpoint paths matched. The final tmQM ledger records checkpoint checksums; the SI audit also records prediction and input checksums.
-
-The SI bundle contains the target registry, final ledgers, target statistics, complete per-seed metrics, baseline scores, test-graph edges and weights, roughness values, correlation inclusion masks, checksums, and plotting code. Raw and oracle-shifted RMSE, \(R^2\), Pearson correlation, Spearman correlation, Kendall correlation, and bias remain available in machine-readable tables where the printed tables select fewer metrics. These materials are distributed with the corrected code and data release, \texttt{v0.2.0-corrected} \cite{gameel2026correctedRelease}. Raw structures, LMDB databases, model checkpoints, and full prediction arrays are not included in that release. Rebuilding this SI neither retrains models nor changes the main manuscript.
+All 164 recomputed native-target MAEs agreed with the final ledgers to within \(6.7\times10^{-16}\) Ha. All split-file checksums matched the target registry, all split molecule sets were disjoint, and the tmQM and QM9 predictions used matching checkpoints. The release includes target and prediction manifests, checksums, and machine-readable evaluation summaries \cite{gameel2026correctedRelease}.
 
 \bibliographystyle{unsrt}
 \bibliography{bib/references}

@@ -6,13 +6,13 @@
   },
   {
     "file": "CHANGELOG.md",
-    "size_bytes": 1109,
-    "sha256": "807ee96deb160b9ea873e723744612c5dd60843b996289f9b7129ed2e929bf94"
+    "size_bytes": 1239,
+    "sha256": "ba9089aceb18e45f49d254914b2830e8290a2751ef15eb8efff8107c361ffffc"
   },
   {
     "file": "CITATION.cff",
     "size_bytes": 937,
-    "sha256": "9d8529ddbb53120ebcfdd23cd3f2c4e9ad3b5c9209b026b515c6067116a54495"
+    "sha256": "40b566141b33cc2c0cdf589d16aaf9440527cae245e4b218decb40c2e0391e63"
   },
   {
     "file": "CONTRIBUTING.md",
@@ -37,7 +37,7 @@
   {
     "file": "README.md",
     "size_bytes": 4492,
-    "sha256": "c96b6ce15885ad52b47b98c699c1180b86bcb750ed299aea14b67cd866f095b5"
+    "sha256": "6eb799cbceb26012eb519e76745000e4a4ec2014db110293900dae95fcb02a2b"
   },
   {
     "file": "RELEASE_CHECKLIST.md",
@@ -47,7 +47,7 @@
   {
     "file": "RELEASE_STATUS.md",
     "size_bytes": 342,
-    "sha256": "310a1d60f16deec3d73eee5e6cbcdf685fd74dac0442b86971d7b9216a8ed0cd"
+    "sha256": "ffa5fd7ff2a68a9920a2bfb1d1a5c390ba6a1c12ea11e03218e53e2a22f4d735"
   },
   {
     "file": "configs/angular_feature_metadata.json",
@@ -141,8 +141,13 @@
   },
   {
     "file": "manuscript/build/main.pdf",
-    "size_bytes": 789790,
-    "sha256": "369992996b9dd4e702fe13209fa096fa14255b07142aa426b20d85ddbb263389"
+    "size_bytes": 777317,
+    "sha256": "23667b9503f7b70ef4f7ed4d33d7dfb201750a9191966a61c58e1c0a5b18ff94"
+  },
+  {
+    "file": "manuscript/build/manuscript-only.pdf",
+    "size_bytes": 421149,
+    "sha256": "bf528ddbed2decd012e76fa158c3673b1dd491dbb95f91b76902de9388f298fe"
   },
   {
     "file": "manuscript/data/fig01_per_seed.csv",
@@ -311,8 +316,8 @@
   },
   {
     "file": "manuscript/sections/section_08_methods.tex",
-    "size_bytes": 9064,
-    "sha256": "fbb22eacf8258c49c161e0e3905466ecbf4323a10d49a849244e631b66dabf4f"
+    "size_bytes": 12253,
+    "sha256": "dde2e5c409ec84ca4a79633e2185bc403b89ce582f637e49e531800abc020d88"
   },
   {
     "file": "manuscript/si/README_CORRECTED_SI.md",
@@ -321,18 +326,18 @@
   },
   {
     "file": "manuscript/si/build/supplementary_information.bbl",
-    "size_bytes": 4392,
-    "sha256": "1ab4889c3bf8497f6576a83ea4a29af7f0a6db02483c6cb7739427c5ef76f531"
+    "size_bytes": 394,
+    "sha256": "cb9c0f8408a966c5bf35701d805aa829a0409de8d3f1f6a31f64842ce6455c1b"
   },
   {
     "file": "manuscript/si/build/supplementary_information.pdf",
-    "size_bytes": 594538,
-    "sha256": "7f995a9f21bbde13ff294daa8edbc108c4cee81879077972ee1a1f8a46847b18"
+    "size_bytes": 555886,
+    "sha256": "56762973994512ecf74fc7f34d47aa68967ba15d0ebdb5c39051d3e64fbdd40a"
   },
   {
     "file": "manuscript/si/corrected_content.tex",
-    "size_bytes": 29084,
-    "sha256": "e089f6566cf7afd8564b21a1eebbc1cab001e38a7f82c3753a977e5e34ce981b"
+    "size_bytes": 21350,
+    "sha256": "fb1eadadaf3b5bb213e4c0e602e2283c7531b8eca05ca9969c29dd92b4c1cfd0"
   },
   {
     "file": "manuscript/si/data/normalization_controls_test_2026-09-22/permutation_associations.csv",
@@ -736,8 +741,8 @@
   },
   {
     "file": "manuscript/supplement.pdf",
-    "size_bytes": 594538,
-    "sha256": "7f995a9f21bbde13ff294daa8edbc108c4cee81879077972ee1a1f8a46847b18"
+    "size_bytes": 555886,
+    "sha256": "56762973994512ecf74fc7f34d47aa68967ba15d0ebdb5c39051d3e64fbdd40a"
   },
   {
     "file": "pyproject.toml",

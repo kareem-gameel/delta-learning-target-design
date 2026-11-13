@@ -3,7 +3,7 @@
 Code, processed evidence, manuscript source, and reproducibility checks for
 **When better baselines make worse models: a target-design principle for delta learning**.
 
-Manuscript revision **v2** is available in release `v0.3.2`. Read the [combined manuscript and SI](manuscript/build/main.pdf) or the [standalone SI](manuscript/supplement.pdf). Supplementary Table S3 compares final-epoch training MAE with validation and test MAE at the validation-selected checkpoint. The September [v0.2.0-corrected release](https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected) preserves the original manuscript and corrected test protocol. The files under `manuscript/submission/` document that September submission.
+Manuscript revision **v2** is available in release `v0.3.3`. Read the [combined manuscript and SI](manuscript/build/main.pdf) or the [standalone SI](manuscript/supplement.pdf). Supplementary Table S3 compares final-epoch training MAE with validation and test MAE at the validation-selected checkpoint. The September [v0.2.0-corrected release](https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected) preserves the original manuscript and corrected test protocol. The files under `manuscript/submission/` document that September submission.
 
 ## Evidence contract
 
