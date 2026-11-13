@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 - 2026-11-13
+
+- Release molecule-level QM9 Psi4 energies and provenance, revised v2 sources, and rebuilt manuscript and SI PDFs.
+
 ## 0.3.3 - 2026-11-13
 
 - Consolidate methods in the main manuscript and publish the combined, main-only, and supplementary PDFs.

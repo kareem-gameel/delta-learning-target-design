@@ -78,6 +78,14 @@ Simon~L{\'e}on Krug, Danish Khan, and O.~Anatole von Lilienfeld.
   diatomics: Foundational baseline for $\delta$-machine learning.
 \newblock {\em The Journal of Chemical Physics}, 162(4):044101, 2025.
 
+\bibitem{aldeghi2022roughness}
+Matteo Aldeghi, David~E. Graff, Nathan Frey, Joseph~A. Morrone, Edward~O.
+  Pyzer-Knapp, Kirk~E. Jordan, and Connor~W. Coley.
+\newblock Roughness of molecular property landscapes and its impact on
+  modellability.
+\newblock {\em Journal of Chemical Information and Modeling},
+  62(19):4660--4671, September 2022.
+
 \bibitem{belkin2006manifold}
 Mikhail Belkin, Partha Niyogi, and Vikas Sindhwani.
 \newblock Manifold regularization: A geometric framework for learning from
@@ -171,6 +179,26 @@ Belinda Phipson and Gordon~K. Smyth.
 \newblock {\em Statistical Applications in Genetics and Molecular Biology},
   9(1):39, 2010.
 
+\bibitem{zheng2021aiqm1}
+Peikun Zheng, Roman Zubatyuk, Wei Wu, Olexandr Isayev, and Pavlo~O. Dral.
+\newblock Artificial intelligence-enhanced quantum chemical method with broad
+  applicability.
+\newblock {\em Nature Communications}, 12(1), December 2021.
+
+\bibitem{zeng2023qdpi}
+Jinzhe Zeng, Yujun Tao, Timothy~J. Giese, and Darrin~M. York.
+\newblock {QD$\pi$}: A quantum deep potential interaction model for drug
+  discovery.
+\newblock {\em Journal of Chemical Theory and Computation}, 19(4):1261--1275,
+  January 2023.
+
+\bibitem{wengert2022cocrystals}
+Simon Wengert, Gábor Csányi, Karsten Reuter, and Johannes~T. Margraf.
+\newblock A hybrid machine learning approach for structure stability prediction
+  in molecular co-crystal screenings.
+\newblock {\em Journal of Chemical Theory and Computation}, 18(7):4586--4593,
+  June 2022.
+
 \bibitem{mardirossian2016wb97mv}
 Narbe Mardirossian and Martin Head-Gordon.
 \newblock {$\omega$B97M-V}: A combinatorially optimized, range-separated
@@ -206,8 +234,8 @@ Robert~M. Parrish, Lori~A. Burns, Daniel G.~A. Smith, Andrew~C. Simmonett,
 Kareem~M. Gameel, Ihor Neporozhnii, Sjoerd Hoogland, and Oleksandr Voznyy.
 \newblock The mechanics of delta learning: Corrected code and data release.
 \newblock
-  \url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.2.0-corrected},
+  \url{https://github.com/kareem-gameel/delta-learning-target-design/releases/tag/v0.4.0},
   2026.
-\newblock Version v0.2.0-corrected.
+\newblock Version v0.4.0.
 
 \end{thebibliography}

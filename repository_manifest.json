@@ -6,13 +6,13 @@
   },
   {
     "file": "CHANGELOG.md",
-    "size_bytes": 1239,
-    "sha256": "ba9089aceb18e45f49d254914b2830e8290a2751ef15eb8efff8107c361ffffc"
+    "size_bytes": 1378,
+    "sha256": "c2b171b2e3f1ed832f99e998f40002139674a8aa46a7fa9277241d94eaf8f75f"
   },
   {
     "file": "CITATION.cff",
     "size_bytes": 937,
-    "sha256": "40b566141b33cc2c0cdf589d16aaf9440527cae245e4b218decb40c2e0391e63"
+    "sha256": "770eddaa0cbf3dc20d14bf34f1ff5f42d1f03195b0be3309b2c586a37a4ece16"
   },
   {
     "file": "CONTRIBUTING.md",
@@ -36,8 +36,8 @@
   },
   {
     "file": "README.md",
-    "size_bytes": 4492,
-    "sha256": "6eb799cbceb26012eb519e76745000e4a4ec2014db110293900dae95fcb02a2b"
+    "size_bytes": 4623,
+    "sha256": "7f773951332e91b3cc8e03483aa2ab7713572d26f1882d880643970ecc4b4e40"
   },
   {
     "file": "RELEASE_CHECKLIST.md",
@@ -47,7 +47,7 @@
   {
     "file": "RELEASE_STATUS.md",
     "size_bytes": 342,
-    "sha256": "ffa5fd7ff2a68a9920a2bfb1d1a5c390ba6a1c12ea11e03218e53e2a22f4d735"
+    "sha256": "f8a5ad600afa23f72d0bc4b41d894b80fde642839d8681a0177f2c9289fbb4e6"
   },
   {
     "file": "configs/angular_feature_metadata.json",
@@ -136,18 +136,18 @@
   },
   {
     "file": "manuscript/bib/references.bib",
-    "size_bytes": 15566,
-    "sha256": "7c1d41a0059046b6c5ebcd36f340c655b4dfe0a71394b868a816cd44e29f3c0b"
+    "size_bytes": 17502,
+    "sha256": "980561156fbabe6ccce5c6ddc61fc31be841d4ce9e79f193f5b77858ae8acbfa"
   },
   {
     "file": "manuscript/build/main.pdf",
-    "size_bytes": 777317,
-    "sha256": "23667b9503f7b70ef4f7ed4d33d7dfb201750a9191966a61c58e1c0a5b18ff94"
+    "size_bytes": 779596,
+    "sha256": "c5426c015b02862eb1230720830117f73125cc1b26c6ddad3807f5a50564cec5"
   },
   {
     "file": "manuscript/build/manuscript-only.pdf",
-    "size_bytes": 421149,
-    "sha256": "bf528ddbed2decd012e76fa158c3673b1dd491dbb95f91b76902de9388f298fe"
+    "size_bytes": 423325,
+    "sha256": "2a5b1d93876e535a57b32a867ff228c4a52bece9e9aa2efdaf7450756af26247"
   },
   {
     "file": "manuscript/data/fig01_per_seed.csv",
@@ -203,6 +203,16 @@
     "file": "manuscript/data/fig04_qm9_transfer.csv",
     "size_bytes": 2463,
     "sha256": "fcd186ea89dff85570cf325b99ecd97b7364f6bcdc10923c8b95d86967ea9cea"
+  },
+  {
+    "file": "manuscript/data/qm9_psi4/README.md",
+    "size_bytes": 1333,
+    "sha256": "929ed321f84666cab5a77ff0f2d1c61d2e2cadceb18acaad73bfd4c77e0aff57"
+  },
+  {
+    "file": "manuscript/data/qm9_psi4/qm9_psi4_total_energies.csv",
+    "size_bytes": 7093963,
+    "sha256": "075567bb6dd2156699d94f0fce1c93e7a3a788fafaebc41dc981673ff97fc779"
   },
   {
     "file": "manuscript/data/qm9_xtb_only_comparison_summary.csv",
@@ -261,13 +271,13 @@
   },
   {
     "file": "manuscript/main.bbl",
-    "size_bytes": 9750,
-    "sha256": "9ea4fc5bd59e743bbfb54f2bca6860a527450875c8e60af5fa792151073a410a"
+    "size_bytes": 10911,
+    "sha256": "cdfd16d9a22b86534696b54ac2b9abeda242717f95d8ca78cdbc7d2ce0648d06"
   },
   {
     "file": "manuscript/main.tex",
-    "size_bytes": 4158,
-    "sha256": "005094b23b2b5d1a2a7b69f3f24f17b17df998b8523d186aa882da0213ab6aff"
+    "size_bytes": 4364,
+    "sha256": "929c0e67a78eb907c3336041cb0c9844ace92516bcc27c68afe1acd614b41f03"
   },
   {
     "file": "manuscript/preamble.tex",
@@ -301,8 +311,8 @@
   },
   {
     "file": "manuscript/sections/section_01_introduction.tex",
-    "size_bytes": 5194,
-    "sha256": "c02f55b528596849f9a9242664ad9956b295f360c3b26213fb2033f1ddd2b77b"
+    "size_bytes": 5222,
+    "sha256": "a49812bd163bf80eb23e95bd66e46062dd0df63fb8bd2aa153a75065560bcf43"
   },
   {
     "file": "manuscript/sections/section_02_results_discussion.tex",
@@ -311,8 +321,8 @@
   },
   {
     "file": "manuscript/sections/section_07_discussion.tex",
-    "size_bytes": 3735,
-    "sha256": "12d8b02903f32996cab4d9fa9000e3dd62fb1b4029a23901947b600ff92fae55"
+    "size_bytes": 3835,
+    "sha256": "01c648620c56ed7d52a5fcb31a840d0c19ef12f79bbbc5aec5e0da0e95ecde0d"
   },
   {
     "file": "manuscript/sections/section_08_methods.tex",
@@ -326,13 +336,13 @@
   },
   {
     "file": "manuscript/si/build/supplementary_information.bbl",
-    "size_bytes": 394,
-    "sha256": "cb9c0f8408a966c5bf35701d805aa829a0409de8d3f1f6a31f64842ce6455c1b"
+    "size_bytes": 374,
+    "sha256": "1452c80bf150130e2d52a74f5a9faa3b5c85af2e84280ee50f0460b8d4923b41"
   },
   {
     "file": "manuscript/si/build/supplementary_information.pdf",
-    "size_bytes": 555886,
-    "sha256": "56762973994512ecf74fc7f34d47aa68967ba15d0ebdb5c39051d3e64fbdd40a"
+    "size_bytes": 555850,
+    "sha256": "4f8d2e82357d7c45fd85e300bbc05c769c5231e3c5faed1dc00dfea43fa29a6b"
   },
   {
     "file": "manuscript/si/corrected_content.tex",
@@ -741,8 +751,8 @@
   },
   {
     "file": "manuscript/supplement.pdf",
-    "size_bytes": 555886,
-    "sha256": "56762973994512ecf74fc7f34d47aa68967ba15d0ebdb5c39051d3e64fbdd40a"
+    "size_bytes": 555850,
+    "sha256": "4f8d2e82357d7c45fd85e300bbc05c769c5231e3c5faed1dc00dfea43fa29a6b"
   },
   {
     "file": "pyproject.toml",

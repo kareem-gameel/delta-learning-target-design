@@ -55,6 +55,16 @@
     "sha256": "fcd186ea89dff85570cf325b99ecd97b7364f6bcdc10923c8b95d86967ea9cea"
   },
   {
+    "file": "manuscript/data/qm9_psi4/README.md",
+    "size_bytes": 1333,
+    "sha256": "929ed321f84666cab5a77ff0f2d1c61d2e2cadceb18acaad73bfd4c77e0aff57"
+  },
+  {
+    "file": "manuscript/data/qm9_psi4/qm9_psi4_total_energies.csv",
+    "size_bytes": 7093963,
+    "sha256": "075567bb6dd2156699d94f0fce1c93e7a3a788fafaebc41dc981673ff97fc779"
+  },
+  {
     "file": "manuscript/data/qm9_xtb_only_comparison_summary.csv",
     "size_bytes": 755,
     "sha256": "f3b822742d9d6f8858d4efb62a490c475083d3f80b2c024e864c5ad150cf655f"
